@@ -1,13 +1,39 @@
 from view import View
 
 class UI:
-    
+     __usuario = None 
+
+
+    @classmethod
+    def main(cls):
+        # verifica a existe o usuário admin
+        View.cliente_criar_admin()
+        # mostra o menu da aplicação
+        UI.menu()
+
+    @classmethod
+    def menu(cls):
+        op = 0
+        while op != 15:
+            if cls.__usuario == None: 
+                # usuário não está logado
+                op = UI.menu_visitante()
+            else:
+                # usuário está logado, verifica se é o admin
+                admin = cls.__usuario["nome"] == "admin"
+                # mensagem de bem-vindo
+                print("IF Comércio Eletrônico 2025")
+                print("Bem-vindo(a), " + cls.__usuario["nome"])
+                # menu do usuário: admin ou cliente
+                if admin: UI.menu_admin()
+                else: UI.menu_cliente()
+
 
     def menu_visitante():
         print('Bem-Vindo ao nosso sistema de compra!')
         print('1 - Entrar na conta')
         print('2 - Cadastrar uma nova conta')
-        print('3 - Sair')
+        print('15 - Sair')
 
         opcao = int(input('Escolha uma opção: '))
         if opcao == 1:
@@ -16,8 +42,21 @@ class UI:
         if opcao == 2:
             UI.cadastrar()
 
-        else:
-            UI.menu_visitante()
+        return opcao
+    
+    
+
+    @classmethod
+    def entrar(cls):
+        email = input("Informe o e-mail: ")
+        senha = input("Informe a senha: ")
+        cls.__usuario = View.cliente_autenticar(email, senha)
+        if cls.__usuario == None: print("Usuário ou senha inválidos")
+
+    def cadastrar():
+        UI.cliente_inserir()
+
+
 
     def menu_admin():
         print("Clientes")
@@ -29,10 +68,47 @@ class UI:
         print("Produtos")
         print("9-Inserir, 10-Listar, 11-Atualizar, 12-Excluir, 13-Reajuste")
         print()
-        print("13-Fim")
-        return int(input("Informe uma opção: "))
+        print("Vendas")
+        print("14-Listar as vendas")
+        print("15-Fim")
+        op = int(input("Informe uma opção: "))
+        if op == 1: UI.cliente_inserir()
+        if op == 2: UI.cliente_listar()
+        if op == 3: UI.cliente_atualizar()
+        if op == 4: UI.cliente_excluir()
+        if op == 5: UI.categoria_inserir()
+        if op == 6: UI.categoria_listar()
+        if op == 7: UI.categoria_atualizar()
+        if op == 8: UI.categoria_excluir()
+        if op == 9: UI.produto_inserir()
+        if op == 10: UI.produto_listar()
+        if op == 11: UI.produto_atualizar()
+        if op == 12: UI.produto_excluir()
+        if op == 13: UI.reajustar_preco()
+        if op == 14: UI.venda_listar()
+        if op == 15: UI.usuario_sair()
+
+
+    def menu_cliente():
+        print("1-Listar Produtos")
+        print("2-Inserir Produto no carrinho")
+        print("3-Visualizar carrinho")
+        print("4-Comprar carrinho")
+        print("5-Listar minhas compras")
+        print("6-Fim")
+        op = int(input("Informe uma opção: "))
+        if op == 1: pass
+        if op == 2: pass
+        if op == 3: pass
+        if op == 4: pass
+        if op == 5: pass
+        if op == 6: UI.usuario.sair()
+
+    @classmethod
+    def usuario_sair(cls):
+        cls.__usuario = None
     
-    def main():
+    def main_admin():
         op = 0
         while op != 14:
             op = UI.menu_admin()

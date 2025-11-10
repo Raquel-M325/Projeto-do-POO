@@ -5,6 +5,21 @@ from models.venda import Venda, VendaDAO
 from models.vendaitem import VendaItem, VendaItemDAO
 
 class View:
+
+    def cliente_criar_admin():
+        # cria o usuário admin se ele não existir
+        for obj in View.cliente_listar():
+            if obj.get_email() == "admin": return
+        View.cliente_inserir("admin", "admin", "1234", "1234") 
+
+    def cliente_autenticar(email, senha):
+        for obj in View.cliente_listar():
+            if obj.get_email() == email and obj.get_senha() == senha: 
+                return { "id": obj.get_id(), "nome": obj.get_nome() }
+        return None
+
+
+
     def cliente_inserir(nome, email, fone):
         id = 0
         c = Cliente(id, nome, email, fone)
