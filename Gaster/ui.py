@@ -2,7 +2,24 @@ from view import View
 
 class UI:
     
-    def menu():
+
+    def menu_visitante():
+        print('Bem-Vindo ao nosso sistema de compra!')
+        print('1 - Entrar na conta')
+        print('2 - Cadastrar uma nova conta')
+        print('3 - Sair')
+
+        opcao = int(input('Escolha uma opção: '))
+        if opcao == 1:
+            UI.entrar()
+        
+        if opcao == 2:
+            UI.cadastrar()
+
+        else:
+            UI.menu_visitante()
+
+    def menu_admin():
         print("Clientes")
         print("1-Inserir, 2-Listar, 3-Atualizar, 4-Excluir")
         print()
@@ -18,7 +35,7 @@ class UI:
     def main():
         op = 0
         while op != 14:
-            op = UI.menu()
+            op = UI.menu_admin()
             if op == 1: UI.cliente_inserir()
             if op == 2: UI.cliente_listar()
             if op == 3: UI.cliente_atualizar()
