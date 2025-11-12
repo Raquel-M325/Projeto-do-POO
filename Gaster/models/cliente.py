@@ -21,16 +21,11 @@ class Cliente:
         self.senha = senha
     
     #GET
-    def get_id(self):
-        return self.id
-    def get_nome(self):
-        return self.nome
-    def get_email(self):
-        return self.email
-    def get_fone(self):
-        return self.fone
-    def get_senha(self):
-        return self.senha
+    def get_id(self): return self.id
+    def get_nome(self): return self.nome
+    def get_email(self): return self.email
+    def get_fone(self): return self.fone
+    def get_senha(self): return self.senha
 
 
     def __str__(self):

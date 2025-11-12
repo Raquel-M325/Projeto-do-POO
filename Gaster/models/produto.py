@@ -23,16 +23,11 @@ class Produto:
     
 
     #GET
-    def get_id(self):
-        return self.id
-    def get_descricao(self):
-        return self.descricao
-    def get_preco(self):
-        return self.preco
-    def get_estoque(self):
-        return self.estoque
-    def get_id_Categoria(self):
-        return self.id_Categoria
+    def get_id(self): return self.id
+    def get_descricao(self): return self.descricao
+    def get_preco(self): return self.preco
+    def get_estoque(self): return self.estoque
+    def get_id_Categoria(self): return self.id_Categoria
         
 
     def get_idcat(self):

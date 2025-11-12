@@ -7,6 +7,25 @@ class VendaItem:
         self.set_idVenda(id_Venda)
         self.set_idProduto(id_Produto)
 
+    #Set
+    def set_id(self, id):
+        self.id = id
+    def set_qtd(self, qtd):
+        self.qtd = qtd
+    def set_preco(self, preco):
+        self.preco = preco
+    def set_idVenda(self, id_Venda):
+        self.id_Venda = id_Venda
+    def set_idProduto(self, id_Produto):
+        self.id_Produto = id_Produto
+    
+    #Get
+    def get_id(self): return self.id
+    def get_qtd(self): return self.qtd
+    def get_preco(self): return self.preco
+    def get_idVenda(self): return self.id_Venda
+    def get_idProduto(self): return self.id_Produto
+
     def __str__(self):
         return f"{self.id} - {self.qtd} - {self.preco} - {self.id_Venda} - {self.id_Produto}"
     def to_json(self):

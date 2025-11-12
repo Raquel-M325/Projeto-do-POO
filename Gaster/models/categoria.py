@@ -11,10 +11,8 @@ class Categoria:
         self.descricao = descricao
     
     #GET
-    def get_id(self):
-        return self.id
-    def get_descricao(self):
-        return self.descricao
+    def get_id(self): return self.id
+    def get_descricao(self): return self.descricao
     
 
     def __str__(self):

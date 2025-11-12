@@ -20,16 +20,11 @@ class Venda:
         self.id_Cliente = id_Cliente
     
     #Get
-    def get_id(self):
-        return self.id
-    def get_data(self):
-        return self.data
-    def get_carrinho(self):
-        return self.carrinho
-    def get_total(self):
-        return self.total
-    def get_id_Cliente(self):
-        return self.id_Cliente
+    def get_id(self): return self.id
+    def get_data(self): return self.data
+    def get_carrinho(self): return self.carrinho
+    def get_total(self): return self.total
+    def get_id_Cliente(self): return self.id_Cliente
     
     
     def __str__(self):
