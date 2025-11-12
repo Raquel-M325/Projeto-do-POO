@@ -202,9 +202,9 @@ class UI:
     def venda_listar():
         for obj in View.venda_listar():print(obj)
 
-    def listar_produtos():
+    #def listar_produtos():
 
-    def inserir_produtos():
+    #def inserir_produtos():
         
 
 UI.main()

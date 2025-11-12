@@ -74,7 +74,7 @@ class View:
             ProdutoDAO.atualizar(obj)
     
     #VENDA
-    def venda_inserir():
+    #def venda_inserir():
 
 
     def venda_listar():
