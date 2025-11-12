@@ -5,7 +5,32 @@ class Venda:
         self.set_data(data)
         self.set_carrinho(carrinho)
         self.set_total(total)
-        self.set_id_Clientes(id_Cliente)
+        self.set_id_Cliente(id_Cliente)
+    
+    #Set
+    def set_id(self, id):
+        self.id = id
+    def set_data(self, data):
+        self.data = data
+    def set_carrinho(self, carrinho):
+        self.carrinho = carrinho
+    def set_total(self, total):
+        self.total = total
+    def set_id_Cliente(self, id_Cliente):
+        self.id_Cliente = id_Cliente
+    
+    #Get
+    def get_id(self):
+        return self.id
+    def get_data(self):
+        return self.data
+    def get_carrinho(self):
+        return self.carrinho
+    def get_total(self):
+        return self.total
+    def get_id_Cliente(self):
+        return self.id_Cliente
+    
     
     def __str__(self):
         return f"{self.id} - {self.data} - {self.carrinho} - {self.total} - {self.id_Cliente}"

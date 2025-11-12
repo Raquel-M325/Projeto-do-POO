@@ -7,19 +7,41 @@ class Produto:
         self.set_preco(preco)
         self.set_estoque(estoque)
         self.set_id_Categoria(id_Categoria)
+
+    
+    #SET 
+    def set_id(self, id):
+        self.id = id
+    def set_descricao(self, descricao):
+        self.descricao = descricao
+    def set_preco(self, preco):
+        self.preco = preco
+    def set_estoque(self, estoque):
+        self.estoque = estoque
+    def set_id_Categoria(self, id_Categoria):
+        self.id_Categoria = id_Categoria
+    
+
+    #GET
+    def get_id(self):
+        return self.id
+    def get_descricao(self):
+        return self.descricao
+    def get_preco(self):
+        return self.preco
+    def get_estoque(self):
+        return self.estoque
+    def get_id_Categoria(self):
+        return self.id_Categoria
         
+
     def get_idcat(self):
-        for obj in categorias:
-            if obj.get_id() == self.id_Categoria: return obj.get_descrica()
-        # with open("categoria.json", mode="r") as arquivo:
-        #     list_dic = json.load(arquivo)
-        #     for dic in list_dic:
-        #         for key in dic:
-        #             if key == "id":
-        #                 if self.id_Categoria == dic[key]:
-        #                     return dic["descricao"]
+        for obj in CategoriaDAO.listar():
+            if obj.get_id() == self.id_Categoria: return obj.get_descricao()
+
+
     def reajustar_preco(self, porcentagem):
-        self.preco * (1 + porcentagem)
+        self.preco = self.preco * (1 + (porcentagem/100))
 
     def __str__(self):
         return f"{self.id} - {self.descricao} - R${self.preco} - {self.estoque} unidades - {self.get_idcat()}"

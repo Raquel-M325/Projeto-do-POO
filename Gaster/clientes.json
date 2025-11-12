@@ -2,19 +2,29 @@
     {
         "id": 1,
         "nome": "admin",
-        "email": "1234",
-        "fone": "1234"
+        "email": "admin",
+        "fone": "1234",
+        "senha": "1234"
+    },
+    {
+        "id": 4,
+        "nome": "Raquel Martiniano",
+        "email": "raquel123",
+        "fone": "93",
+        "senha": "cade a anima\u00e7ao"
+    },
+    {
+        "id": 5,
+        "nome": "Miguel",
+        "email": "dahora",
+        "fone": "345",
+        "senha": "migs"
     },
     {
         "id": 2,
-        "nome": "admin",
-        "email": "1234",
-        "fone": "1234"
-    },
-    {
-        "id": 3,
-        "nome": "Miguel",
-        "email": "daorinha",
-        "fone": "9999"
+        "nome": "Gaster",
+        "email": "blaster",
+        "fone": "100",
+        "senha": "darkworld"
     }
 ]

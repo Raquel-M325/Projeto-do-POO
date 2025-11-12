@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "descricao": "Jornada",
+        "preco": 59.99,
+        "estoque": 99,
+        "id_Categoria": 1
+    }
+]

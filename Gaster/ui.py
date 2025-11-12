@@ -14,7 +14,7 @@ class UI:
     @classmethod
     def menu(cls):
         op = 0
-        while op != 15:
+        while op != 3:
             if cls.__usuario == None: 
                 # usuário não está logado
                 op = UI.menu_visitante()
@@ -33,7 +33,7 @@ class UI:
         print('Bem-Vindo ao nosso sistema de compra!')
         print('1 - Entrar na conta')
         print('2 - Cadastrar uma nova conta')
-        print('15 - Sair')
+        print('3 - Sair')
 
         opcao = int(input('Escolha uma opção: '))
         if opcao == 1:
@@ -70,6 +70,7 @@ class UI:
         print()
         print("Vendas")
         print("14-Listar as vendas")
+        print()
         print("15-Fim")
         op = int(input("Informe uma opção: "))
         if op == 1: UI.cliente_inserir()
@@ -102,7 +103,7 @@ class UI:
         if op == 3: pass
         if op == 4: pass
         if op == 5: pass
-        if op == 6: UI.usuario.sair()
+        if op == 6: UI.usuario_sair()
 
     @classmethod
     def usuario_sair(cls):
@@ -125,12 +126,14 @@ class UI:
             if op == 11: UI.produto_atualizar()
             if op == 12: UI.produto_excluir()
             if op == 13: UI.reajustar_preco()
+            if op == 14: UI.venda_listar()
 
     def cliente_inserir():
         nome = input("Informe o nome: ")
         email = input("Informe o email: ")
         fone = input("Informe o número de telefone: ")
-        View.cliente_inserir(nome, email, fone)
+        senha = input("Insira uma senha: ")
+        View.cliente_inserir(nome, email, fone, senha)
 
     def cliente_listar():
         for obj in View.cliente_listar():print(obj)
@@ -141,7 +144,8 @@ class UI:
         nome = input("Informe o novo nome: ")
         email = input("Informe o email: ")
         fone = input("Informe o número de telefone: ")
-        View.cliente_atualizar(id, nome, email, fone)
+        senha = input("Insira sua nova senha: ")
+        View.cliente_atualizar(id, nome, email, fone, senha)
 
     def cliente_excluir():
         UI.cliente_listar()
@@ -188,10 +192,14 @@ class UI:
     def produto_excluir():
         UI.produto_listar()
         id = int(input("Informe o id a ser excluído: "))
+        View.produto_excluir(id)
 
     def reajustar_preco():
         UI.produto_listar()
-        porcentagem = int(input("Informe a porcentagem: "))
+        porcentagem = float(input("Informe a porcentagem: "))
         View.reajustar_preco(porcentagem)
+
+    def venda_listar():
+        for obj in View.venda_listar():print(obj)
 
 UI.main()
