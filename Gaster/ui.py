@@ -1,7 +1,7 @@
 from view import View
 
 class UI:
-     __usuario = None 
+    __usuario = None 
 
 
     @classmethod

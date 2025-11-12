@@ -1,8 +1,22 @@
 import json
 class Categoria:
     def __init__(self, id, descricao):
+        self.set_id(id)
+        self.set_descricao(descricao)
+
+    #SET 
+    def set_id(self, id):
         self.id = id
+    def set_descricao(self, descricao):
         self.descricao = descricao
+    
+    #GET
+    def get_id(self):
+        return self.id
+    def get_descricao(self):
+        return self.descricao
+    
+
     def __str__(self):
         return f"{self.id} - {self.descricao}"
     def to_json(self):

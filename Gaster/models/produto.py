@@ -2,25 +2,22 @@ import json
 from models.categoria import CategoriaDAO
 class Produto:
     def __init__(self, id, descricao, preco, estoque, id_Categoria):
-        self.id = id
-        self.descricao = descricao
-        self.preco = preco
-        self.estoque = estoque
-        self.id_Categoria = id_Categoria
+        self.set_id(id)
+        self.set_descricao(descricao)
+        self.set_preco(preco)
+        self.set_estoque(estoque)
+        self.set_id_Categoria(id_Categoria)
         
     def get_idcat(self):
-        # categoria = CategoriaDAO.listar()
-        # for obj in categorias:
-        #     if obj == "id":
-        #         if self.id_Categoria == obj["id"]:
-        #             return obj["descricao"]
-        with open("categoria.json", mode="r") as arquivo:
-            list_dic = json.load(arquivo)
-            for dic in list_dic:
-                for key in dic:
-                    if key == "id":
-                        if self.id_Categoria == dic[key]:
-                            return dic["descricao"]
+        for obj in categorias:
+            if obj.get_id() == self.id_Categoria: return obj.get_descrica()
+        # with open("categoria.json", mode="r") as arquivo:
+        #     list_dic = json.load(arquivo)
+        #     for dic in list_dic:
+        #         for key in dic:
+        #             if key == "id":
+        #                 if self.id_Categoria == dic[key]:
+        #                     return dic["descricao"]
     def reajustar_preco(self, porcentagem):
         self.preco * (1 + porcentagem)
 

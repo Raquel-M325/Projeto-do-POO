@@ -3,14 +3,14 @@ from models.cliente import Cliente, ClienteDAO
 from models.produto import Produto, ProdutoDAO
 from models.venda import Venda, VendaDAO
 from models.vendaitem import VendaItem, VendaItemDAO
-
+import json
 class View:
 
     def cliente_criar_admin():
         # cria o usuário admin se ele não existir
         for obj in View.cliente_listar():
-            if obj.get_email() == "admin": return
-        View.cliente_inserir("admin", "admin", "1234", "1234") 
+            if obj.get_email() == "admin": return "Olá adm"
+        View.cliente_inserir("admin", "1234", "1234") 
 
     def cliente_autenticar(email, senha):
         for obj in View.cliente_listar():

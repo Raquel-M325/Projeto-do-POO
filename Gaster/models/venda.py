@@ -1,11 +1,11 @@
 import json
 class Venda:
     def __init__(self, id, data, carrinho, total, id_Cliente):
-        self.id = id
-        self.data = data
-        self.carrinho = carrinho
-        self.total = total
-        self.id_Clientes = id_Cliente
+        self.set_id(id)
+        self.set_data(data)
+        self.set_carrinho(carrinho)
+        self.set_total(total)
+        self.set_id_Clientes(id_Cliente)
     
     def __str__(self):
         return f"{self.id} - {self.data} - {self.carrinho} - {self.total} - {self.id_Cliente}"

@@ -1,11 +1,11 @@
 import json
 class VendaItem:
     def __init__(self, id, qtd, preco, id_Venda, id_Produto):
-        self.id
-        self.qtd
-        self.preco
-        self.idVenda
-        self.idProduto
+        self.set_id(id)
+        self.set_qtd(qtd)
+        self.set_preco(preco)
+        self.set_idVenda(id_Venda)
+        self.set_idProduto(id_Produto)
 
     def __str__(self):
         return f"{self.id} - {self.qtd} - {self.preco} - {self.id_Venda} - {self.id_Produto}"
