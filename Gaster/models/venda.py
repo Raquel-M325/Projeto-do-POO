@@ -1,6 +1,6 @@
 import json
 class Venda:
-    def __init__(self, id, data, carrinho, total, id_Cliente):
+    def __init__(self, id):
         self.set_id(id)
         self.set_data(data)
         self.set_carrinho(carrinho)

@@ -98,8 +98,8 @@ class UI:
         print("5-Listar minhas compras")
         print("6-Fim")
         op = int(input("Informe uma opção: "))
-        if op == 1: pass
-        if op == 2: pass
+        if op == 1: UI.listar_produtos()
+        if op == 2: UI.inserir_produtos()
         if op == 3: pass
         if op == 4: pass
         if op == 5: pass
@@ -201,5 +201,10 @@ class UI:
 
     def venda_listar():
         for obj in View.venda_listar():print(obj)
+
+    def listar_produtos():
+
+    def inserir_produtos():
+        
 
 UI.main()
