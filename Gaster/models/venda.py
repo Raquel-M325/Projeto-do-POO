@@ -1,21 +1,25 @@
 import json
+from models.vendaitem import VendaItemDAO
+from datetime import datetime
 class Venda:
     def __init__(self, id):
         self.set_id(id)
-        self.set_data(data)
-        self.set_carrinho(carrinho)
-        self.set_total(total)
-        self.set_id_Cliente(id_Cliente)
+        # self.set_data(data)
+        # self.set_carrinho(carrinho)
+        # self.set_total(total)
+        # self.set_id_Cliente(id_Cliente)
     
     #Set
     def set_id(self, id):
         self.id = id
-    def set_data(self, data):
-        self.data = data
+    def set_data(self):
+        self.data = datetime.now()
     def set_carrinho(self, carrinho):
-        self.carrinho = carrinho
+        self.carrinho = True
+        if carrinho == False: self.carrinho = carrinho
     def set_total(self, total):
-        self.total = total
+        for obj in VendaItemDAO.listar():
+            if obj.get_itens() != 0: self.total = total
     def set_id_Cliente(self, id_Cliente):
         self.id_Cliente = id_Cliente
     

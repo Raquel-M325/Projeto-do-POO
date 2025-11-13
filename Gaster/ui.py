@@ -199,12 +199,20 @@ class UI:
         porcentagem = float(input("Informe a porcentagem: "))
         View.reajustar_preco(porcentagem)
 
-    def venda_listar():
-        for obj in View.venda_listar():print(obj)
+    #def venda_listar():
+        
 
-    #def listar_produtos():
+    def listar_produtos():
+        print("Veja os produtos")
+        print()
+        UI.produto_listar()
+        
+    @classmethod
+    def inserir_produtos(cls):
+        for obj in View.cliente_listar():
+            if cls.__usuario["nome"] == obj.get_nome(): c = obj.get_id()
+        View.venda_inserir(c)
 
-    #def inserir_produtos():
         
 
 UI.main()

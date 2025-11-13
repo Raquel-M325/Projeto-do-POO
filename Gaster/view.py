@@ -4,6 +4,8 @@ from models.produto import Produto, ProdutoDAO
 from models.venda import Venda, VendaDAO
 from models.vendaitem import VendaItem, VendaItemDAO
 import json
+from datetime import datetime
+
 class View:
 
     def cliente_criar_admin():
@@ -74,7 +76,9 @@ class View:
             ProdutoDAO.atualizar(obj)
     
     #VENDA
-    #def venda_inserir():
+    def venda_inserir(id_Cliente):
+        c = Venda(0)
+        VendaDAO.inserir(c)
 
 
     def venda_listar():
