@@ -4,7 +4,6 @@ from models.produto import Produto, ProdutoDAO
 from models.venda import Venda, VendaDAO
 from models.vendaitem import VendaItem, VendaItemDAO
 import json
-from datetime import datetime
 
 class View:
 
@@ -78,11 +77,18 @@ class View:
     #VENDA
     def venda_inserir(id_Cliente):
         c = Venda(0)
-        VendaDAO.inserir(c)
-
+        if c in VendaDAO.listar():
+            VendaItemDAO.inserir(c):
+        else: VendaDAO.inserir(c)
 
     def venda_listar():
         return VendaDAO.listar()
+    
+    def vendaitem_inserir(produto, quantos):
+        for obj in ProdutoDAO.listar():
+            if obj.get_descricao == produto:
+                c = obj.get_preco()
+                VendaItemDAO.inserir(produto, quantos, c)
 
     # SERÁ COLOCADO DEPOIS!!!!! AINDA FALTA MONTAR A INTERAÇÃO DESSA PARTE DO SISTEMA.
 
@@ -94,7 +100,7 @@ class View:
     
     # def venda_excluir():
     
-    # def vendaitem_inserir():
+    
     
     # def vendaitem_listar():
     #     return VendaItemDAO.listar()
