@@ -1,6 +1,6 @@
 import json
 class VendaItem:
-    def __init__(self, id, qtd, preco):
+    def __init__(self, id, qtd, preco, id_Venda, id_Produto):
         self.set_id(id)
         self.set_qtd(qtd)
         self.set_preco(preco)

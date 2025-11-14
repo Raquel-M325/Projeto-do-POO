@@ -1,31 +1,29 @@
 import json
 from models.vendaitem import VendaItemDAO
+from models.Cliente import ClienteDAO
 from datetime import datetime
 class Venda:
-    def __init__(self, id):
+    def __init__(self, id, data, carrinho, total, id_Cliente):
         self.set_id(id)
-        self.set_data()
-        self.set_carrinho()
-        self.set_total()
-        self.set_id_Cliente()
+        self.set_data(data)
+        self.set_carrinho(carrinho)
+        self.set_total(total)
+        self.set_id_Cliente(id_Cliente)
     
     #Set
     def set_id(self, id):
         self.id = id
-    def set_data(self):
+    def set_data(self, data):
         self.data = datetime.now()
-    def set_carrinho(self):
+    def set_carrinho(self, carrinho):
         self.carrinho = True
-        for obj in VendaDAO.listar():
-            if obj.get_id() == self.id: self.carrinho = True
-        self.carrinho = False
-    def set_total(self):
+        if carrinho == False: self.carrinho = False
+    def set_total(self, total):
         for obj in VendaItemDAO.listar():
             if obj.get_itens() != 0: self.total = total
-    def set_id_Cliente(self):
+    def set_id_Cliente(self, id_Cliente):
         for obj in ClienteDAO.listar():
-            if obt.get_id() = 
-        self.id_Cliente
+            if obt.get_id() == id_Cliente: self.id_Cliente = id_Cliente
     
     #Get
     def get_id(self): return self.id
@@ -34,7 +32,11 @@ class Venda:
     def get_total(self): return self.total
     def get_id_Cliente(self): return self.id_Cliente
     
-    
+    def cliente_nome(self):
+        for obj in ClienteDAO.listar():
+            if obj.get_id() == self.id_Cliente: return obj.get_nome()
+
+
     def __str__(self):
         return f"{self.id} - {self.data} - {self.carrinho} - {self.total} - {self.id_Cliente}"
     def to_json(self):

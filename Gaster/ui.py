@@ -100,33 +100,14 @@ class UI:
         op = int(input("Informe uma opção: "))
         if op == 1: UI.listar_produtos()
         if op == 2: UI.inserir_produtos()
-        if op == 3: pass
-        if op == 4: pass
-        if op == 5: pass
+        if op == 3: UI.visualizar_carrinho()
+        if op == 4: UI.comprar_carrinho()
+        if op == 5: UI.listar_minhas_compras()
         if op == 6: UI.usuario_sair()
 
     @classmethod
     def usuario_sair(cls):
         cls.__usuario = None
-    
-    def main_admin():
-        op = 0
-        while op != 14:
-            op = UI.menu_admin()
-            if op == 1: UI.cliente_inserir()
-            if op == 2: UI.cliente_listar()
-            if op == 3: UI.cliente_atualizar()
-            if op == 4: UI.cliente_excluir()
-            if op == 5: UI.categoria_inserir()
-            if op == 6: UI.categoria_listar()
-            if op == 7: UI.categoria_atualizar()
-            if op == 8: UI.categoria_excluir()
-            if op == 9: UI.produto_inserir()
-            if op == 10: UI.produto_listar()
-            if op == 11: UI.produto_atualizar()
-            if op == 12: UI.produto_excluir()
-            if op == 13: UI.reajustar_preco()
-            if op == 14: UI.venda_listar()
 
     def cliente_inserir():
         nome = input("Informe o nome: ")
@@ -199,20 +180,42 @@ class UI:
         porcentagem = float(input("Informe a porcentagem: "))
         View.reajustar_preco(porcentagem)
 
+
+    def venda_inserir(cls):
+        View.venda_inserir()
     def venda_listar():
         for obj in View.venda_listar(): print (obj)   
+
+    # Funções do cliente
 
     def listar_produtos():
         print("Veja os produtos")
         print()
         UI.produto_listar()
         
-    @classmethod
-    def inserir_produtos(cls):
+    def inserir_produtos():
         produto = input("Digite um produto: ")
         quantos = input("Digite quantos você quer: ")
         View.vendaitem_inserir(produto, quantos)
 
+    def visualizar_carrinho():
+        nome = input("Digite seu nome: ")
+        View.visualizar_carrinho(nome)
+    def comprar_carrinho():
+        UI.opcao_pagar()
+
+    def opcao_pagar():
+        print("1-Crédito")
+        print("2-Débito")
+        print("3-Pix")
+        print("4-Voltar")
+        print()
+        pagar = int(input("Escolha uma opção de pagamento: "))
+        View.opcao_pagar(pagar)
+
+    def listar_minhas_compras():
+        nome = input("Digite seu nome: ")
+        View.listar_minhas_compras(nome)
         
 
 UI.main()

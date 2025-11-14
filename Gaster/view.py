@@ -4,6 +4,7 @@ from models.produto import Produto, ProdutoDAO
 from models.venda import Venda, VendaDAO
 from models.vendaitem import VendaItem, VendaItemDAO
 import json
+from datetime import datetime
 
 class View:
 
@@ -78,7 +79,7 @@ class View:
     def venda_inserir(id_Cliente):
         c = Venda(0)
         if c in VendaDAO.listar():
-            VendaItemDAO.inserir(c):
+            VendaItemDAO.inserir(c)
         else: VendaDAO.inserir(c)
 
     def venda_listar():
@@ -89,6 +90,26 @@ class View:
             if obj.get_descricao == produto:
                 c = obj.get_preco()
                 VendaItemDAO.inserir(produto, quantos, c)
+    #
+
+    def comprar_carrinho(confirmacao):
+        carrinho = False
+        for obj in VendaDAO.listar():
+            if obj.get_carrinho() == True : obj.set_carrinho() = carrinho
+        return "Seu pagamente foi realizado no {confirmacao}."
+
+    def opcao_pagar(pagar):
+        if pagar == 1: c = "Crédito" 
+        if pagar == 2: c = "Débito"
+        if pagar == 3: c = "Pix"
+        if pagar == 4: return None
+        View.comprar_carrinho(c)
+    
+    def listar_minhas_compras(nome):
+        for obj in Cliente.listar():
+            if obj.get_nome() ==  nome: n = obj.get_id()
+        for obj in VendaDAO.listar():
+            if obj.get_id_Cliente == n: print(obj)
 
     # SERÁ COLOCADO DEPOIS!!!!! AINDA FALTA MONTAR A INTERAÇÃO DESSA PARTE DO SISTEMA.
 
@@ -102,8 +123,8 @@ class View:
     
     
     
-    # def vendaitem_listar():
-    #     return VendaItemDAO.listar()
+    def vendaitem_listar():
+        return VendaItemDAO.listar()
 
     # def vendaitem_atualizar():
     
