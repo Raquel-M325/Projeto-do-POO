@@ -194,13 +194,15 @@ class UI:
         UI.produto_listar()
         
     def inserir_produtos():
+        View.venda_inserir()
         produto = input("Digite um produto: ")
         quantos = input("Digite quantos você quer: ")
-        View.vendaitem_inserir(produto, quantos)
+        View.inserir_produtos(produto, quantos)
 
     def visualizar_carrinho():
         nome = input("Digite seu nome: ")
         View.visualizar_carrinho(nome)
+        
     def comprar_carrinho():
         UI.opcao_pagar()
 

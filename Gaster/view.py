@@ -98,30 +98,22 @@ class View:
             if obj.get_descricao == produto:
                 quantia = obj.get_estoque - qtd 
 
-
-    def listar_carrinho():
-
     
-    def visualizar_carrinho(id_cliente, id_venda):
-        cliente = ClienteDAO.buscar_id(id_cliente)
-        venda = VendaDAO.buscar_id(id_venda)
+    def visualizar_carrinho(nome):
+        for obj in ClienteDAO.listar():
+            if obj.get_nome() == nome: n = obj.get_id()
+        for obj in VendaDAO.listar():
+            if obj.get_id_Cliente == n:
+                for otj in VendaItemDAO:
+                    if otj.get_idVenda == obj.get_id(): print(otj)
 
-        if venda.id_cliente != cliente.id:
-            print ("Essa venda não pertence a este cliente")
-            return
-
-        for obj in VendaItemDAO.objetos():
-            if obj.id_venda == venda.id:
-                print(obj)
-
-    
 
 
     def comprar_carrinho(confirmacao):
         carrinho = False
         for obj in VendaDAO.listar():
             if obj.get_carrinho() == True : obj.set_carrinho() = carrinho
-        return "Seu pagamento foi realizado no {confirmacao}."
+        print("Seu pagamento foi realizado no {confirmacao}.")
 
     def opcao_pagar(pagar):
         if pagar == 1: c = "Crédito" 
