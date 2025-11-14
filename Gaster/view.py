@@ -78,9 +78,7 @@ class View:
     #VENDA
     def venda_inserir(id_Cliente):
         c = Venda(0)
-        if c in VendaDAO.listar():
-            VendaItemDAO.inserir(c)
-        else: VendaDAO.inserir(c)
+        VendaDAO.inserir(c)
 
     def venda_listar():
         return VendaDAO.listar()
@@ -93,10 +91,14 @@ class View:
 
     #
 
-    def inserir_produto():
+    def inserir_produto(produto, quantos):
+        for obj in View.venda_listar():
+            if obj == None: View.venda_inserir()
         for obj in ProdutoDAO.listar():
             if obj.get_descricao == produto:
-                quantia = obj.get_estoque - qtd 
+                quantia = obj.get_estoque() - quantos
+                if quantia < 0: return "Quantidade insuficiente"
+
 
     
     def visualizar_carrinho(nome):
