@@ -1,6 +1,6 @@
 import json
 from models.vendaitem import VendaItemDAO
-from models.Cliente import ClienteDAO
+from models.cliente import ClienteDAO
 from datetime import datetime
 class Venda:
     def __init__(self, id, data, carrinho, total, id_Cliente):
