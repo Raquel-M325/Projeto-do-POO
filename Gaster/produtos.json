@@ -5,5 +5,12 @@
         "preco": 59.99,
         "estoque": 99,
         "id_Categoria": 1
+    },
+    {
+        "id": 2,
+        "descricao": "Smooth criminal",
+        "preco": 300.0,
+        "estoque": 3,
+        "id_Categoria": 2
     }
 ]

@@ -115,7 +115,7 @@ class View:
         carrinho = False
         for obj in VendaDAO.listar():
             if obj.get_carrinho() == True : obj.set_carrinho() == carrinho
-        print("Seu pagamento foi realizado no {confirmacao}.")
+        return "Seu pagamento foi realizado no {confirmacao}."
 
     def opcao_pagar(pagar):
         if pagar == 1: c = "Crédito" 
