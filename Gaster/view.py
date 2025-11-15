@@ -76,20 +76,57 @@ class View:
             ProdutoDAO.atualizar(obj)
     
     #VENDA
-    def venda_inserir(id_Cliente):
+    def venda_inserir():
         c = Venda(0)
         VendaDAO.inserir(c)
 
+    def venda_existe():
+        u = View.usuario()
+        c = VendaDAO.listar():
+        if c == None:
+            View.venda_inserir()
+        else:
+            for obj in c:
+                if obj.get_id_Cliente() == 
+
+    def usuario(usuario):
+        for obj in ClienteDAO.listar():
+            
     def venda_listar():
         return VendaDAO.listar()
     
-    def vendaitem_inserir(produto, quantos):
-        for obj in ProdutoDAO.listar():
-            if obj.get_descricao == produto:
-                c = obj.get_preco()
-                VendaItemDAO.inserir(produto, quantos, c)
+    def venda_atualizar():
+        c = Venda()
+        VendaDAO.atualizar(c)
 
-    #
+    def venda_excluir(id):
+        c = Venda(id)
+        VendaDAO.excluir(c)
+    
+
+    # VendaItem
+    def vendaitem_inserir(quantos, preco):
+        c = VendaItem(0, quantos, preco)
+        VendaItemDAO.inserir(c)
+
+    def achar_preco(produto, quantos):
+        for obj in ProdutoDAO.listar():
+            if get_id() == produto: preco = obj.get_preco()
+        View.vendaitem_inserir(quantos, preco)
+
+    def vendaitem_listar():
+        return VendaItemDAO.listar()
+
+    def vendaitem_atualizar():
+        c = VendaItem()
+        VendaItemDAO.atualizar(c)
+
+    def vendaitem_excluir(id):
+        c = VendaItem(id)
+        c = VendaItemDAO(c)
+
+
+    # Funções do Cliente
 
     def inserir_produto(produto, quantos):
         for obj in View.venda_listar():
@@ -99,7 +136,6 @@ class View:
                 quantia = obj.get_estoque() - quantos
                 if quantia < 0: return "Quantidade insuficiente"
 
-
     
     def visualizar_carrinho(nome):
         for obj in ClienteDAO.listar():
@@ -108,7 +144,6 @@ class View:
             if obj.get_id_Cliente == n:
                 for otj in VendaItemDAO:
                     if otj.get_idVenda == obj.get_id(): print(otj)
-
 
 
     def comprar_carrinho(confirmacao):
@@ -129,22 +164,3 @@ class View:
             if obj.get_nome() ==  nome: n = obj.get_id()
         for obj in VendaDAO.listar():
             if obj.get_id_Cliente == n: print(obj)
-
-    # SERÁ COLOCADO DEPOIS!!!!! AINDA FALTA MONTAR A INTERAÇÃO DESSA PARTE DO SISTEMA.
-
-    
-    
-    
-    
-    # def venda_atualizar():
-    
-    # def venda_excluir():
-    
-    
-    
-    def vendaitem_listar():
-        return VendaItemDAO.listar()
-
-    # def vendaitem_atualizar():
-    
-    # def vendaitem_excluir():

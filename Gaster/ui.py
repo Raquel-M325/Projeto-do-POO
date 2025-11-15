@@ -109,6 +109,8 @@ class UI:
     def usuario_sair(cls):
         cls.__usuario = None
 
+    # Funções cliente
+
     def cliente_inserir():
         nome = input("Informe o nome: ")
         email = input("Informe o email: ")
@@ -133,6 +135,10 @@ class UI:
         id = int(input("Informe o id a ser excluído: "))
         View.cliente_excluir(id)
 
+
+
+    # Fuções da Categoria
+
     def categoria_inserir():
         descricao = input("Infor a descrição dessa categoria: ")
         View.categoria_inserir(descricao)
@@ -150,6 +156,8 @@ class UI:
         UI.categoria_listar()
         id = int(input("Informe o id a ser excluído: "))
         View.categoria_excluir(id)
+
+    # Funções do produto
 
     def produto_inserir():
         descricao = input("Informa a descrição desse produto: ")
@@ -180,6 +188,7 @@ class UI:
         porcentagem = float(input("Informe a porcentagem: "))
         View.reajustar_preco(porcentagem)
 
+    # Funções da venda
 
     def venda_inserir(cls):
         View.venda_inserir()
@@ -188,20 +197,22 @@ class UI:
 
     # Funções do cliente
 
+    
     def listar_produtos():
         print("Veja os produtos")
         print()
+
         UI.produto_listar()
         
     def inserir_produtos():
-        View.venda_inserir()
-        produto = input("Digite um produto: ")
-        quantos = input("Digite quantos você quer: ")
-        View.inserir_produtos(produto, quantos)
+        UI.produto_listar()
+        View.venda_existe()
+        produto = int(input("Digite o id do produto: "))
+        quantos = int(input("Digite quantos você quer: "))
+        View.achar_preco(produto, quantos)
 
     def visualizar_carrinho():
-        nome = input("Digite seu nome: ")
-        View.visualizar_carrinho(nome)
+        View.visualizar_carrinho()
         
     def comprar_carrinho():
         UI.opcao_pagar()
@@ -216,8 +227,7 @@ class UI:
         View.opcao_pagar(pagar)
 
     def listar_minhas_compras():
-        nome = input("Digite seu nome: ")
-        View.listar_minhas_compras(nome)
+        View.listar_minhas_compras()
         
 
 UI.main()
