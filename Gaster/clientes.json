@@ -26,5 +26,12 @@
         "email": "gaster",
         "fone": "100",
         "senha": "darkworld"
+    },
+    {
+        "id": 6,
+        "nome": "a",
+        "email": "a",
+        "fone": "d",
+        "senha": "a"
     }
 ]

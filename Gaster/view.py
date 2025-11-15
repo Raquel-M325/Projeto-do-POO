@@ -12,7 +12,7 @@ class View:
         # cria o usuário admin se ele não existir
         for obj in View.cliente_listar():
             if obj.get_email() == "admin": return "Olá adm"
-        View.cliente_inserir("admin","admin", "1234", "1234") 
+        View.cliente_inserir("admin","admin", "1234", "1234")
 
     def cliente_autenticar(email, senha):
         for obj in View.cliente_listar():
@@ -80,17 +80,15 @@ class View:
         c = Venda(0)
         VendaDAO.inserir(c)
 
-    def venda_existe():
-        u = View.usuario()
-        c = VendaDAO.listar():
-        if c == None:
-            View.venda_inserir()
-        else:
-            for obj in c:
-                if obj.get_id_Cliente() == 
-
-    def usuario(usuario):
-        for obj in ClienteDAO.listar():
+    def criar_venda(usuario):
+        if VendaDAO.listar() == None: View.venda_inserir()
+        clientes = []
+        for obj in VendaDAO.listar():
+            if obj.get_id_Cliente() == None: obj.get_id_Cliente = usuario
+            clientes.append(obj.get_id_Cliente())
+        if usuario in clientes: return None
+        View.venda_inserir()
+        
             
     def venda_listar():
         return VendaDAO.listar()
@@ -111,7 +109,7 @@ class View:
 
     def achar_preco(produto, quantos):
         for obj in ProdutoDAO.listar():
-            if get_id() == produto: preco = obj.get_preco()
+            if obj.get_id() == produto: preco = obj.get_preco()
         View.vendaitem_inserir(quantos, preco)
 
     def vendaitem_listar():

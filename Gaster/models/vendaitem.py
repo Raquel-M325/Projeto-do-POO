@@ -1,6 +1,6 @@
 import json
 from models.produto import ProdutoDAO
-from models.venda import VendaDAO
+# from models.venda import VendaDAO
 class VendaItem:
     def __init__(self, id, qtd, preco):
         self.set_id(id)
@@ -11,44 +11,45 @@ class VendaItem:
 
     #Set
     def set_id(self, id):
-        for obj in VendaItemDAO():
-            if obj.get_idProduto() == self.id_Produto: VendaItemDAO.atualizar(obj.get_id(), self.qtd, self.preco)
+        for obj in VendaItemDAO.listar():
+            if obj.get_idProduto() == self.get_idProduto():
+                VendaItemDAO.atualizar(obj.get_id(), self.qtd, self.preco)
         self.id = id
     def set_qtd(self, qtd):
-        for obj in ProdutoDAO.listar():
-            if obj.get_id() == self.id_Produto: self.qtd = qtd + self.qtd
+        self.qtd = qtd
     def set_preco(self, preco):
         self.preco = preco
     def set_idVenda(self):
-        self.id_Venda = None
+        self.idVenda = 0
     def set_idProduto(self):
         for obj in ProdutoDAO.listar():
-            if obj.get_preco() == self.preco: self.id_Produto = obj.get_id()
+            if obj.get_preco() == self.preco: idProduto = obj.get_id()
+        self.idProduto = idProduto
     
     #Get
     def get_id(self): return self.id
     def get_qtd(self): return self.qtd
     def get_preco(self): return self.preco
-    def get_idVenda(self): return self.id_Venda
-    def get_idProduto(self): return self.id_Produto
+    def get_idVenda(self): return self.idVenda
+    def get_idProduto(self): return self.get_idProduto
 
 
     def __str__(self):
-        return f"{self.id} - {self.qtd} - {self.preco} - {self.id_Venda} - {self.id_Produto}"
+        return f"{self.id} - {self.qtd} - {self.preco} - {self.idVenda} - {self.idProduto}"
     def to_json(self):
-        return { "id" : self.id, "qtd" : self.qtd, "preco" : self.preco, "id_Venda" : self.id_Venda, "id_Produto" : self.id_Produto }
+        return { "id" : self.id, "qtd" : self.qtd, "preco" : self.preco, "id_Venda" : self.idVenda, "id_Produto" : self.idProduto }
     def from_json(dic):
         return VendaItem(dic["id"],  dic["qtd"], dic["preco"], dic["id_Venda"], dic["id_Produto"])
     
 class VendaItemDAO:
-    objetos = []
+    objetos = []                           
     @classmethod
     def inserir(cls, obj):
         cls.abrir()
         id = 0
         for aux in cls.objetos:
-            if aux.id > id : id = aux.id
-        obj.id = id + 1
+            if aux.id > id: id = aux.id
+        obj.id = id + 1 
         cls.objetos.append(obj)
         cls.salvar()
     @classmethod
@@ -79,17 +80,19 @@ class VendaItemDAO:
     
     @classmethod
     def salvar(cls):
-        with open("vendaitem.json", mode = "w") as arquivo:
-            json.dump(cls.objetos, arquivo, default = VendaItem.to_json, indent = 4)
+        with open("vendaitem.json", mode="w") as arquivo:
+            #json.dump(cls.objetos, arquivo, default = vars, indent=4)
+            json.dump(cls.objetos, arquivo, default = VendaItem.to_json, indent=4)
     
     @classmethod
     def abrir(cls):
-        cls.objetos =[]
+        cls.objetos = []
         try:
-            with open("vendaitem.json", mode = "r") as arquivo:
+            with open("vendaitem.json", mode="r") as arquivo:
                 list_dic = json.load(arquivo)
                 for dic in list_dic:
-                    c = VendaItem.from_json(dic)
+                    # c = Cliente(dic["id"], dic["nome"])
+                    c = Produto.from_json(dic)
                     cls.objetos.append(c)
         except:
-            pass 
+            pass

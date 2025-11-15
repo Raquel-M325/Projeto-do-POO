@@ -197,16 +197,17 @@ class UI:
 
     # Funções do cliente
 
-    
-    def listar_produtos():
+    @classmethod
+    def listar_produtos(cls):
         print("Veja os produtos")
         print()
-
+        print(cls.__usuario)
         UI.produto_listar()
-        
-    def inserir_produtos():
+    
+    @classmethod
+    def inserir_produtos(cls):
+        View.venda_inserir()
         UI.produto_listar()
-        View.venda_existe()
         produto = int(input("Digite o id do produto: "))
         quantos = int(input("Digite quantos você quer: "))
         View.achar_preco(produto, quantos)

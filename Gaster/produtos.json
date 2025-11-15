@@ -12,5 +12,12 @@
         "preco": 300.0,
         "estoque": 3,
         "id_Categoria": 2
+    },
+    {
+        "id": 3,
+        "descricao": "\u00d3culos",
+        "preco": 150.0,
+        "estoque": 30,
+        "id_Categoria": 3
     }
 ]

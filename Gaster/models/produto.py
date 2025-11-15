@@ -104,6 +104,3 @@ class ProdutoDAO:
                     cls.objetos.append(c)
         except:
             pass
-               
-
-
