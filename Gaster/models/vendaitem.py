@@ -2,36 +2,31 @@ import json
 from models.produto import ProdutoDAO
 # from models.venda import VendaDAO
 class VendaItem:
-    def __init__(self, id, qtd, preco):
+    def __init__(self, id, qtd, preco, id_Venda, id_Produto):
         self.set_id(id)
         self.set_qtd(qtd)
         self.set_preco(preco)
-        self.set_idVenda()
-        self.set_idProduto()
+        self.set_idVenda(id_Venda)
+        self.set_idProduto(id_Produto)
 
     #Set
     def set_id(self, id):
-        for obj in VendaItemDAO.listar():
-            if obj.get_idProduto() == self.get_idProduto():
-                VendaItemDAO.atualizar(obj.get_id(), self.qtd, self.preco)
         self.id = id
     def set_qtd(self, qtd):
         self.qtd = qtd
     def set_preco(self, preco):
         self.preco = preco
-    def set_idVenda(self):
-        self.idVenda = 0
-    def set_idProduto(self):
-        for obj in ProdutoDAO.listar():
-            if obj.get_preco() == self.preco: idProduto = obj.get_id()
-        self.idProduto = idProduto
+    def set_idVenda(self, id_Venda):
+        self.idVenda = id_Venda
+    def set_idProduto(self, id_Produto):
+        self.idProduto = id_Produto
     
     #Get
     def get_id(self): return self.id
     def get_qtd(self): return self.qtd
     def get_preco(self): return self.preco
     def get_idVenda(self): return self.idVenda
-    def get_idProduto(self): return self.get_idProduto
+    def get_idProduto(self): return self.idProduto
 
 
     def __str__(self):
@@ -44,6 +39,7 @@ class VendaItem:
 class VendaItemDAO:
     objetos = []                           
     @classmethod
+            
     def inserir(cls, obj):
         cls.abrir()
         id = 0
