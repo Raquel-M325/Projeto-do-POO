@@ -244,7 +244,8 @@ class UI:
         UI.produto_listar()
         produto = int(input("Digite o id do produto: "))
         quantos = int(input("Digite quantos você quer: "))
-        View.achar_preco(produto, quantos)
+        preco = View.achar_preco(produto)
+        View.vendaitem_inserir(quantos, preco, venda, produto)
 
     @staticmethod
     def visualizar_carrinho():

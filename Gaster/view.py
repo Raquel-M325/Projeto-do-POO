@@ -86,6 +86,8 @@ class View:
                 if obj.get_carrinho() == True: return obj.get_id()
                 else: return "Venda realizada"
         View.venda_inserir(usuario)
+        venda = VendaDAO.listar()[-1]
+        return venda.get_id()
 
     def venda_listar():
         return VendaDAO.listar()
@@ -104,14 +106,9 @@ class View:
         c = VendaItem(0, quantos, preco)
         VendaItemDAO.inserir(c)
 
-    def achar_preco(produto, quantos):
-        preco = None
+    def achar_preco(produto):
         for obj in ProdutoDAO.listar():
-            if obj.get_id() == produto: 
-                preco = obj.get_preco()
-                break
-        if preco is None: return "Produto não encontrado"
-        View.vendaitem_inserir(quantos, preco)
+            if obj.get_id() == produto: return obj.get_preco()
 
     def vendaitem_listar():
         return VendaItemDAO.listar()
