@@ -86,8 +86,11 @@ class View:
                 if obj.get_carrinho() == True: return obj.get_id()
                 else: return "Venda realizada"
         View.venda_inserir(usuario)
-        venda = VendaDAO.listar()[-1]
-        return venda.get_id()
+        # venda = VendaDAO.listar()[-1]
+        for obj in VendaDAO.listar():
+            if obj.get_id_Cliente() == usuario:
+                if obj.get_carrinho() == True: return obj.get_id()
+        #return venda.get_id()
 
     def venda_existente(usuario):
         for obj in VendaDAO.listar():
