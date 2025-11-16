@@ -81,14 +81,20 @@ class View:
         VendaDAO.inserir(c)
 
     def criar_venda(usuario):
-        if VendaDAO.listar() == None: View.venda_inserir()
-        clientes = []
-        for obj in VendaDAO.listar():
-            if obj.get_id_Cliente() == None: obj.get_id_Cliente = usuario
-            clientes.append(obj.get_id_Cliente())
-        if usuario in clientes: return None
+        if not VendaDAO.listar(): 
+            View.venda_inserir()
+
+        clientes = [v.get_id_Cliente() for v in VendaDAO.listar()]
+
+        if usuario in clientes:
+            return None
+
         View.venda_inserir()
-        
+
+        ultima_venda = VendaDAO.listar()[-1]
+        ultima_venda.set_id_Cliente(usuario)
+        VendaDAO.atualizar(ultima_venda)
+
             
     def venda_listar():
         return VendaDAO.listar()
@@ -108,8 +114,12 @@ class View:
         VendaItemDAO.inserir(c)
 
     def achar_preco(produto, quantos):
+        preco = None
         for obj in ProdutoDAO.listar():
-            if obj.get_id() == produto: preco = obj.get_preco()
+            if obj.get_id() == produto: 
+                preco = obj.get_preco()
+                break
+        if preco is None: return "Produto não encontrado"
         View.vendaitem_inserir(quantos, preco)
 
     def vendaitem_listar():
@@ -121,34 +131,53 @@ class View:
 
     def vendaitem_excluir(id):
         c = VendaItem(id)
-        c = VendaItemDAO(c)
+        VendaItemDAO.excluir(c)
 
 
     # Funções do Cliente
 
     def inserir_produto(produto, quantos):
-        for obj in View.venda_listar():
-            if obj == None: View.venda_inserir()
+        produto_encontrado = None
         for obj in ProdutoDAO.listar():
-            if obj.get_descricao == produto:
-                quantia = obj.get_estoque() - quantos
-                if quantia < 0: return "Quantidade insuficiente"
+            if obj.get_descricao() == produto:
+                produto_encontrado = obj
+                break
 
-    
+        if produto_encontrado is None:
+            return "Produto não encontrado"
+
+        quantia = produto_encontrado.get_estoque() - quantos
+        if quantia < 0:
+            return "Quantidade insuficiente"
+
+        produto_encontrado.set_estoque(quantia)
+        ProdutoDAO.atualizar(produto_encontrado)
+
+        ultima_venda = VendaDAO.listar()[-1] 
+        View.vendaitem_inserir(quantos, produto_encontrado.get_preco())
+
+        
     def visualizar_carrinho(nome):
+        n = None
         for obj in ClienteDAO.listar():
-            if obj.get_nome() == nome: n = obj.get_id()
-        for obj in VendaDAO.listar():
-            if obj.get_id_Cliente == n:
-                for otj in VendaItemDAO:
-                    if otj.get_idVenda == obj.get_id(): print(otj)
+            if obj.get_nome() == nome:
+                n = obj.get_id()
+            
+        if n is None:
+            return "Cliente não encontrado"
+
+        for v in VendaDAO.listar():
+            if v.get_id_Cliente() == n:
+                for otj in VendaItemDAO.listar():
+                    if otj.get_idVenda() == v.get_id():
+                        print(otj)
 
 
     def comprar_carrinho(confirmacao):
         carrinho = False
         for obj in VendaDAO.listar():
-            if obj.get_carrinho() == True : obj.set_carrinho() == carrinho
-        return "Seu pagamento foi realizado no {confirmacao}."
+            if obj.get_carrinho() == True : obj.set_carrinho(carrinho) 
+        return f"Seu pagamento foi realizado no {confirmacao}."
 
     def opcao_pagar(pagar):
         if pagar == 1: c = "Crédito" 
@@ -158,7 +187,7 @@ class View:
         View.comprar_carrinho(c)
     
     def listar_minhas_compras(nome):
-        for obj in Cliente.listar():
+        for obj in ClienteDAO.listar():
             if obj.get_nome() ==  nome: n = obj.get_id()
         for obj in VendaDAO.listar():
-            if obj.get_id_Cliente == n: print(obj)
+            if obj.get_id_Cliente() == n: print(obj)
