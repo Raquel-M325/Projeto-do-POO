@@ -19,5 +19,12 @@
         "preco": 150.0,
         "estoque": 30,
         "id_Categoria": 3
+    },
+    {
+        "id": 4,
+        "descricao": "bolo",
+        "preco": 10.0,
+        "estoque": 10,
+        "id_Categoria": 1
     }
 ]

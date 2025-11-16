@@ -5,7 +5,7 @@ class UI:
 
 
     @classmethod
-    def main(cls):
+    def main(cls): #FALTA USAR CLS
         # verifica a existe o usuário admin
         View.cliente_criar_admin()
         # mostra o menu da aplicação
@@ -14,10 +14,12 @@ class UI:
     @classmethod  
     def menu(cls):
         op = 0
-        while op != 3:
+        while True:
             if cls.__usuario == None: 
                 # usuário não está logado
                 op = UI.menu_visitante()
+                if op == 3:
+                    break #tem que colocar o break para quebrar o loop
             else:
                 # usuário está logado, verifica se é o admin
                 admin = cls.__usuario["nome"] == "admin"
@@ -38,12 +40,15 @@ class UI:
         opcao = int(input('Escolha uma opção: '))
         if opcao == 1:
             UI.entrar()
-        
-        if opcao == 2:
+        elif opcao == 2:
             UI.cadastrar()
+        elif opcao == 3:
+            print("Saindo...")
+        else:
+            print('Opção inválida, tente novamente')
 
         return opcao
-    
+        
     
 
     @classmethod
@@ -60,51 +65,65 @@ class UI:
 
     @staticmethod  
     def menu_admin():
-        print("Clientes")
-        print("1-Inserir, 2-Listar, 3-Atualizar, 4-Excluir")
-        print()
-        print("Categoria")
-        print("5-Inserir, 6-Listar, 7-Atualizar, 8-Excluir")
-        print()
-        print("Produtos")
-        print("9-Inserir, 10-Listar, 11-Atualizar, 12-Excluir, 13-Reajuste")
-        print()
-        print("Vendas")
-        print("14-Listar as vendas")
-        print()
-        print("15-Fim")
-        op = int(input("Informe uma opção: "))
-        if op == 1: UI.cliente_inserir()
-        if op == 2: UI.cliente_listar()
-        if op == 3: UI.cliente_atualizar()
-        if op == 4: UI.cliente_excluir()
-        if op == 5: UI.categoria_inserir()
-        if op == 6: UI.categoria_listar()
-        if op == 7: UI.categoria_atualizar()
-        if op == 8: UI.categoria_excluir()
-        if op == 9: UI.produto_inserir()
-        if op == 10: UI.produto_listar()
-        if op == 11: UI.produto_atualizar()
-        if op == 12: UI.produto_excluir()
-        if op == 13: UI.reajustar_preco()
-        if op == 14: UI.venda_listar()
-        if op == 15: UI.usuario_sair()
+        while True: #para tirar o loop
+            print("Clientes")
+            print("1-Inserir, 2-Listar, 3-Atualizar, 4-Excluir")
+            print()
+            print("Categoria")
+            print("5-Inserir, 6-Listar, 7-Atualizar, 8-Excluir")
+            print()
+            print("Produtos")
+            print("9-Inserir, 10-Listar, 11-Atualizar, 12-Excluir, 13-Reajuste")
+            print()
+            print("Vendas")
+            print("14-Listar as vendas")
+            print()
+            print("15-Fim")
+
+            op = int(input("Informe uma opção: "))
+
+            if op == 1: UI.cliente_inserir()
+            if op == 2: UI.cliente_listar()
+            if op == 3: UI.cliente_atualizar()
+            if op == 4: UI.cliente_excluir()
+            if op == 5: UI.categoria_inserir()
+            if op == 6: UI.categoria_listar()
+            if op == 7: UI.categoria_atualizar()
+            if op == 8: UI.categoria_excluir()
+            if op == 9: UI.produto_inserir()
+            if op == 10: UI.produto_listar()
+            if op == 11: UI.produto_atualizar()
+            if op == 12: UI.produto_excluir()
+            if op == 13: UI.reajustar_preco()
+            if op == 14: UI.venda_listar()
+            elif op == 15: 
+                UI.usuario_sair()
+                break
+            else:
+                print('Opção Inválida, tente novamente')
 
     @staticmethod  
     def menu_cliente():
-        print("1-Listar Produtos")
-        print("2-Inserir Produto no carrinho")
-        print("3-Visualizar carrinho")
-        print("4-Comprar carrinho")
-        print("5-Listar minhas compras")
-        print("6-Fim")
-        op = int(input("Informe uma opção: "))
-        if op == 1: UI.listar_produtos()
-        if op == 2: UI.inserir_produtos()
-        if op == 3: UI.visualizar_carrinho()
-        if op == 4: UI.comprar_carrinho()
-        if op == 5: UI.listar_minhas_compras()
-        if op == 6: UI.usuario_sair()
+        while True: #precisa colocar para nao ficar o loop 
+            print("1-Listar Produtos")
+            print("2-Inserir Produto no carrinho")
+            print("3-Visualizar carrinho")
+            print("4-Comprar carrinho")
+            print("5-Listar minhas compras")
+            print("6-Fim")
+            
+            op = int(input("Informe uma opção: "))
+
+            if op == 1: UI.listar_produtos()
+            if op == 2: UI.inserir_produtos()
+            if op == 3: UI.visualizar_carrinho()
+            if op == 4: UI.comprar_carrinho()
+            if op == 5: UI.listar_minhas_compras()
+            elif op == 6: 
+                UI.usuario_sair()
+                break
+            else:
+                print('Opção Inválida, tente novamente')
 
     @classmethod
     def usuario_sair(cls):
