@@ -1,14 +1,18 @@
 [
     {
-        "id": 1,
-        "descricao": "Games"
-    },
-    {
         "id": 2,
         "descricao": "Musicas"
     },
     {
         "id": 3,
         "descricao": "Acessorio"
+    },
+    {
+        "id": 1,
+        "descricao": "Games"
+    },
+    {
+        "id": 4,
+        "descricao": "Comida"
     }
 ]
