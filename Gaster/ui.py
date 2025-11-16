@@ -5,7 +5,7 @@ class UI:
 
 
     @classmethod
-    def main(cls): #FALTA USAR CLS
+    def main(cls):
         # verifica a existe o usuário admin
         View.cliente_criar_admin()
         # mostra o menu da aplicação
@@ -221,14 +221,10 @@ class UI:
 
     # Funções da venda
     
-    @classmethod
-    def venda_inserir(cls): #FALTA FAZER
-        View.venda_inserir()
-    
     @staticmethod
     def venda_listar():
-        for obj in View.venda_listar(): print (obj)   
-
+        View.chec_vendas()
+        
     # Funções do cliente
 
     @classmethod

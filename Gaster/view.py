@@ -103,7 +103,7 @@ class View:
                 if obj.get_carrinho() == False: compras.append(obj.get_id()) 
                 else: return "Venda não realizada"
         return compras
-
+    
     def venda_listar():
         return VendaDAO.listar()
     
@@ -182,3 +182,15 @@ class View:
     def listar_minhas_compras(vendas):
         for obj in VendaItemDAO.listar():
             if obj.get_idVenda() in vendas: print(obj)
+
+    #ADM
+
+    def chec_vendas():
+        vendas = []
+        for obj in View.venda_listar():
+            if obj.get_carrinho() == False: venda.append(obj.get_id())
+        View.listar_vendas(vendas)
+    
+    def listar_vendas(vendas):
+        for obj in VendaItemDAO.listar():
+            if obj.get_idVenda in vendas: print(obj)
