@@ -240,7 +240,7 @@ class UI:
     
     @classmethod 
     def inserir_produtos(cls): #FALTA FAZER USANDO CLS
-        venda = View.venda_existe(cls.__usuario)
+        venda = View.venda_existe(cls.__usuario["id"])
         UI.produto_listar()
         produto = int(input("Digite o id do produto: "))
         quantos = int(input("Digite quantos você quer: "))
@@ -249,12 +249,13 @@ class UI:
 
     @classmethod
     def visualizar_carrinho(cls):
-        venda = View.venda_existente(cls.__usuario)
+        venda = View.venda_existente(cls.__usuario["id"])
         View.visualizar_carrinho(venda)
 
-    @staticmethod    
-    def comprar_carrinho():
-        UI.opcao_pagar()
+    @classmethod    
+    def comprar_carrinho(cls):
+        pagamento = UI.opcao_pagar()
+        View.comprar_carrinho(pagamento, cls.__usuario["id"])
 
     @staticmethod
     def opcao_pagar():
@@ -264,7 +265,8 @@ class UI:
         print("4-Voltar")
         print()
         pagar = int(input("Escolha uma opção de pagamento: "))
-        View.opcao_pagar(pagar)
+        forma = View.opcao_pagar(pagar)
+        return forma
 
     @staticmethod
     def listar_minhas_compras():

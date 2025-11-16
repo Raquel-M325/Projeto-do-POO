@@ -94,6 +94,7 @@ class View:
             if obj.get_id_Cliente() == usuario:
                 if obj.get_carrinho() == True: return obj.get_id()
                 else: return "Venda realizada"
+        return None
 
     def venda_listar():
         return VendaDAO.listar()
@@ -156,10 +157,11 @@ class View:
             if obj.get_idVenda() == venda: print(obj)
 
 
-    def comprar_carrinho(confirmacao):
+    def comprar_carrinho(pagamento, usuario):
         carrinho = False
         for obj in VendaDAO.listar():
-            if obj.get_carrinho() == True : obj.set_carrinho(carrinho) 
+            if obj.get_id_Cliente == usuario:
+                if obj.get_carrinho() == True : obj
         return f"Seu pagamento foi realizado no {confirmacao}."
 
     def opcao_pagar(pagar):
@@ -167,7 +169,7 @@ class View:
         if pagar == 2: c = "Débito"
         if pagar == 3: c = "Pix"
         if pagar == 4: return None
-        View.comprar_carrinho(c)
+        return c
     
     def listar_minhas_compras(nome):
         for obj in ClienteDAO.listar():
