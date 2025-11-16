@@ -6,7 +6,7 @@ class Venda:
     def __init__(self, id, carrinho, id_Cliente):
         self.set_id(id)
         self.set_data(None)
-        self.set_carrinho()
+        self.set_carrinho(carrinho)
         self.set_total()
         self.set_id_Cliente(id_Cliente)
     
