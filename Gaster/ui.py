@@ -247,9 +247,10 @@ class UI:
         preco = View.achar_preco(produto)
         View.vendaitem_inserir(quantos, preco, venda, produto)
 
-    @staticmethod
-    def visualizar_carrinho():
-        View.visualizar_carrinho()
+    @classmethod
+    def visualizar_carrinho(cls):
+        venda = View.venda_existente(cls.__usuario)
+        View.visualizar_carrinho(venda)
 
     @staticmethod    
     def comprar_carrinho():
