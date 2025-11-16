@@ -120,8 +120,8 @@ class View:
     
 
     # VendaItem
-    def vendaitem_inserir(quantos, preco):
-        c = VendaItem(0, quantos, preco)
+    def vendaitem_inserir(quantos, preco, id_Venda, id_Produto):
+        c = VendaItem(0, quantos, preco, id_Venda, id_Produto)
         VendaItemDAO.inserir(c)
 
     def achar_preco(produto):
