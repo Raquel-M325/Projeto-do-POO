@@ -11,7 +11,7 @@ class UI:
         # mostra o menu da aplicação
         UI.menu()
 
-    @classmethod
+    @classmethod  
     def menu(cls):
         op = 0
         while op != 3:
@@ -28,7 +28,7 @@ class UI:
                 if admin: UI.menu_admin()
                 else: UI.menu_cliente()
 
-
+    @staticmethod
     def menu_visitante():
         print('Bem-Vindo ao nosso sistema de compra!')
         print('1 - Entrar na conta')
@@ -52,12 +52,13 @@ class UI:
         senha = input("Informe a senha: ")
         cls.__usuario = View.cliente_autenticar(email, senha)
         if cls.__usuario == None: print("Usuário ou senha inválidos")
-
+    
+    @staticmethod  
     def cadastrar():
         UI.cliente_inserir()
 
 
-
+    @staticmethod  
     def menu_admin():
         print("Clientes")
         print("1-Inserir, 2-Listar, 3-Atualizar, 4-Excluir")
@@ -89,7 +90,7 @@ class UI:
         if op == 14: UI.venda_listar()
         if op == 15: UI.usuario_sair()
 
-
+    @staticmethod  
     def menu_cliente():
         print("1-Listar Produtos")
         print("2-Inserir Produto no carrinho")
@@ -110,7 +111,7 @@ class UI:
         cls.__usuario = None
 
     # Funções cliente
-
+    @staticmethod  
     def cliente_inserir():
         nome = input("Informe o nome: ")
         email = input("Informe o email: ")
@@ -118,9 +119,11 @@ class UI:
         senha = input("Insira uma senha: ")
         View.cliente_inserir(nome, email, fone, senha)
 
+    @staticmethod  
     def cliente_listar():
-        for obj in View.cliente_listar():print(obj)
+        for obj in View.cliente_listar(): print(obj)
 
+    @staticmethod  
     def cliente_atualizar():
         UI.cliente_listar()
         id = int(input("Informe o id a ser atualizado: "))
@@ -130,6 +133,7 @@ class UI:
         senha = input("Insira sua nova senha: ")
         View.cliente_atualizar(id, nome, email, fone, senha)
 
+    @staticmethod  
     def cliente_excluir():
         UI.cliente_listar()
         id = int(input("Informe o id a ser excluído: "))
@@ -138,20 +142,23 @@ class UI:
 
 
     # Fuções da Categoria
-
+    @staticmethod
     def categoria_inserir():
         descricao = input("Infor a descrição dessa categoria: ")
         View.categoria_inserir(descricao)
 
+    @staticmethod
     def categoria_listar():
         for obj in View.categoria_listar():print(obj)
 
+    @staticmethod
     def categoria_atualizar():
         UI.categoria_listar()
         id = int(input("Informe o id a ser atualizado: "))
         descricao = input("Informe a nova descrição dessa categoria: ")
         View.categoria_atualizar(id, descricao)
 
+    @staticmethod
     def categoria_excluir():
         UI.categoria_listar()
         id = int(input("Informe o id a ser excluído: "))
@@ -159,6 +166,7 @@ class UI:
 
     # Funções do produto
 
+    @staticmethod
     def produto_inserir():
         descricao = input("Informa a descrição desse produto: ")
         preco = float(input("Informe o preço: "))
@@ -166,9 +174,11 @@ class UI:
         id_Categoria = int(input("Informe a categoria desse produto colocando o id referente: "))
         View.produto_inserir(descricao, preco, estoque, id_Categoria)
 
+    @staticmethod
     def produto_listar():
         for obj in View.produto_listar():print(obj)
 
+    @staticmethod
     def produto_atualizar():
         UI.produto_listar()
         id = int(input("Informe o id a ser atualizado: "))
@@ -178,20 +188,25 @@ class UI:
         id_Categoria = int(input("Informe a categoria atual desse produto colocando o id referente: "))
         View.produto_atualizar(id, descricao, preco, estoque, id_Categoria)
 
+    @staticmethod
     def produto_excluir():
         UI.produto_listar()
         id = int(input("Informe o id a ser excluído: "))
         View.produto_excluir(id)
 
+    @staticmethod
     def reajustar_preco():
         UI.produto_listar()
         porcentagem = float(input("Informe a porcentagem: "))
         View.reajustar_preco(porcentagem)
 
     # Funções da venda
-
-    def venda_inserir(cls):
+    
+    @classmethod
+    def venda_inserir(cls): #FALTA FAZER
         View.venda_inserir()
+    
+    @staticmethod
     def venda_listar():
         for obj in View.venda_listar(): print (obj)   
 
@@ -204,20 +219,23 @@ class UI:
         print(cls.__usuario)
         UI.produto_listar()
     
-    @classmethod
-    def inserir_produtos(cls):
+    @classmethod 
+    def inserir_produtos(cls): #FALTA FAZER USANDO CLS
         View.venda_inserir()
         UI.produto_listar()
         produto = int(input("Digite o id do produto: "))
         quantos = int(input("Digite quantos você quer: "))
         View.achar_preco(produto, quantos)
 
+    @staticmethod
     def visualizar_carrinho():
         View.visualizar_carrinho()
-        
+
+    @staticmethod    
     def comprar_carrinho():
         UI.opcao_pagar()
 
+    @staticmethod
     def opcao_pagar():
         print("1-Crédito")
         print("2-Débito")
@@ -227,6 +245,7 @@ class UI:
         pagar = int(input("Escolha uma opção de pagamento: "))
         View.opcao_pagar(pagar)
 
+    @staticmethod
     def listar_minhas_compras():
         View.listar_minhas_compras()
         
