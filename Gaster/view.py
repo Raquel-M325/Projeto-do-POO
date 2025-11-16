@@ -80,7 +80,7 @@ class View:
         c = Venda(0, usuario)
         VendaDAO.inserir(c)
 
-    def venda_exite(usuario):
+    def venda_existe(usuario):
         for obj in VendaDAO.listar():
             if obj.get_id_Cliente() == usuario:
                 if obj.get_carrinho() == True: return obj.get_id()
