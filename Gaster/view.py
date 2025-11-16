@@ -96,6 +96,14 @@ class View:
                 else: return "Venda realizada"
         return None
 
+    def venda_feita(usuario):
+        compras = []
+        for obj in VendaDAO.listar():
+            if obj.get_id_Cliente() == usuario:
+                if obj.get_carrinho() == False: compras.append(obj.get_id()) 
+                else: return "Venda não realizada"
+        return compras
+
     def venda_listar():
         return VendaDAO.listar()
     
@@ -171,8 +179,6 @@ class View:
         if pagar == 4: return None
         return c
     
-    def listar_minhas_compras(nome):
-        for obj in ClienteDAO.listar():
-            if obj.get_nome() ==  nome: n = obj.get_id()
-        for obj in VendaDAO.listar():
-            if obj.get_id_Cliente() == n: print(obj)
+    def listar_minhas_compras(vendas):
+        for obj in VendaItemDAO.listar():
+            if obj.get_idVenda() in vendas: print(obj)

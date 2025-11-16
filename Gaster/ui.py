@@ -254,6 +254,7 @@ class UI:
 
     @classmethod    
     def comprar_carrinho(cls):
+        if UI.visualizar_carrinho() == None: return "Seu carrinho está vazio"
         pagamento = UI.opcao_pagar()
         View.comprar_carrinho(pagamento, cls.__usuario["id"])
 
@@ -268,9 +269,10 @@ class UI:
         forma = View.opcao_pagar(pagar)
         return forma
 
-    @staticmethod
-    def listar_minhas_compras():
-        View.listar_minhas_compras()
+    @classmethod
+    def listar_minhas_compras(cls):
+        vendas = View.venda_feita(cls.__usuario["id"])
+        View.listar_minhas_compras(vendas)
         
 
 UI.main()
