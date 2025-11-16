@@ -119,11 +119,8 @@ class UI:
             if op == 3: UI.visualizar_carrinho()
             if op == 4: UI.comprar_carrinho()
             if op == 5: UI.listar_minhas_compras()
-            elif op == 6: 
-                UI.usuario_sair()
-                break
-            else:
-                print('Opção Inválida, tente novamente')
+            if op == 6: UI.usuario_sair()
+
 
     @classmethod
     def usuario_sair(cls):
