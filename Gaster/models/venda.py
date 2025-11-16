@@ -3,7 +3,7 @@ from models.vendaitem import VendaItem, VendaItemDAO
 from models.cliente import ClienteDAO
 from datetime import datetime
 class Venda:
-    def __init__(self, id, id_Cliente):
+    def __init__(self, id, carrinho, id_Cliente):
         self.set_id(id)
         self.set_data(None)
         self.set_carrinho()
@@ -18,8 +18,8 @@ class Venda:
             self.data = datetime.now()
         else:
             self.data = data
-    def set_carrinho(self):
-        self.carrinho = True
+    def set_carrinho(self, carrinho):
+        self.carrinho = carrinho
     def set_total(self):
         total = 0
         for obj in VendaItemDAO.listar():

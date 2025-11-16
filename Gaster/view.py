@@ -77,7 +77,7 @@ class View:
     
     #VENDA
     def venda_inserir(usuario):
-        c = Venda(0, usuario)
+        c = Venda(0, True, usuario)
         VendaDAO.inserir(c)
 
     def venda_existe(usuario):
@@ -160,9 +160,9 @@ class View:
     def comprar_carrinho(pagamento, usuario):
         carrinho = False
         for obj in VendaDAO.listar():
-            if obj.get_id_Cliente == usuario:
-                if obj.get_carrinho() == True : obj
-        return f"Seu pagamento foi realizado no {confirmacao}."
+            if obj.get_id_Cliente() == usuario:
+                if obj.get_carrinho() == True : VendaDAO.atualizar(obj.get_id(), carrinho, obj.get_id_Cliente())
+        return f"Seu pagamento foi realizado no {pagamento}."
 
     def opcao_pagar(pagar):
         if pagar == 1: c = "Crédito" 
