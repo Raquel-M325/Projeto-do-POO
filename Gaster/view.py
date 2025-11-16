@@ -193,4 +193,4 @@ class View:
     
     def listar_vendas(vendas):
         for obj in VendaItemDAO.listar():
-            if obj.get_idVenda in vendas: print(obj)
+            if obj.get_idVenda() in vendas: print(obj)
