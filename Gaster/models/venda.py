@@ -22,9 +22,9 @@ class Venda:
         self.carrinho = carrinho
     def set_total(self):
         total = 0
-        for obj in VendaItemDAO.listar():
-            if obj.get_idVenda() == self.id:
-                total += obj.get_preco() * obj.get_qtd()
+        # for obj in VendaItemDAO.listar(): #Ver depois
+        #     if obj.get_idVenda() == self.id:
+        #         total += obj.get_preco() * obj.get_qtd()
         self.total = total
          
     def set_id_Cliente(self, id_Cliente):
@@ -46,7 +46,7 @@ class Venda:
     def __str__(self):
         return f"{self.id} - {self.data.strftime('%d/%m/%Y')} - {self.carrinho} - {self.total} - {self.id_Cliente}"
     def to_json(self):
-        return { "id" : self.id, "data" : self.data.strftime("%d/%m/%Y"), "total" : self.total, "id_Cliente" : self.id_Cliente }
+        return { "id" : self.id, "data" : self.data.strftime("%d/%m/%Y"), "carrinho" : self.carrinho,"total" : self.total, "id_Cliente" : self.id_Cliente }
     def from_json(dic):
         return Venda(dic["id"], \
         datetime.strptime(dic["data"], "%d/%m/%Y"), dic["carrinho"], dic["total"], dic["id_Cliente"])

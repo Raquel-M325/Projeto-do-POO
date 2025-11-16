@@ -224,7 +224,7 @@ class UI:
         UI.produto_listar()
     
     @classmethod 
-    def inserir_produtos(cls): #FALTA FAZER USANDO CLS
+    def inserir_produtos(cls): 
         venda = View.venda_existe(cls.__usuario["id"])
         UI.produto_listar()
         produto = int(input("Digite o id do produto: "))

@@ -1,9 +1,9 @@
 [
     {
         "id": 1,
-        "qtd": 1,
-        "preco": 300.0,
+        "qtd": 3,
+        "preco": 59.99,
         "id_Venda": null,
-        "id_Produto": 2
+        "id_Produto": 1
     }
 ]
