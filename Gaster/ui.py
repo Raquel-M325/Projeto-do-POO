@@ -240,7 +240,7 @@ class UI:
     
     @classmethod 
     def inserir_produtos(cls): #FALTA FAZER USANDO CLS
-        View.venda_inserir()
+        venda = View.venda_exite(cls.__usuario)
         UI.produto_listar()
         produto = int(input("Digite o id do produto: "))
         quantos = int(input("Digite quantos você quer: "))

@@ -76,26 +76,17 @@ class View:
             ProdutoDAO.atualizar(obj)
     
     #VENDA
-    def venda_inserir():
-        c = Venda(0)
+    def venda_inserir(usuario):
+        c = Venda(0, usuario)
         VendaDAO.inserir(c)
 
-    def criar_venda(usuario):
-        if not VendaDAO.listar(): 
-            View.venda_inserir()
+    def venda_exite(usuario):
+        for obj in VendaDAO.listar():
+            if obj.get_id_Cliente() == usuario:
+                if obj.get_carrinho() == True: return obj.get_id()
+                else: return "Venda realizada"
+        View.venda_inserir(usuario)
 
-        clientes = [v.get_id_Cliente() for v in VendaDAO.listar()]
-
-        if usuario in clientes:
-            return None
-
-        View.venda_inserir()
-
-        ultima_venda = VendaDAO.listar()[-1]
-        ultima_venda.set_id_Cliente(usuario)
-        VendaDAO.atualizar(ultima_venda)
-
-            
     def venda_listar():
         return VendaDAO.listar()
     
