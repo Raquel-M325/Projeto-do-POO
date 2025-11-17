@@ -234,6 +234,7 @@ class UI:
         quantos = int(input("Digite quantos você quer: "))
         preco = View.achar_preco(produto)
         View.vendaitem_inserir(quantos, preco, venda, produto)
+        View.atualizar_estoque(produto, quantos)
 
     @classmethod
     def visualizar_carrinho(cls):

@@ -131,5 +131,12 @@
         "preco": 300.0,
         "id_Venda": 8,
         "id_Produto": 2
+    },
+    {
+        "id": 20,
+        "qtd": 3,
+        "preco": 300.0,
+        "id_Venda": 9,
+        "id_Produto": 2
     }
 ]

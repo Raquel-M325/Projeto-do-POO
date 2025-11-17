@@ -229,3 +229,16 @@ class View:
     def listar_vendas(vendas):
         for obj in VendaItemDAO.listar():
             if obj.get_idVenda() in vendas: print(obj)
+
+    def atualizar_estoque(produto, quantos): #coloquei a quantidade para atualizar, mas falta ver do adm, mesmo funcionando do cliente
+        for obj in ProdutoDAO.listar():
+            if obj.get_id() == produto:
+                novo = obj.get_estoque() - quantos
+                obj.set_estoque(novo)
+                ProdutoDAO.atualizar(obj)
+                break
+
+        return View.verificar_estoque()
+
+    def verificar_estoque():  #seria para ver a condição, caso a pessoa insista levar o estoque que está vazio, para avisar que o estoque acabou!
+        
