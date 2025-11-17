@@ -173,13 +173,47 @@ class View:
                 VendaDAO.atualizar(c)
         return f"Seu pagamento foi realizado no {pagamento}."
 
-    def opcao_pagar(pagar):
-        if pagar == 1: c = "Crédito" 
-        if pagar == 2: c = "Débito"
-        if pagar == 3: c = "Pix"
+    def opcao_pagar(pagar):  #fiz alteraçoes para deixar mais completo
+        if pagar == 1: c = pagamento_credito() 
+        if pagar == 2: c = pagamento_debito()
+        if pagar == 3: c = pagamento_pix()
         if pagar == 4: return None
         return c
-    
+
+    def pagamento_credito():
+        print('Crédito:\n')
+
+        numero_cartao = input('Digite o número do seu cartão: ')
+        validade = input('Digite a validade do cartão [MM/AA]: ')
+        CVV = input('Digite o código de segurança (CVV): ')
+        nome = input('Nome titular completo: ')
+
+        return finalizacao()
+
+    def pagamento_debito():
+        print('Débito:\n')
+
+        numero_cartao = input('Digite o número do seu cartão: ')
+        validade = input('Digite a validade do cartão [MM/AA]: ')
+        CVV = input('Digite o código de segurança (CVV): ')
+        nome = input('Nome titular completo: ')
+        banco = input('Digite qual é o banco: ')
+        tipo = input('Que tipo de conta (corrente ou poupança): ')
+
+        return finalizacao()
+
+    def pagamento_pix():
+        print('Pix:\n')
+
+        nome = input('Nome titular completo: ')
+        chave = input('Digite sua chave: ')
+
+        return finalizacao()
+
+    def finalizacao():
+        print('Espero que tenha gostado!')
+
+
     def listar_minhas_compras(vendas):
         for obj in VendaItemDAO.listar():
             if obj.get_idVenda() in vendas: print(obj)
