@@ -273,7 +273,7 @@ class UI:
     def vendaitem_listar():
         for obj in View.vendaitem_listar(): print(obj)
 
-    def vendaitem_inserir():
+    def vendaitem_inserir(): #vai permanecer ou só foi teste?
         c = VendaItem(0, 1, 1, 1, 1)
         VendaItemDAO.inserir(c)
 UI.main()
