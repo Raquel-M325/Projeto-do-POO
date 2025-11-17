@@ -1,4 +1,5 @@
 from view import View
+from models.vendaitem import VendaItem, VendaItemDAO
 
 class UI:
     __usuario = None 
@@ -112,7 +113,9 @@ class UI:
         if op == 4: UI.comprar_carrinho()
         if op == 5: UI.listar_minhas_compras()
         if op == 6: UI.usuario_sair() 
-
+        if op == 7: UI.venda_listar()
+        if op == 8: UI.vendaitem_listar()
+        if op == 9: UI.vendaitem_inserir()
 
     @classmethod
     def usuario_sair(cls):
@@ -239,7 +242,7 @@ class UI:
 
     @classmethod    
     def comprar_carrinho(cls):
-        if UI.visualizar_carrinho() == None: return "Seu carrinho está vazio"
+        # if UI.visualizar_carrinho() is None: return "Seu carrinho está vazio"
         pagamento = UI.opcao_pagar()
         View.comprar_carrinho(pagamento, cls.__usuario["id"])
 
@@ -259,5 +262,14 @@ class UI:
         vendas = View.venda_feita(cls.__usuario["id"])
         View.listar_minhas_compras(vendas)
         
+    # DEBUG
+    def venda_listar():
+        for obj in View.venda_listar(): print(obj)
+    
+    def vendaitem_listar():
+        for obj in View.vendaitem_listar(): print(obj)
 
+    def vendaitem_inserir():
+        c = VendaItem(0, 1, 1, 1, 1)
+        VendaItemDAO.inserir(c)
 UI.main()

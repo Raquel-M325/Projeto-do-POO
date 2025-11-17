@@ -40,5 +40,19 @@
         "email": "oidenovo",
         "fone": "1111",
         "senha": "1"
+    },
+    {
+        "id": 8,
+        "nome": "Raquel",
+        "email": "raquel1",
+        "fone": "1111",
+        "senha": "1"
+    },
+    {
+        "id": 9,
+        "nome": "Gilbert",
+        "email": "gil",
+        "fone": "1212",
+        "senha": "2"
     }
 ]

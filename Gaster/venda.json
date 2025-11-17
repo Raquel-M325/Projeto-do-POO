@@ -1,9 +1,22 @@
 [
     {
-        "id": 1,
-        "data": "16/11/2025",
-        "carrinho": true,
-        "total": 0,
+        "id": 2,
+        "carrinho": false,
         "id_Cliente": 2
+    },
+    {
+        "id": 3,
+        "carrinho": true,
+        "id_Cliente": 2
+    },
+    {
+        "id": 1,
+        "carrinho": false,
+        "id_Cliente": 6
+    },
+    {
+        "id": 4,
+        "carrinho": true,
+        "id_Cliente": 6
     }
 ]

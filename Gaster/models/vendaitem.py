@@ -1,5 +1,5 @@
 import json
-from models.produto import ProdutoDAO
+# from models.produto import ProdutoDAO
 # from models.venda import VendaDAO
 class VendaItem:
     def __init__(self, id, qtd, preco, id_Venda, id_Produto):
@@ -39,7 +39,6 @@ class VendaItem:
 class VendaItemDAO:
     objetos = []                           
     @classmethod
-            
     def inserir(cls, obj):
         cls.abrir()
         id = 0
@@ -88,7 +87,7 @@ class VendaItemDAO:
                 list_dic = json.load(arquivo)
                 for dic in list_dic:
                     # c = Cliente(dic["id"], dic["nome"])
-                    c = Produto.from_json(dic)
+                    c = VendaItem.from_json(dic)
                     cls.objetos.append(c)
         except:
             pass

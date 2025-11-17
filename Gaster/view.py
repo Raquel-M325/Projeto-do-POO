@@ -166,11 +166,11 @@ class View:
 
 
     def comprar_carrinho(pagamento, usuario):
-        carrinho = False
         for obj in VendaDAO.listar():
             if obj.get_id_Cliente() == usuario and obj.get_carrinho() is True : 
-                    c = Venda(obj.get_id(), carrinho, obj.get_id_Cliente())
-                    VendaDAO.atualizar(c)
+                c = Venda(obj.get_id(), False, obj.get_id_Cliente())
+                # obj.get_carrinho() == False
+                VendaDAO.atualizar(c)
         return f"Seu pagamento foi realizado no {pagamento}."
 
     def opcao_pagar(pagar):
