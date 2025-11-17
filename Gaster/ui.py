@@ -258,7 +258,7 @@ class UI:
         print()
         pagar = int(input("Escolha uma opção de pagamento: "))
         forma = View.opcao_pagar(pagar)
-        return forma  #analise na view se está tudo ok ou se ainda falta!
+        return forma  
 
     @classmethod
     def listar_minhas_compras(cls):
