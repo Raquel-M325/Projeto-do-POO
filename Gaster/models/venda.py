@@ -44,7 +44,7 @@ class Venda:
 
 
     def __str__(self):
-        return f"{self.id} - {self.data.strftime('%d/%m/%Y')} - {self.carrinho} - {self.total} - {self.id_Cliente}"
+        return f"Id da Venda: {self.id} - Data da compra: {self.data.strftime('%d/%m/%Y')} - Carrinho: {self.carrinho} - Total de custo: {self.total} - Id do Cliente: {self.id_Cliente}"
     def to_json(self):
         return { "id" : self.id, "carrinho" : self.carrinho, "id_Cliente" : self.id_Cliente }
     def from_json(dic):

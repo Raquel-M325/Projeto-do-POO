@@ -39,7 +39,7 @@ class Produto:
         self.preco = self.preco * (1 + (porcentagem/100))
 
     def __str__(self):
-        return f"{self.id} - {self.descricao} - R${self.preco} - {self.estoque} unidades - {self.get_idcat()}"
+        return f"Id do Produto: {self.id} - Descrição: {self.descricao} - Preço do produto: R${self.preco:.2f} - Estoque: {self.estoque} - Unidades - {self.get_idcat()}"
     def to_json(self):
         return { "id" : self.id, "descricao" : self.descricao, "preco" : self.preco, "estoque" : self.estoque, "id_Categoria" : self.id_Categoria }
     @staticmethod

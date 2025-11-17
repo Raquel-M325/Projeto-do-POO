@@ -29,7 +29,7 @@ class Cliente:
 
 
     def __str__(self):
-        return f"{self.id} - {self.nome} - {self.email} - {self.fone}"
+        return f"Id do Cliente: {self.id} - Nome do usuário: {self.nome} - Email: {self.email} - Telefone: {self.fone}"
     def to_json(self):
         return { "id" : self.id, "nome" : self.nome, "email" : self.email, "fone" : self.fone, "senha" : self.senha}
     @staticmethod

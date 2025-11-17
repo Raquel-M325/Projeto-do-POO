@@ -16,7 +16,7 @@ class Categoria:
     
 
     def __str__(self):
-        return f"{self.id} - {self.descricao}"
+        return f"Id da Categoria: {self.id} - Descrição: {self.descricao}"
     def to_json(self):
         return { "id" : self.id, "descricao" : self.descricao }
     @staticmethod
