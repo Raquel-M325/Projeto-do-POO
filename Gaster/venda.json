@@ -5,11 +5,6 @@
         "id_Cliente": 2
     },
     {
-        "id": 3,
-        "carrinho": true,
-        "id_Cliente": 2
-    },
-    {
         "id": 1,
         "carrinho": false,
         "id_Cliente": 6
@@ -18,5 +13,30 @@
         "id": 4,
         "carrinho": false,
         "id_Cliente": 6
+    },
+    {
+        "id": 3,
+        "carrinho": false,
+        "id_Cliente": 2
+    },
+    {
+        "id": 5,
+        "carrinho": false,
+        "id_Cliente": 2
+    },
+    {
+        "id": 6,
+        "carrinho": false,
+        "id_Cliente": 2
+    },
+    {
+        "id": 7,
+        "carrinho": false,
+        "id_Cliente": 2
+    },
+    {
+        "id": 8,
+        "carrinho": false,
+        "id_Cliente": 2
     }
 ]

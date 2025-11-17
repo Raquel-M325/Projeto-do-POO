@@ -174,24 +174,24 @@ class View:
         return f"Seu pagamento foi realizado no {pagamento}."
 
     def opcao_pagar(pagar):  #fiz alteraçoes para deixar mais completo
-        if pagar == 1: c = pagamento_credito() 
-        if pagar == 2: c = pagamento_debito()
-        if pagar == 3: c = pagamento_pix()
+        if pagar == 1: return View.pagamento_credito() 
+        if pagar == 2: return View.pagamento_debito()
+        if pagar == 3: return View.pagamento_pix()
         if pagar == 4: return None
         return c
 
     def pagamento_credito():
-        print('Crédito:\n')
+        print('========================  CRÉDITO  ==========================\n')
 
         numero_cartao = input('Digite o número do seu cartão: ')
         validade = input('Digite a validade do cartão [MM/AA]: ')
         CVV = input('Digite o código de segurança (CVV): ')
         nome = input('Nome titular completo: ')
 
-        return finalizacao()
+        return View.finalizacao()
 
     def pagamento_debito():
-        print('Débito:\n')
+        print('===================  DÉBITO  ====================\n')
 
         numero_cartao = input('Digite o número do seu cartão: ')
         validade = input('Digite a validade do cartão [MM/AA]: ')
@@ -200,18 +200,18 @@ class View:
         banco = input('Digite qual é o banco: ')
         tipo = input('Que tipo de conta (corrente ou poupança): ')
 
-        return finalizacao()
+        return View.finalizacao()
 
     def pagamento_pix():
-        print('Pix:\n')
+        print('=====================  PIX  ============================\n')
 
         nome = input('Nome titular completo: ')
         chave = input('Digite sua chave: ')
 
-        return finalizacao()
+        return View.finalizacao()
 
     def finalizacao():
-        print('Espero que tenha gostado!')
+        return 'Espero que tenha gostado!'
 
 
     def listar_minhas_compras(vendas):
