@@ -76,34 +76,31 @@ class View:
             ProdutoDAO.atualizar(obj)
     
     #VENDA
+    @staticmethod
     def venda_inserir(usuario):
-        c = Venda(0, "True", usuario)
+        c = Venda(0, True, usuario)
         VendaDAO.inserir(c)
-
+        return c.get_id()
+        
+    @staticmethod
     def venda_existe(usuario):
         for obj in VendaDAO.listar():
-            print(obj)
-            if obj.get_id_Cliente() == usuario:
-                if obj.get_carrinho() == "True": return obj.get_id()
+            if obj.get_id_Cliente() == usuario and obj.get_carrinho() is True:
+                return obj.get_id()
 
-        View.venda_inserir(usuario)
-        # # venda = VendaDAO.listar()[-1]
-        # for obj in VendaDAO.listar():
-        #     if obj.get_id_Cliente() == usuario:
-        #         if obj.get_carrinho() == True: return obj.get_id()
-        # #return venda.get_id()
+        return View.venda_inserir(usuario)
 
     def venda_existente(usuario):
         for obj in VendaDAO.listar():
             if obj.get_id_Cliente() == usuario:
-                if obj.get_carrinho() == "True": return obj.get_id()
+                if obj.get_carrinho() is True: return obj.get_id()
         return None
 
     def venda_feita(usuario):
         compras = []
         for obj in VendaDAO.listar():
             if obj.get_id_Cliente() == usuario:
-                if obj.get_carrinho() == "False": compras.append(obj.get_id()) 
+                if obj.get_carrinho() == False: compras.append(obj.get_id()) 
                 else: return "Venda não realizada"
         return compras
     
@@ -169,10 +166,11 @@ class View:
 
 
     def comprar_carrinho(pagamento, usuario):
-        carrinho = "False"
+        carrinho = False
         for obj in VendaDAO.listar():
-            if obj.get_id_Cliente() == usuario:
-                if obj.get_carrinho() == "True" : VendaDAO.atualizar(obj.get_id(), carrinho, obj.get_id_Cliente())
+            if obj.get_id_Cliente() == usuario and obj.get_carrinho() is True : 
+                    c = Venda(obj.get_id(), carrinho, obj.get_id_Cliente())
+                    VendaDAO.atualizar(c)
         return f"Seu pagamento foi realizado no {pagamento}."
 
     def opcao_pagar(pagar):
@@ -191,7 +189,7 @@ class View:
     def chec_vendas():
         vendas = []
         for obj in View.venda_listar():
-            if obj.get_carrinho() == "False": venda.append(obj.get_id())
+            if obj.get_carrinho() is False: venda.append(obj.get_id())
         View.listar_vendas(vendas)
     
     def listar_vendas(vendas):

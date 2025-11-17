@@ -2,8 +2,8 @@
     {
         "id": 1,
         "data": "16/11/2025",
-        "carrinho": "True",
+        "carrinho": true,
         "total": 0,
-        "id_Cliente": 6
+        "id_Cliente": 2
     }
 ]
