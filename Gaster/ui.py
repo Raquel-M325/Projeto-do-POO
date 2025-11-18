@@ -93,7 +93,7 @@ class UI:
         if op == 11: UI.produto_atualizar()
         if op == 12: UI.produto_excluir()
         if op == 13: UI.reajustar_preco()
-        if op == 14: UI.venda_listar()
+        if op == 14: UI.venda_registradas()
         if op == 15: UI.usuario_sair()
 
     @staticmethod  
@@ -216,7 +216,7 @@ class UI:
     # Funções da venda
     
     @staticmethod
-    def venda_listar():
+    def venda_registradas():
         View.chec_vendas()
         
     # Funções do cliente

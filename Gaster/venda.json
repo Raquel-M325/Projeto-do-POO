@@ -18,5 +18,10 @@
         "id": 4,
         "carrinho": false,
         "id_Cliente": 2
+    },
+    {
+        "id": 5,
+        "carrinho": true,
+        "id_Cliente": 6
     }
 ]

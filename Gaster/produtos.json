@@ -28,17 +28,17 @@
         "id_Categoria": 1
     },
     {
-        "id": 3,
-        "descricao": "\u00d3culos",
-        "preco": 165.0,
-        "estoque": 23,
-        "id_Categoria": 3
-    },
-    {
         "id": 2,
         "descricao": "Smooth criminal",
         "preco": 385.00000000000006,
         "estoque": 0,
         "id_Categoria": 2
+    },
+    {
+        "id": 3,
+        "descricao": "\u00d3culos",
+        "preco": 165.0,
+        "estoque": 20,
+        "id_Categoria": 3
     }
 ]

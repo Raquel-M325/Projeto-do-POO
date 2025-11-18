@@ -212,7 +212,7 @@ class View:
     def chec_vendas():
         vendas = []
         for obj in View.venda_listar():
-            if obj.get_carrinho() is False: venda.append(obj.get_id())
+            if obj.get_carrinho() is False: vendas.append(obj.get_id())
         View.listar_vendas(vendas)
     
     def listar_vendas(vendas):
