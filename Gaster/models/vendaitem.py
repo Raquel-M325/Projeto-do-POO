@@ -13,6 +13,7 @@ class VendaItem:
     def set_id(self, id):
         self.id = id
     def set_qtd(self, qtd):
+        if qtd <= 0: raise ValueError("Digite uma quantidade válida! ")
         self.qtd = qtd
     def set_preco(self, preco):
         self.preco = preco

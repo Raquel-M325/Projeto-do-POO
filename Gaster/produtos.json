@@ -7,24 +7,24 @@
         "id_Categoria": 1
     },
     {
-        "id": 3,
-        "descricao": "\u00d3culos",
-        "preco": 150.0,
-        "estoque": 30,
-        "id_Categoria": 3
-    },
-    {
         "id": 4,
         "descricao": "bolo",
         "preco": 10.0,
-        "estoque": 10,
+        "estoque": 6,
         "id_Categoria": 4
+    },
+    {
+        "id": 3,
+        "descricao": "\u00d3culos",
+        "preco": 150.0,
+        "estoque": 34,
+        "id_Categoria": 3
     },
     {
         "id": 2,
         "descricao": "Smooth criminal",
         "preco": 300.0,
-        "estoque": 0,
+        "estoque": -8,
         "id_Categoria": 2
     }
 ]

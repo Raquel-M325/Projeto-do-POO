@@ -118,6 +118,8 @@ class View:
 
     # VendaItem
     def vendaitem_inserir(quantos, preco, id_Venda, id_Produto):
+        if quantos <= 0: 
+            return "Digite uma quantidade válida!"
         c = VendaItem(0, quantos, preco, id_Venda, id_Produto)
         VendaItemDAO.inserir(c)
 
@@ -231,6 +233,7 @@ class View:
             if obj.get_idVenda() in vendas: print(obj)
 
     def atualizar_estoque(produto, quantos): #coloquei a quantidade para atualizar, mas falta ver do adm, mesmo funcionando do cliente
+        View.verificar_estoque(produto)
         for obj in ProdutoDAO.listar():
             if obj.get_id() == produto:
                 novo = obj.get_estoque() - quantos
@@ -238,7 +241,8 @@ class View:
                 ProdutoDAO.atualizar(obj)
                 break
 
-        return View.verificar_estoque()
-
-    def verificar_estoque():  #seria para ver a condição, caso a pessoa insista levar o estoque que está vazio, para avisar que o estoque acabou!
-        
+    #Acabei criando só a ideia
+    def verificar_estoque(produto):  #seria para ver a condição, caso a pessoa insista levar o estoque que está vazio, para avisar que o estoque acabou!
+        for obj in ProdutoDAO.listar():
+            if obj.get_id() == produto and obj.get_estoque() <= 0:
+                return 'O produto está em falta!'

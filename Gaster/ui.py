@@ -1,6 +1,6 @@
 from view import View
 from models.vendaitem import VendaItem, VendaItemDAO
-
+from models.venda import Venda, VendaDAO
 class UI:
     __usuario = None 
 
@@ -116,6 +116,8 @@ class UI:
         if op == 7: UI.venda_listar()
         if op == 8: UI.vendaitem_listar()
         if op == 9: UI.vendaitem_inserir()
+        if op == 10: UI.venda_excluir()
+        if op == 11: UI.vendaitem_excluir()
 
     @classmethod
     def usuario_sair(cls):
@@ -276,4 +278,15 @@ class UI:
     def vendaitem_inserir(): #vai permanecer ou só foi teste?
         c = VendaItem(0, 1, 1, 1, 1)
         VendaItemDAO.inserir(c)
+
+    def venda_excluir():
+        id = int(input("Digite um id para excluir: "))
+        c = Venda(id, "", 0)
+        VendaDAO.excluir(c)
+   
+    def vendaitem_excluir():
+        id = int(input("Digite um id para excluir: "))
+        c = VendaItem(id, 1, 0, 0, 0)
+        VendaItemDAO.excluir(c)
+
 UI.main()
