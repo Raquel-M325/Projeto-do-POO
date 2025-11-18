@@ -54,5 +54,12 @@
         "email": "gil",
         "fone": "1212",
         "senha": "2"
+    },
+    {
+        "id": 10,
+        "nome": "Miguel",
+        "email": "migs",
+        "fone": "9090",
+        "senha": "gaster"
     }
 ]

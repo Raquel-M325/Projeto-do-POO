@@ -1,44 +1,30 @@
 [
     {
         "id": 1,
-        "qtd": 3,
-        "preco": 59.99,
+        "qtd": 7,
+        "preco": 60.0,
         "id_Venda": 1,
-        "id_Produto": 1
+        "id_Produto": 6
     },
     {
         "id": 2,
-        "qtd": 11,
-        "preco": 300.0,
-        "id_Venda": 1,
-        "id_Produto": 2
-    },
-    {
-        "id": 4,
         "qtd": 10,
-        "preco": 300.0,
-        "id_Venda": 1,
+        "preco": 350.0,
+        "id_Venda": 2,
         "id_Produto": 2
     },
     {
-        "id": 5,
+        "id": 3,
         "qtd": 12,
         "preco": 59.99,
         "id_Venda": 2,
         "id_Produto": 1
     },
     {
-        "id": 6,
-        "qtd": 8,
+        "id": 4,
+        "qtd": 3,
         "preco": 150.0,
-        "id_Venda": 2,
-        "id_Produto": 3
-    },
-    {
-        "id": 7,
-        "qtd": 4,
-        "preco": 59.99,
         "id_Venda": 3,
-        "id_Produto": 1
+        "id_Produto": 3
     }
 ]

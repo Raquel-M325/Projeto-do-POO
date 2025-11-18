@@ -2,29 +2,43 @@
     {
         "id": 4,
         "descricao": "bolo",
-        "preco": 10.0,
+        "preco": 11.0,
         "estoque": 6,
         "id_Categoria": 4
     },
     {
-        "id": 2,
-        "descricao": "Smooth criminal",
-        "preco": 300.0,
-        "estoque": 0,
-        "id_Categoria": 2
+        "id": 5,
+        "descricao": "Sonic Frontiers",
+        "preco": 98.89000000000001,
+        "estoque": 1000000,
+        "id_Categoria": 1
     },
     {
-        "id": 3,
-        "descricao": "\u00d3culos",
-        "preco": 150.0,
-        "estoque": 23,
-        "id_Categoria": 3
+        "id": 6,
+        "descricao": "Five Nights at Freddys's Into the Pit",
+        "preco": 66.0,
+        "estoque": 392,
+        "id_Categoria": 1
+    },
+    {
+        "id": 2,
+        "descricao": "Smooth criminal",
+        "preco": 385.00000000000006,
+        "estoque": 20,
+        "id_Categoria": 2
     },
     {
         "id": 1,
         "descricao": "Jornada",
-        "preco": 59.99,
-        "estoque": 77,
+        "preco": 65.989,
+        "estoque": 65,
         "id_Categoria": 1
+    },
+    {
+        "id": 3,
+        "descricao": "\u00d3culos",
+        "preco": 165.0,
+        "estoque": 23,
+        "id_Categoria": 3
     }
 ]

@@ -2,12 +2,12 @@
     {
         "id": 1,
         "carrinho": false,
-        "id_Cliente": 6
+        "id_Cliente": 2
     },
     {
         "id": 2,
         "carrinho": false,
-        "id_Cliente": 2
+        "id_Cliente": 10
     },
     {
         "id": 3,
