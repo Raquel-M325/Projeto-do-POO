@@ -118,8 +118,15 @@ class View:
 
     # VendaItem
     def vendaitem_inserir(quantos, preco, id_Venda, id_Produto):
-        if quantos <= 0: 
-            return "Digite uma quantidade válida!"
+        a = 0 # Variável de verificação; Lógica do assembly ;)
+        for obj in VendaItemDAO.listar():
+            if obj.get_idProduto() == id_Produto and obj.get_idVenda() == id_Venda:
+                soma = quantos + obj.get_qtd()
+                c = VendaItem(obj.get_id(), soma, preco, id_Venda, id_Produto)
+                VendaItemDAO.atualizar(c)
+                a = 1
+                break
+        if a == 1: return
         c = VendaItem(0, quantos, preco, id_Venda, id_Produto)
         VendaItemDAO.inserir(c)
 
@@ -140,27 +147,6 @@ class View:
 
 
     # Funções do Cliente
-
-    # def inserir_produto(produto, quantos):
-    #     produto_encontrado = None
-    #     for obj in ProdutoDAO.listar():
-    #         if obj.get_descricao() == produto:
-    #             produto_encontrado = obj
-    #             break
-
-    #     if produto_encontrado is None:
-    #         return "Produto não encontrado"
-
-    #     quantia = produto_encontrado.get_estoque() - quantos
-    #     if quantia < 0:
-    #         return "Quantidade insuficiente"
-
-    #     produto_encontrado.set_estoque(quantia)
-    #     ProdutoDAO.atualizar(produto_encontrado)
-
-    #     ultima_venda = VendaDAO.listar()[-1] 
-    #     View.vendaitem_inserir(quantos, produto_encontrado.get_preco())
-
         
     def visualizar_carrinho(venda):
         for obj in VendaItemDAO.listar():
@@ -218,7 +204,8 @@ class View:
 
     def listar_minhas_compras(vendas):
         for obj in VendaItemDAO.listar():
-            if obj.get_idVenda() in vendas: print(obj)
+            for prints in vendas:
+                if obj.get_idVenda() == prints: print(obj)
 
     #ADM
 
@@ -232,13 +219,14 @@ class View:
         for obj in VendaItemDAO.listar():
             if obj.get_idVenda() in vendas: print(obj)
 
-    def atualizar_estoque(produto, quantos): #coloquei a quantidade para atualizar, mas falta ver do adm, mesmo funcionando do cliente
-        View.verificar_estoque(produto)
+    def atualizar_estoque(produto, quantos, venda, preco): #coloquei a quantidade para atualizar, mas falta ver do adm, mesmo funcionando do cliente
         for obj in ProdutoDAO.listar():
             if obj.get_id() == produto:
                 novo = obj.get_estoque() - quantos
+                if novo < 0: break
                 obj.set_estoque(novo)
                 ProdutoDAO.atualizar(obj)
+                View.vendaitem_inserir(quantos, preco, venda, produto)
                 break
 
     #Acabei criando só a ideia

@@ -235,8 +235,9 @@ class UI:
         produto = int(input("Digite o id do produto: "))
         quantos = int(input("Digite quantos você quer: "))
         preco = View.achar_preco(produto)
-        View.vendaitem_inserir(quantos, preco, venda, produto)
-        View.atualizar_estoque(produto, quantos)
+        View.atualizar_estoque(produto, quantos, venda, preco) # Verifica se pode inserir antes de inserir
+        # Coloquei o vendaitem_inserir dentro de atualizar estoque para verificação
+        
 
     @classmethod
     def visualizar_carrinho(cls):
