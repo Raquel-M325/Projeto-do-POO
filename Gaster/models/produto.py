@@ -30,11 +30,6 @@ class Produto:
     def get_id_Categoria(self): return self.id_Categoria
         
 
-    def get_idcat(self):
-        for obj in CategoriaDAO.listar():
-            if obj.get_id() == self.id_Categoria: return obj.get_descricao()
-
-
     def reajustar_preco(self, porcentagem):
         self.preco = self.preco * (1 + (porcentagem/100))
 
