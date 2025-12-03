@@ -40,7 +40,7 @@ class ManterProdutoUI:
             descricao = st.text_input("Informe a nova descrição", op.get_descricao())
             preco = st.text_input("Informe o novo preço", op.get_preco())
             estoque = st.text_input("Informe o novo valor do estoque", op.get_estoque())
-            id_categoria = st.text_input("Informe o novo id da categoria", op.get_id_categoria())
+            id_categoria = st.text_input("Informe o novo id da categoria", op.get_id_Categoria())
             if st.button("Atualizar"):
                 id = op.get_id()
                 View.produto_atualizar(id, descricao, preco, estoque, id_categoria)
