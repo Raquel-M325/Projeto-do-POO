@@ -13,7 +13,7 @@ class ManterProdutoUI:
         with tab4: ManterProdutoUI.excluir()
 
     def listar():
-        produto = View.Produto_listar()
+        produto = View.produto_listar()
         if len(produto) == 0: st.write("Nenhum Produto cadastrado")
         else:
             list_dic = []
@@ -27,13 +27,13 @@ class ManterProdutoUI:
         estoque = st.text_input("Informe o estoque")
         id_categoria = st.text_input("Informe o Id da Categoria")
         if st.button("Inserir"):
-            View.Produto_inserir(descricao, preco, estoque, id_categoria)
+            View.produto_inserir(descricao, preco, estoque, id_categoria)
             st.success("Produto inserido com sucesso")
             time.sleep(2)
             st.rerun()
 
     def atualizar():
-        produto = View.Produto_listar()
+        produto = View.produto_listar()
         if len(produto) == 0: st.write("Nenhum Produto cadastrado")
         else:
             op = st.selectbox("Atualização de Produtos", Produtos)
@@ -43,19 +43,19 @@ class ManterProdutoUI:
             id_categoria = st.text_input("Informe o novo id da categoria", op.get_id_categoria())
             if st.button("Atualizar"):
                 id = op.get_id()
-                View.Produto_atualizar(id, descricao, preco, estoque, id_categoria)
+                View.produto_atualizar(id, descricao, preco, estoque, id_categoria)
                 st.success("Produto atualizado com sucesso")
                 time.sleep(2)
                 st.rerun()
 
     def excluir():
-        produto = View.Produto_listar()
+        produto = View.produto_listar()
         if len(produto) == 0: st.write("Nenhum Produto cadastrado")
         else:
             op = st.selectbox("Exclusão de Produtos", Produtos)
             if st.button("Excluir"):
                 id = op.get_id()
-                View.Produto_excluir(id)
+                View.produto_excluir(id)
                 st.success("Produto excluído com sucesso")
                 time.sleep(2)
                 st.rerun()
