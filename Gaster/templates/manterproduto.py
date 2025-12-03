@@ -36,7 +36,7 @@ class ManterProdutoUI:
         produto = View.produto_listar()
         if len(produto) == 0: st.write("Nenhum Produto cadastrado")
         else:
-            op = st.selectbox("Atualização de Produtos", Produtos)
+            op = st.selectbox("Atualização de Produtos", produto)
             descricao = st.text_input("Informe a nova descrição", op.get_descricao())
             preco = st.text_input("Informe o novo preço", op.get_preco())
             estoque = st.text_input("Informe o novo valor do estoque", op.get_estoque())
@@ -52,7 +52,7 @@ class ManterProdutoUI:
         produto = View.produto_listar()
         if len(produto) == 0: st.write("Nenhum Produto cadastrado")
         else:
-            op = st.selectbox("Exclusão de Produtos", Produtos)
+            op = st.selectbox("Exclusão de Produtos", produto)
             if st.button("Excluir"):
                 id = op.get_id()
                 View.produto_excluir(id)
