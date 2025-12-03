@@ -3,7 +3,7 @@ from templates.mantercliente import ManterClienteUI
 from templates.manterproduto import ManterProdutoUI
 from templates.reajustarproduto import ReajustarProdutoUI
 from templates.login import LoginUI
-from views import View
+from view import View
 import streamlit as st
 
 class IndexUI:
