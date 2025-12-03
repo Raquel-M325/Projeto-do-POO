@@ -3,6 +3,7 @@ from templates.mantercliente import ManterClienteUI
 from templates.manterproduto import ManterProdutoUI
 from templates.reajustarproduto import ReajustarProdutoUI
 from templates.login import LoginUI
+from templates.abrir import AbrirUI
 from view import View
 import streamlit as st
 
@@ -38,7 +39,7 @@ class IndexUI:
             "Entrar no Sistema",
             "Abrir Conta"])
         if op == "Entrar no Sistema": LoginUI.main()
-        if op == "Abrir Conta": pass
+        if op == "Abrir Conta": AbrirUI.main()
 
     def sidebar():
         if "cliente_id" not in st.session_state: IndexUI.menu_visitante()

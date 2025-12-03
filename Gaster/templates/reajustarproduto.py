@@ -12,7 +12,7 @@ class ReajustarProdutoUI:
     def reajustar():
         preco = st.text_input("Informe o preço a ser reajustado")
         if st.button("Reajustar"):
-            View.reajustar_preco(preco)
+            View.reajustar_preco(float(preco))
             st.success("Preço atualizado com sucesso")
             time.sleep(2)
             st.rerun()
