@@ -1,26 +1,5 @@
 [
     {
-        "id": 4,
-        "descricao": "bolo",
-        "preco": 11.0,
-        "estoque": 6,
-        "id_Categoria": 4
-    },
-    {
-        "id": 5,
-        "descricao": "Sonic Frontiers",
-        "preco": 98.89000000000001,
-        "estoque": 1000000,
-        "id_Categoria": 1
-    },
-    {
-        "id": 6,
-        "descricao": "Five Nights at Freddys's Into the Pit",
-        "preco": 66.0,
-        "estoque": 392,
-        "id_Categoria": 1
-    },
-    {
         "id": 1,
         "descricao": "Jornada",
         "preco": 65.989,
@@ -38,7 +17,28 @@
         "id": 3,
         "descricao": "\u00d3culos",
         "preco": 165.0,
-        "estoque": 20,
+        "estoque": 10,
         "id_Categoria": 3
+    },
+    {
+        "id": 5,
+        "descricao": "Sonic Frontiers",
+        "preco": 98.89000000000001,
+        "estoque": 995000,
+        "id_Categoria": 1
+    },
+    {
+        "id": 4,
+        "descricao": "bolo",
+        "preco": 11.0,
+        "estoque": 1,
+        "id_Categoria": 4
+    },
+    {
+        "id": 6,
+        "descricao": "produto atualizar o fnaf",
+        "preco": 50.0,
+        "estoque": 100,
+        "id_Categoria": 1
     }
 ]

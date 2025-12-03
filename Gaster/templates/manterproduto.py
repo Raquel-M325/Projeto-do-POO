@@ -1,5 +1,62 @@
 import streamlit as st
+import pandas as pd
+from views import View
+import time
 
 class ManterProdutoUI:
     def main():
         st.header("Cadastro de Produtos")
+        tab1, tab2, tab3, tab4 = st.tabs(["Listar", "Inserir", "Atualizar", "Excluir"])
+        with tab1: ManterProdutoUI.listar()
+        with tab2: ManterProdutoUI.inserir()
+        with tab3: ManterProdutoUI.atualizar()
+        with tab4: ManterProdutoUI.excluir()
+
+    def listar():
+        produto = View.Produto_listar()
+        if len(produto) == 0: st.write("Nenhum Produto cadastrado")
+        else:
+            list_dic = []
+            for obj in produto: list_dic.append(obj.to_json())
+            df = pd.DataFrame(list_dic)
+            st.dataframe(df, hide_index=True, column_order=["id", "descricao", "preco", "estoque", "Id_Categoria"])        
+
+    def inserir():
+        descricao = st.text_input("Informe a descrição")
+        preco = st.text_input("Informe o preco")
+        estoque = st.text_input("Informe o estoque")
+        id_categoria = st.text_input("Informe o Id da Categoria")
+        if st.button("Inserir"):
+            View.Produto_inserir(descricao, preco, estoque, id_categoria)
+            st.success("Produto inserido com sucesso")
+            time.sleep(2)
+            st.rerun()
+
+    def atualizar():
+        produto = View.Produto_listar()
+        if len(produto) == 0: st.write("Nenhum Produto cadastrado")
+        else:
+            op = st.selectbox("Atualização de Produtos", Produtos)
+            descricao = st.text_input("Informe a nova descrição", op.get_descricao())
+            preco = st.text_input("Informe o novo preço", op.get_preco())
+            estoque = st.text_input("Informe o novo valor do estoque", op.get_estoque())
+            id_categoria = st.text_input("Informe o novo id da categoria", op.get_id_categoria())
+            if st.button("Atualizar"):
+                id = op.get_id()
+                View.Produto_atualizar(id, descricao, preco, estoque, id_categoria)
+                st.success("Produto atualizado com sucesso")
+                time.sleep(2)
+                st.rerun()
+
+    def excluir():
+        produto = View.Produto_listar()
+        if len(produto) == 0: st.write("Nenhum Produto cadastrado")
+        else:
+            op = st.selectbox("Exclusão de Produtos", Produtos)
+            if st.button("Excluir"):
+                id = op.get_id()
+                View.Produto_excluir(id)
+                st.success("Produto excluído com sucesso")
+                time.sleep(2)
+                st.rerun()
+        
