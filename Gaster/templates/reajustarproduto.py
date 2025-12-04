@@ -7,7 +7,10 @@ class ReajustarProdutoUI:
     def main():
         st.header("Reajustar Preços de Produtos")
         tab1 = st.tabs(["Reajustar"])
-        with tab1: ReajustarProdutoUI.reajustar()
+        try:
+            ReajustarProdutoUI.reajustar()
+        except:
+            print("Há um problema ao reajustar o produto")
 
     def reajustar():
         produto = View.produto_listar()

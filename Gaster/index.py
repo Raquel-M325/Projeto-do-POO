@@ -4,6 +4,7 @@ from templates.manterproduto import ManterProdutoUI
 from templates.reajustarproduto import ReajustarProdutoUI
 from templates.login import LoginUI
 from templates.abrir import AbrirUI
+from templates.listarproduto import ListarProdutoUI
 from view import View
 import streamlit as st
 
@@ -28,7 +29,7 @@ class IndexUI:
             "Visualizar carrinho",
             "Comprar carrinho",
             "Listar minhas compras"])
-        if op == "Listar produtos": pass
+        if op == "Listar produtos": ListarProdutoUI.main()
         if op == "Inserir produto no carrinho": pass
         if op == "Visualizar carrinho": pass
         if op == "Comprar carrinho": pass
@@ -49,7 +50,7 @@ class IndexUI:
             admin = st.session_state["cliente_nome"] == "admin"
             if admin: IndexUI.menu_admin()
             else: IndexUI.menu_cliente()
-            IndexUI.sair_do_sistema() 
+            IndexUI.sair_do_sistema()
 
     def sair_do_sistema():
         if st.sidebar.button("Sair"):
