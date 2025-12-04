@@ -10,9 +10,12 @@ class ReajustarProdutoUI:
         with tab1: ReajustarProdutoUI.reajustar()
 
     def reajustar():
-        preco = st.text_input("Informe o preço a ser reajustado")
-        if st.button("Reajustar"):
-            View.reajustar_preco(float(preco))
-            st.success("Preço atualizado com sucesso")
-            time.sleep(2)
-            st.rerun()
+        produto = View.produto_listar()
+        if len(produto) == 0: st.write("Nenhum Produto pode ser reajustado")
+        else:
+            preco = st.text_input("Informe o preço a ser reajustado")
+            if st.button("Reajustar"):
+                View.reajustar_preco(preco)
+                st.success("Preço atualizado com sucesso")
+                time.sleep(2)
+                st.rerun()
