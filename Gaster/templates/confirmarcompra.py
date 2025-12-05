@@ -13,7 +13,7 @@ class ConfirmarCarrinhoUI:
             if verificacao is not None:
                 st.session_state["usuario_id"] = verificacao["id"] #acho que nessa parte esteja incompleta
                 st.success("Carrinho confirmado! Compra com sucesso!")
-                                st.rerun()
+                st.rerun()
 
             else:
                 st.error("Compra não foi executada. Ainda há produtos no carrinho.")

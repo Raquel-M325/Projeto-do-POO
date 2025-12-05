@@ -10,7 +10,7 @@ class ReajustarProdutoUI:
         try:
             ReajustarProdutoUI.reajustar()
         except:
-            print("Há um problema ao reajustar o produto")
+            st.write("Há um problema ao reajustar o produto")
 
     def reajustar():
         produto = View.produto_listar()

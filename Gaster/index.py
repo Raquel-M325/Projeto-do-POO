@@ -7,6 +7,7 @@ from templates.abrir import AbrirUI
 from templates.listarproduto import ListarProdutoUI
 from templates.confirmarcompra import ConfirmarCarrinhoUI
 from templates.inserircarrinho import InserirCarrinhoUI
+# from templates.visualizarcarrinho import VisualizarCarrinhoUI
 from templates.listarpedidosrealizados import ListarPedidosRealizadosUI
 
 from view import View
@@ -35,11 +36,10 @@ class IndexUI:
             "Comprar carrinho",
             "Listar minhas compras"])
         if op == "Listar produtos": ListarProdutoUI.main()
-        if op == "Inserir produto no carrinho": InserirCarrinhoUI()
-        if op == "Visualizar carrinho":  VisualizarCarrinhoUI()
-        if op == "Comprar carrinho": ConfirmarCarrinhoUI()
-        if op == "Listar minhas compras":  ListarPedidosRealizadosUI()   
-        if op == "Listar Produto": ListarProdutoUI()
+        if op == "Inserir produto no carrinho": InserirCarrinhoUI.main()
+        if op == "Visualizar carrinho":  VisualizarCarrinhoUI.main()
+        if op == "Comprar carrinho": ConfirmarCarrinhoUI.main()
+        if op == "Listar minhas compras":  ListarPedidosRealizadosUI.main()   
 
     def menu_visitante():
         op = st.sidebar.selectbox("Menu", [

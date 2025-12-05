@@ -2,50 +2,57 @@
     {
         "id": 7,
         "descricao": "Deltarune",
-        "preco": 101.0,
+        "preco": 103.0301,
         "estoque": 100,
         "id_Categoria": 1
     },
     {
         "id": 1,
         "descricao": "Jornada",
-        "preco": 67.31537890000001,
+        "preco": 68.66841801589001,
         "estoque": 65,
         "id_Categoria": 1
     },
     {
         "id": 2,
         "descricao": "Smooth criminal",
-        "preco": 392.7385000000001,
+        "preco": 400.6325438500001,
         "estoque": 0,
         "id_Categoria": 2
     },
     {
         "id": 3,
         "descricao": "\u00d3culos",
-        "preco": 168.31650000000002,
+        "preco": 171.69966165000002,
         "estoque": 10,
         "id_Categoria": 3
     },
     {
         "id": 5,
         "descricao": "Sonic Frontiers",
-        "preco": 100.87768900000002,
+        "preco": 102.90533054890003,
         "estoque": 995000,
         "id_Categoria": 1
     },
     {
         "id": 4,
         "descricao": "bolo",
-        "preco": 11.2211,
+        "preco": 11.44664411,
         "estoque": 1,
         "id_Categoria": 4
     },
     {
         "id": 6,
         "descricao": "produto atualizar o fnaf",
-        "preco": 51.005,
+        "preco": 52.0302005,
         "estoque": 100,
         "id_Categoria": 1
+    },
+    {
+        "id": 8,
+        "descricao": "Lentilha",
+        "preco": 15.15,
+        "estoque": 50.0,
+        "id_Categoria": 4.0
     }
 ]
