@@ -25,11 +25,7 @@ class IndexUI:
         if op == "Cadastro de Clientes": ManterClienteUI.main()
         if op == "Cadastro de Produtos": ManterProdutoUI.main()
         if op == "Reajustar Produtos": ReajustarProdutoUI.main()
-        if op == "Visualizar Carrinho": VisualizarCarrinhoUI()
-        if op == "Listar Produto": ListarProdutoUI()
-        if op == "Listar Pedidos Realizados": ListarPedidosRealizadosUI()
-        if op == "Inserir Carrinho": InserirCarrinhoUI()
-        if op == "Confirmar Compra": ConfirmarCarrinhoUI()
+        
 
     def menu_cliente():
         op = st.sidebar.selectbox("Menu", [
@@ -39,10 +35,11 @@ class IndexUI:
             "Comprar carrinho",
             "Listar minhas compras"])
         if op == "Listar produtos": ListarProdutoUI.main()
-        if op == "Inserir produto no carrinho": pass
-        if op == "Visualizar carrinho": pass
-        if op == "Comprar carrinho": pass
-        if op == "Listar minhas compras": pass
+        if op == "Inserir produto no carrinho": InserirCarrinhoUI()
+        if op == "Visualizar carrinho":  VisualizarCarrinhoUI()
+        if op == "Comprar carrinho": ConfirmarCarrinhoUI()
+        if op == "Listar minhas compras":  ListarPedidosRealizadosUI()   
+        if op == "Listar Produto": ListarProdutoUI()
 
     def menu_visitante():
         op = st.sidebar.selectbox("Menu", [

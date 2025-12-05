@@ -16,7 +16,7 @@ class ReajustarProdutoUI:
         produto = View.produto_listar()
         if len(produto) == 0: st.write("Nenhum Produto pode ser reajustado")
         else:
-            preco = st.text_input("Informe o preço a ser reajustado")
+            preco = st.number_input("Informe o preço a ser reajustado")
             if st.button("Reajustar"):
                 View.reajustar_preco(preco)
                 st.success("Preço atualizado com sucesso")
