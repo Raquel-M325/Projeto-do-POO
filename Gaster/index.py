@@ -5,6 +5,10 @@ from templates.reajustarproduto import ReajustarProdutoUI
 from templates.login import LoginUI
 from templates.abrir import AbrirUI
 from templates.listarproduto import ListarProdutoUI
+from templates.confirmarcompra import ConfirmarCarrinhoUI
+from templates.inserircarrinho import InserirCarrinhoUI
+from templates.listarpedidosrealizados import ListarPedidosRealizadosUI
+
 from view import View
 import streamlit as st
 
@@ -21,6 +25,11 @@ class IndexUI:
         if op == "Cadastro de Clientes": ManterClienteUI.main()
         if op == "Cadastro de Produtos": ManterProdutoUI.main()
         if op == "Reajustar Produtos": ReajustarProdutoUI.main()
+        if op == "Visualizar Carrinho": VisualizarCarrinhoUI()
+        if op == "Listar Produto": ListarProdutoUI()
+        if op == "Listar Pedidos Realizados": ListarPedidosRealizadosUI()
+        if op == "Inserir Carrinho": InserirCarrinhoUI()
+        if op == "Confirmar Compra": ConfirmarCarrinhoUI()
 
     def menu_cliente():
         op = st.sidebar.selectbox("Menu", [
