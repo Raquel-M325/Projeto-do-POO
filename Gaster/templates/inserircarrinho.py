@@ -7,6 +7,10 @@ class InserirCarrinhoUI:
     def main():
         st.header("Insira seu item no carrinho")
         tab1 = (["Inserir"])
+        try: 
+            InserirCarrinhoUI.inserir()
+        except:
+            print("Falha ao inserir o produto")
 
     def inserir():
         venda = View.venda_existe(st.session_state["cliente_id"])
@@ -14,7 +18,11 @@ class InserirCarrinhoUI:
         produto = st.number_input("Digite o id do seu produto")
         quantidade = st.number_input("Diga quantos você quer")
         preco = View.achar_preco(produto)
-        View.atualizar_estoque(produto, quantos, venda, preco)
+        if st.button("Inserir"):
+            View.atualizar_estoque(produto, quantos, venda, preco)
+            st.success("Produto inserido no carrinho com sucesso")
+            time.sleep(2)
+            st.rerun()
     
     def listar():
         produto = View.produto_listar()
