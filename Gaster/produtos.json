@@ -44,7 +44,7 @@
     {
         "id": 7,
         "descricao": "Deltarune",
-        "preco": "100.00",
+        "preco": "100.0",
         "estoque": "100",
         "id_Categoria": "1"
     }
