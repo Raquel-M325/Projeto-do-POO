@@ -5,11 +5,16 @@ import pandas as pd
 class ConfirmarCarrinhoUI:
     def main():
         st.header("Confirmação de Compra")
-        st.session_state["cliente_id"] = c["id"]
-        pagar = st.text_input("Informe a opção do pagamento: ")
+        pagar = st.text_input("Informe a opção de pagamento:")
+
         if st.button("Confirmar"):
-            if View.opcao_pagar(pagar) != None: 
-                st.write("Carrinho confirmado! Compra com sucesso!")
+            verificacao = View.opcao_pagar(pagar)
+
+            if verificacao is not None:
+                st.session_state["usuario_id"] = verificacao["id"] #acho que nessa parte esteja incompleta
+                st.success("Carrinho confirmado! Compra com sucesso!")
+                                st.rerun()
+
             else:
-                st.write("Compra não foi executada, ainda há carrinho com os produtos")
+                st.error("Compra não foi executada. Ainda há produtos no carrinho.")
                 st.rerun()
