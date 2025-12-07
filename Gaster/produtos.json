@@ -14,13 +14,6 @@
         "id_Categoria": 2
     },
     {
-        "id": 3,
-        "descricao": "\u00d3culos",
-        "preco": 171.69966165000002,
-        "estoque": 10,
-        "id_Categoria": 3
-    },
-    {
         "id": 5,
         "descricao": "Sonic Frontiers",
         "preco": 102.90533054890003,
@@ -42,17 +35,24 @@
         "id_Categoria": 1
     },
     {
-        "id": 8,
-        "descricao": "Lentilha",
-        "preco": 15.15,
-        "estoque": 50.0,
-        "id_Categoria": 4.0
+        "id": 3,
+        "descricao": "\u00d3culos",
+        "preco": 171.69966165000002,
+        "estoque": 7,
+        "id_Categoria": 3
     },
     {
         "id": 1,
         "descricao": "Jornada",
         "preco": 68.66841801589001,
-        "estoque": 62.0,
+        "estoque": 52,
         "id_Categoria": 1
+    },
+    {
+        "id": 8,
+        "descricao": "Lentilha",
+        "preco": 15.15,
+        "estoque": 43,
+        "id_Categoria": 4.0
     }
 ]

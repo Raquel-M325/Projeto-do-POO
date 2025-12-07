@@ -15,8 +15,8 @@ class InserirCarrinhoUI:
     def inserir():
         InserirCarrinhoUI.listar()
         venda = View.venda_existe(st.session_state["cliente_id"])
-        produto = st.number_input("Digite o id do seu produto", value=None, placeholder="Produto...")
-        quantidade = st.number_input("Diga quantos você quer", value=None, placeholder="Quantidade...")
+        produto = st.number_input("Digite o id do seu produto", value=0, step = 0, placeholder="Produto...")
+        quantidade = st.number_input("Diga quantos você quer", value=0, step = 0, placeholder="Quantidade...")
         preco = View.achar_preco(produto)
         if st.button("Inserir"):
             View.atualizar_estoque(produto, quantidade, venda, preco)

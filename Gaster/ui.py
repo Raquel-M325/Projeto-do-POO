@@ -242,7 +242,9 @@ class UI:
     @classmethod
     def visualizar_carrinho(cls):
         venda = View.venda_existente(cls.__usuario["id"])
-        View.visualizar_carrinho(venda)
+        c = View.visualizar_carrinho(venda)
+        for i in range(len(c)):
+            print("Produto: ", c[i].get_idProduto()," -- Quantidade: ", c[i].get_qtd()," -- Preço: ", f"{c[i].get_preco():.2f}")
 
     @classmethod    
     def comprar_carrinho(cls):

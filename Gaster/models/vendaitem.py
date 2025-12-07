@@ -1,5 +1,5 @@
 import json
-# from models.produto import ProdutoDAO
+from models.produto import ProdutoDAO
 # from models.venda import VendaDAO
 class VendaItem:
     def __init__(self, id, qtd, preco, id_Venda, id_Produto):
@@ -29,6 +29,9 @@ class VendaItem:
     def get_idVenda(self): return self.idVenda
     def get_idProduto(self): return self.idProduto
 
+    def get_nome_produto(self):
+        for obj in ProdutoDAO.listar():
+            if obj.get_id() == self.get_idProduto(): return obj.get_descricao()
 
     def __str__(self):
         return f"Id: {self.id} - Quantidade: {self.qtd} - Preço: {self.preco:.2f} - Id de Venda: {self.idVenda} - Id do Produto: {self.idProduto}"

@@ -4,6 +4,7 @@ from models.produto import Produto, ProdutoDAO
 from models.venda import Venda, VendaDAO
 from models.vendaitem import VendaItem, VendaItemDAO
 import json
+import streamlit as st
 from datetime import datetime
 
 class View:
@@ -149,9 +150,10 @@ class View:
     # Funções do Cliente
         
     def visualizar_carrinho(venda):
+        lista = []
         for obj in VendaItemDAO.listar():
-            if obj.get_idVenda() == venda: print(obj)
-
+            if obj.get_idVenda() == venda: lista.append(obj)
+        return lista
 
     def comprar_carrinho(pagamento, usuario):
         for obj in VendaDAO.listar():
