@@ -3,27 +3,36 @@ from view import View
 import pandas as pd
 
 class ConfirmarCarrinhoUI:
-    def main():
+
+    def main(): #falta fazer com que o terminal mostre no site e não separado
         st.header("Confirmação de Compra")
-        pagar = st.number_input("Informe a opção de pagamento:")
+
+        # Limita as opções entre 1 e 4, apenas inteiros
+        pagar = int(st.number_input(
+            "Informe a opção de pagamento (1-Crédito, 2-Débito, 3-Pix, 4-Carrinho não finalizado):",
+            min_value=1, max_value=4, step=1
+        ))
 
         if st.button("Confirmar"):
-            verificacao = View.opcao_pagar(pagar)
-            if verificacao is not None:
-                if verificacao == 1:
-                    credito = View.pagamento_credito()  
-                
-                if verificacao == 2:
-                    debito = View.pagamento_debito()
+            # Aqui usamos diretamente o valor digitado
+            if pagar == 1:
+                View.pagamento_credito()
+                View.finalizacao()
+                st.success("Carrinho confirmado! Compra com sucesso!")
 
-                if verificacao == 3:
-                    pix = View.pagamento_pix()
+            elif pagar == 2:
+                View.pagamento_debito()
+                View.finalizacao()
+                st.success("Carrinho confirmado! Compra com sucesso!")
 
-            finalizacao = View.finalizacao()
-            st.session_state["usuario_id"] = finalizacao["id"] #acho que nessa parte esteja incompleta
-            st.success("Carrinho confirmado! Compra com sucesso!")
-            st.rerun()
+            elif pagar == 3:
+                View.pagamento_pix()
+                View.finalizacao()
+                st.success("Carrinho confirmado! Compra com sucesso!")
 
-        else:
-            st.error("Compra não foi executada. Ainda há produtos no carrinho.")
-            st.rerun()
+            elif pagar == 4:
+                st.error("Compra não foi executada. Ainda há produtos no carrinho.")
+
+            else:
+                st.error("Opção de pagamento inválida.")
+
