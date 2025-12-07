@@ -7,7 +7,7 @@ from templates.abrir import AbrirUI
 from templates.listarproduto import ListarProdutoUI
 from templates.confirmarcompra import ConfirmarCarrinhoUI
 from templates.inserircarrinho import InserirCarrinhoUI
-# from templates.visualizarcarrinho import VisualizarCarrinhoUI
+from templates.visualizarcarrinho import VisualizarCarrinhoUI
 from templates.listarpedidosrealizados import ListarPedidosRealizadosUI
 
 from view import View
