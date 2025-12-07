@@ -13,10 +13,10 @@ class InserirCarrinhoUI:
             st.write("Falha ao inserir o produto")
 
     def inserir():
-        venda = View.venda_existe(st.session_state["cliente_id"])
         InserirCarrinhoUI.listar()
-        produto = st.number_input("Digite o id do seu produto")
-        quantidade = st.number_input("Diga quantos você quer")
+        venda = View.venda_existe(st.session_state["cliente_id"])
+        produto = st.number_input("Digite o id do seu produto", value=None, placeholder="Produto...")
+        quantidade = st.number_input("Diga quantos você quer", value=None, placeholder="Quantidade...")
         preco = View.achar_preco(produto)
         if st.button("Inserir"):
             View.atualizar_estoque(produto, quantantidade, venda, preco)
