@@ -10,7 +10,7 @@ class InserirCarrinhoUI:
         try: 
             InserirCarrinhoUI.inserir()
         except:
-            st.wrte("Falha ao inserir o produto")
+            st.write("Falha ao inserir o produto")
 
     def inserir():
         venda = View.venda_existe(st.session_state["cliente_id"])
@@ -31,4 +31,4 @@ class InserirCarrinhoUI:
             list_dic = []
             for obj in produto: list_dic.append(obj.to_json())
             df = pd.DataFrame(list_dic)
-            st.dataframe(df, hide_index=True, column_order=["descricao", "preco", "estoque"])
+            st.dataframe(df, hide_index=True, column_order=["id","descricao", "preco", "estoque"])
