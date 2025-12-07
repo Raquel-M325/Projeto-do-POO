@@ -19,7 +19,7 @@ class InserirCarrinhoUI:
         quantidade = st.number_input("Diga quantos você quer", value=None, placeholder="Quantidade...")
         preco = View.achar_preco(produto)
         if st.button("Inserir"):
-            View.atualizar_estoque(produto, quantantidade, venda, preco)
+            View.atualizar_estoque(produto, quantidade, venda, preco)
             st.success("Produto inserido no carrinho com sucesso")
             time.sleep(2)
             st.rerun()

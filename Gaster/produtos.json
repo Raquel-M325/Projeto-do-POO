@@ -7,13 +7,6 @@
         "id_Categoria": 1
     },
     {
-        "id": 1,
-        "descricao": "Jornada",
-        "preco": 68.66841801589001,
-        "estoque": 65,
-        "id_Categoria": 1
-    },
-    {
         "id": 2,
         "descricao": "Smooth criminal",
         "preco": 400.6325438500001,
@@ -54,5 +47,12 @@
         "preco": 15.15,
         "estoque": 50.0,
         "id_Categoria": 4.0
+    },
+    {
+        "id": 1,
+        "descricao": "Jornada",
+        "preco": 68.66841801589001,
+        "estoque": 63.0,
+        "id_Categoria": 1
     }
 ]

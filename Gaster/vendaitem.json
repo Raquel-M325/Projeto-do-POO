@@ -68,5 +68,12 @@
         "preco": 66.0,
         "id_Venda": 8,
         "id_Produto": 6
+    },
+    {
+        "id": 11,
+        "qtd": 2.0,
+        "preco": 68.66841801589001,
+        "id_Venda": 11,
+        "id_Produto": 1.0
     }
 ]
