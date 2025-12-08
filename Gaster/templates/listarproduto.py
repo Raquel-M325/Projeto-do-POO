@@ -6,7 +6,7 @@ import pandas as pd
 class ListarProdutoUI:
     def main():
         st.header("Lista de Produtos")
-        tab1 = (["Listar"])
+        tab1 = st.tabs(["Listar"])
         try:
             ListarProdutoUI.listar()
         except:

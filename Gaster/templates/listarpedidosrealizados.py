@@ -5,7 +5,7 @@ import pandas as pd
 class ListarPedidosRealizadosUI:
     def main():
         st.header("Lista dos Pedidos Realizados")
-        tab1 = (["Listar"])
+        tab1 = st.tabs(["Listar"])
         try:
             ListarPedidosRealizadosUI.listar()
         

@@ -6,7 +6,7 @@ import pandas as pd
 class InserirCarrinhoUI:
     def main():
         st.header("Insira seu item no carrinho")
-        tab1 = (["Inserir"])
+        tab1 = st.tabs(["Inserir"])
         try: 
             InserirCarrinhoUI.inserir()
         except:
