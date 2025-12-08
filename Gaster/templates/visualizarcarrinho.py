@@ -20,6 +20,6 @@ class VisualizarCarrinhoUI:
         if len(itens) == 0: st.write("Seu carrinho não tem produtos")
         else:
             list_dic = []
-            for i in range(len(itens)): list_dic.append(itens[i])
+            for i in range(len(itens)): list_dic.append(itens[i].to_json())
             df = pd.DataFrame(list_dic)
             st.dataframe(df, hide_index=True, column_order=["id_Produto", "qtd", "preco"])      
