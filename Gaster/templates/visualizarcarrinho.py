@@ -7,7 +7,11 @@ class VisualizarCarrinhoUI:
     def main():
         st.header("Carrinho")
         tab1 = st.tabs(["visualizar"])
-        with tab1: VisualizarCarrinhoUI.visualizar()
+        try:
+            VisualizarCarrinhoUI.visualizar()
+
+        except:
+            st.write("Nenhum produto no carrinho")
 
 
     def visualizar():

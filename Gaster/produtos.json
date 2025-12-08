@@ -7,13 +7,6 @@
         "id_Categoria": 2
     },
     {
-        "id": 5,
-        "descricao": "Sonic Frontiers",
-        "preco": 102.90533054890003,
-        "estoque": 995000,
-        "id_Categoria": 1
-    },
-    {
         "id": 4,
         "descricao": "bolo",
         "preco": 11.44664411,
@@ -53,6 +46,13 @@
         "descricao": "Deltarune",
         "preco": 103.0301,
         "estoque": 80,
+        "id_Categoria": 1
+    },
+    {
+        "id": 5,
+        "descricao": "Sonic Frontiers",
+        "preco": 102.90533054890003,
+        "estoque": 994980,
         "id_Categoria": 1
     }
 ]
