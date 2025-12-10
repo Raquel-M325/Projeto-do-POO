@@ -35,13 +35,6 @@
         "id_Produto": "Smooth criminal"
     },
     {
-        "id": 6,
-        "qtd": 3,
-        "preco": 165.0,
-        "id_Venda": 5,
-        "id_Produto": "\u00d3culos"
-    },
-    {
         "id": 8,
         "qtd": 10,
         "preco": 165.0,
@@ -102,13 +95,62 @@
         "qtd": 20,
         "preco": 103.0301,
         "id_Venda": 10,
-        "id_Produto": 7
+        "id_Produto": "Deltarune"
     },
     {
         "id": 16,
         "qtd": 20,
         "preco": 102.90533054890003,
         "id_Venda": 10,
-        "id_Produto": 5
+        "id_Produto": "Sonic Frontiers"
+    },
+    {
+        "id": 17,
+        "qtd": 20,
+        "preco": 102.90533054890003,
+        "id_Venda": 5,
+        "id_Produto": "Sonic Frontiers"
+    },
+    {
+        "id": 18,
+        "qtd": 2,
+        "preco": 103.0301,
+        "id_Venda": 5,
+        "id_Produto": "Deltarune"
+    },
+    {
+        "id": 19,
+        "qtd": 10,
+        "preco": 30.0,
+        "id_Venda": 5,
+        "id_Produto": "Eugenia brasilienses var.erythrocarpa"
+    },
+    {
+        "id": 20,
+        "qtd": 1,
+        "preco": 11.44664411,
+        "id_Venda": 5,
+        "id_Produto": "bolo"
+    },
+    {
+        "id": 21,
+        "qtd": 5,
+        "preco": 30.0,
+        "id_Venda": 5,
+        "id_Produto": "Eugenia brasilienses var.erythrocarpa"
+    },
+    {
+        "id": 6,
+        "qtd": 4,
+        "preco": 171.69966165000002,
+        "id_Venda": 5,
+        "id_Produto": "\u00d3culos"
+    },
+    {
+        "id": 22,
+        "qtd": 1,
+        "preco": 30.0,
+        "id_Venda": 5,
+        "id_Produto": 9
     }
 ]

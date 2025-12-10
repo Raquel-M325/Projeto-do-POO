@@ -7,25 +7,11 @@
         "id_Categoria": 2
     },
     {
-        "id": 4,
-        "descricao": "bolo",
-        "preco": 11.44664411,
-        "estoque": 1,
-        "id_Categoria": 4
-    },
-    {
         "id": 6,
         "descricao": "produto atualizar o fnaf",
         "preco": 52.0302005,
         "estoque": 100,
         "id_Categoria": 1
-    },
-    {
-        "id": 3,
-        "descricao": "\u00d3culos",
-        "preco": 171.69966165000002,
-        "estoque": 7,
-        "id_Categoria": 3
     },
     {
         "id": 1,
@@ -42,17 +28,38 @@
         "id_Categoria": 4.0
     },
     {
-        "id": 7,
-        "descricao": "Deltarune",
-        "preco": 103.0301,
-        "estoque": 80,
-        "id_Categoria": 1
-    },
-    {
         "id": 5,
         "descricao": "Sonic Frontiers",
         "preco": 102.90533054890003,
-        "estoque": 994980,
+        "estoque": 994960,
         "id_Categoria": 1
+    },
+    {
+        "id": 7,
+        "descricao": "Deltarune",
+        "preco": 103.0301,
+        "estoque": 78,
+        "id_Categoria": 1
+    },
+    {
+        "id": 4,
+        "descricao": "bolo",
+        "preco": 11.44664411,
+        "estoque": 0,
+        "id_Categoria": 4
+    },
+    {
+        "id": 3,
+        "descricao": "\u00d3culos",
+        "preco": 171.69966165000002,
+        "estoque": 6,
+        "id_Categoria": 3
+    },
+    {
+        "id": 9,
+        "descricao": "Eugenia brasilienses var.erythrocarpa",
+        "preco": 30.0,
+        "estoque": 34.0,
+        "id_Categoria": 5.0
     }
 ]
