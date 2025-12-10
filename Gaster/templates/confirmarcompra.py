@@ -13,20 +13,17 @@ class ConfirmarCarrinhoUI:
         if st.button("Confirmar"):
             # Aqui usamos diretamente o valor digitado
             if pagar == 1:
-                View.pagamento_credito(numero_cartao, validade, CVV, nome)
                 numero_cartao = input('Digite o número do seu cartão: ')
                 validade = input('Digite a validade do cartão [MM/AA]: ')
                 CVV = input('Digite o código de segurança (CVV): ')
                 nome = input('Nome titular completo: ')
 
+                View.pagamento_credito(numero_cartao, validade, CVV, nome)
                 st.success("Carrinho confirmado! Compra com sucesso!")
                 st.rerun()
 
 
             elif pagar == 2:
-                View.pagamento_debito(numero_cartao, validade, CVV, nome, banco, tipo)
-                View.finalizacao()
-                st.success("Carrinho confirmado! Compra com sucesso!")
                 numero_cartao = input('Digite o número do seu cartão: ')
                 validade = input('Digite a validade do cartão [MM/AA]: ')
                 CVV = input('Digite o código de segurança (CVV): ')
@@ -34,15 +31,16 @@ class ConfirmarCarrinhoUI:
                 banco = input('Digite qual é o banco: ')
                 tipo = input('Que tipo de conta (corrente ou poupança): ')
 
+                View.pagamento_debito(numero_cartao, validade, CVV, nome, banco, tipo)
                 st.success("Carrinho confirmado! Compra com sucesso!")
                 st.rerun()
 
 
             elif pagar == 3:
-                View.pagamento_pix(nome, chave)
                 nome = input('Nome titular completo: ')
                 chave = input('Digite sua chave: ')
 
+                View.pagamento_pix(nome, chave)
                 st.success("Carrinho confirmado! Compra com sucesso!")
                 st.rerun()
 
