@@ -21,20 +21,6 @@
         "id_Categoria": 1
     },
     {
-        "id": 8,
-        "descricao": "Lentilha",
-        "preco": 15.15,
-        "estoque": 43,
-        "id_Categoria": 4.0
-    },
-    {
-        "id": 5,
-        "descricao": "Sonic Frontiers",
-        "preco": 102.90533054890003,
-        "estoque": 994960,
-        "id_Categoria": 1
-    },
-    {
         "id": 7,
         "descricao": "Deltarune",
         "preco": 103.0301,
@@ -56,10 +42,24 @@
         "id_Categoria": 3
     },
     {
+        "id": 8,
+        "descricao": "Lentilha",
+        "preco": 15.15,
+        "estoque": 40,
+        "id_Categoria": 4.0
+    },
+    {
         "id": 9,
         "descricao": "Eugenia brasilienses var.erythrocarpa",
         "preco": 30.0,
-        "estoque": 34.0,
+        "estoque": 32.0,
         "id_Categoria": 5.0
+    },
+    {
+        "id": 5,
+        "descricao": "Sonic Frontiers",
+        "preco": 102.90533054890003,
+        "estoque": 994938,
+        "id_Categoria": 1
     }
 ]

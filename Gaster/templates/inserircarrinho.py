@@ -6,11 +6,8 @@ import pandas as pd
 class InserirCarrinhoUI:
     def main():
         st.header("Insira seu item no carrinho")
-        tab1 = st.tabs(["Inserir"])
-        try:
-            InserirCarrinhoUI.inserir()
-        except:
-            st.error("Nenhum produto foi inserido")
+        tab1, = st.tabs(["Inserir"])
+        with tab1: InserirCarrinhoUI.inserir()
 
     def inserir():
         InserirCarrinhoUI.listar()
@@ -18,7 +15,6 @@ class InserirCarrinhoUI:
         produto = st.number_input("Digite o id do seu produto", value=0, step = 0, placeholder="Produto...")
         quantidade = st.number_input("Diga quantos você quer", value=0, step = 0, placeholder="Quantidade...")
         preco = View.achar_preco(produto)
-        st.write(preco)
         if st.button("Inserir"):
             View.atualizar_estoque(produto, quantidade, venda, preco)
             st.success("Produto inserido no carrinho com sucesso")

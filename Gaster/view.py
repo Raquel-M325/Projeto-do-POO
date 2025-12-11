@@ -119,7 +119,7 @@ class View:
 
     # VendaItem
     def vendaitem_inserir(quantos, preco, id_Venda, id_Produto):
-        a = 0 # Variável de verificação; Lógica do assembly ;)
+        a = 0                                                                   # Variável de verificação; Lógica do assembly ;)
         for obj in VendaItemDAO.listar():
             if obj.get_idProduto() == id_Produto and obj.get_idVenda() == id_Venda:
                 soma = quantos + obj.get_qtd()
