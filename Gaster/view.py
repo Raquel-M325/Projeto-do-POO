@@ -205,9 +205,11 @@ class View:
 
 
     def listar_minhas_compras(vendas):
+        c = []
         for obj in VendaItemDAO.listar():
             for prints in vendas:
-                if obj.get_idVenda() == prints: print(obj)
+                if obj.get_idVenda() == prints: c.append(obj)
+        return c
 
     #ADM
 
