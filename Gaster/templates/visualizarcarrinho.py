@@ -6,7 +6,7 @@ import pandas as pd
 class VisualizarCarrinhoUI:
     def main():
         st.header("Carrinho")
-        tab1, = st.tabs(["visualizar"])
+        tab1, = st.tabs(["Visualizar"])
         with tab1: VisualizarCarrinhoUI.visualizar()
 
 
