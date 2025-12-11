@@ -36,7 +36,7 @@ class VendaItem:
     def __str__(self):
         return f"Id: {self.id} - Quantidade: {self.qtd} - Preço: {self.preco:.2f} - Id de Venda: {self.idVenda} - Id do Produto: {self.idProduto}"
     def to_json(self):
-        return { "id" : self.id, "qtd" : self.qtd, "preco" : self.preco, "id_Venda" : self.idVenda, "id_Produto" : self.idProduto }
+        return { "id" : self.id, "qtd" : self.qtd, "preco" : self.preco, "id_Venda" : self.idVenda, "id_Produto" : self.idProduto, "produto": self.get_nome_produto() }
     def from_json(dic):
         return VendaItem(dic["id"],  dic["qtd"], dic["preco"], dic["id_Venda"], dic["id_Produto"])
     

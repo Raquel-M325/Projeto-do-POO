@@ -6,11 +6,8 @@ import pandas as pd
 class ListarProdutoUI:
     def main():
         st.header("Lista de Produtos")
-        tab1 = st.tabs(["Listar"])
-        try:
-            ListarProdutoUI.listar()
-        except:
-            print("Não há produtos para serem listados")
+        tab1, = st.tabs(["Listar"])
+        with tab1:ListarProdutoUI.listar()
 
     def listar():
         produto = View.produto_listar()

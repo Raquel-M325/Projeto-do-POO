@@ -6,11 +6,8 @@ import time
 class ReajustarProdutoUI:
     def main():
         st.header("Reajustar Preços de Produtos")
-        tab1 = st.tabs(["Reajustar"])
-        try:
-            ReajustarProdutoUI.reajustar()
-        except:
-            st.write("Há um problema ao reajustar o produto")
+        tab1, = st.tabs(["Reajustar"])
+        with tab1:ReajustarProdutoUI.reajustar()
 
     def reajustar():
         produto = View.produto_listar()

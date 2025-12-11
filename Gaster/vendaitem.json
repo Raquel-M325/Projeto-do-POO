@@ -4,167 +4,167 @@
         "qtd": 7,
         "preco": 60.0,
         "id_Venda": 1,
-        "id_Produto": "produto atualizar o fnaf"
+        "id_Produto": 6,
+        "produto": "produto atualizar o fnaf"
     },
     {
         "id": 2,
         "qtd": 10,
         "preco": 350.0,
         "id_Venda": 2,
-        "id_Produto": "Smooth criminal"
+        "id_Produto": 2,
+        "produto": "Smooth criminal"
     },
     {
         "id": 3,
         "qtd": 12,
         "preco": 59.99,
         "id_Venda": 2,
-        "id_Produto": "Jornada"
+        "id_Produto": 1,
+        "produto": "Jornada"
     },
     {
         "id": 4,
         "qtd": 3,
         "preco": 150.0,
         "id_Venda": 3,
-        "id_Produto": "\u00d3culos"
+        "id_Produto": 3,
+        "produto": "\u00d3culos"
     },
     {
         "id": 5,
         "qtd": 20,
         "preco": 385.00000000000006,
         "id_Venda": 4,
-        "id_Produto": "Smooth criminal"
+        "id_Produto": 2,
+        "produto": "Smooth criminal"
     },
     {
         "id": 8,
         "qtd": 10,
         "preco": 165.0,
         "id_Venda": 7,
-        "id_Produto": "\u00d3culos"
+        "id_Produto": 3,
+        "produto": "\u00d3culos"
     },
     {
         "id": 9,
         "qtd": 5000,
         "preco": 98.89000000000001,
         "id_Venda": 7,
-        "id_Produto": "Sonic Frontiers"
+        "id_Produto": 5,
+        "produto": "Sonic Frontiers"
     },
     {
         "id": 7,
         "qtd": 5,
         "preco": 11.0,
         "id_Venda": 6,
-        "id_Produto": "bolo"
+        "id_Produto": 4,
+        "produto": "bolo"
     },
     {
         "id": 10,
         "qtd": 10,
         "preco": 66.0,
         "id_Venda": 8,
-        "id_Produto": "produto atualizar o fnaf"
+        "id_Produto": 6,
+        "produto": "produto atualizar o fnaf"
     },
     {
         "id": 12,
         "qtd": 3,
         "preco": 171.69966165000002,
         "id_Venda": 11,
-        "id_Produto": "\u00d3culos"
+        "id_Produto": 3,
+        "produto": "\u00d3culos"
     },
     {
         "id": 11,
         "qtd": 8,
         "preco": 68.66841801589001,
         "id_Venda": 11,
-        "id_Produto": "Jornada"
+        "id_Produto": 1,
+        "produto": "Jornada"
     },
     {
         "id": 14,
         "qtd": 5,
         "preco": 68.66841801589001,
         "id_Venda": 5,
-        "id_Produto": "Jornada"
+        "id_Produto": 1,
+        "produto": "Jornada"
     },
     {
         "id": 13,
         "qtd": 7,
         "preco": 15.15,
         "id_Venda": 5,
-        "id_Produto": "Lentilha"
+        "id_Produto": 8,
+        "produto": "Lentilha"
     },
     {
         "id": 15,
         "qtd": 20,
         "preco": 103.0301,
         "id_Venda": 10,
-        "id_Produto": "Deltarune"
+        "id_Produto": 7,
+        "produto": "Deltarune"
     },
     {
         "id": 16,
         "qtd": 20,
         "preco": 102.90533054890003,
         "id_Venda": 10,
-        "id_Produto": "Sonic Frontiers"
-    },
-    {
-        "id": 17,
-        "qtd": 20,
-        "preco": 102.90533054890003,
-        "id_Venda": 5,
-        "id_Produto": "Sonic Frontiers"
+        "id_Produto": 5,
+        "produto": "Sonic Frontiers"
     },
     {
         "id": 18,
         "qtd": 2,
         "preco": 103.0301,
         "id_Venda": 5,
-        "id_Produto": "Deltarune"
+        "id_Produto": 7,
+        "produto": "Deltarune"
     },
     {
         "id": 19,
         "qtd": 10,
         "preco": 30.0,
         "id_Venda": 5,
-        "id_Produto": "Eugenia brasilienses var.erythrocarpa"
+        "id_Produto": 9,
+        "produto": "Eugenia brasilienses var.erythrocarpa"
     },
     {
         "id": 20,
         "qtd": 1,
         "preco": 11.44664411,
         "id_Venda": 5,
-        "id_Produto": "bolo"
+        "id_Produto": 4,
+        "produto": "bolo"
     },
     {
         "id": 21,
         "qtd": 5,
         "preco": 30.0,
         "id_Venda": 5,
-        "id_Produto": "Eugenia brasilienses var.erythrocarpa"
+        "id_Produto": 9,
+        "produto": "Eugenia brasilienses var.erythrocarpa"
     },
     {
         "id": 6,
         "qtd": 4,
         "preco": 171.69966165000002,
         "id_Venda": 5,
-        "id_Produto": "\u00d3culos"
+        "id_Produto": 3,
+        "produto": "\u00d3culos"
     },
     {
-        "id": 22,
-        "qtd": 1,
-        "preco": 30.0,
-        "id_Venda": 5,
-        "id_Produto": 9
-    },
-    {
-        "id": 23,
-        "qtd": 10,
-        "preco": 102.90533054890003,
-        "id_Venda": 12,
-        "id_Produto": 5
-    },
-    {
-        "id": 24,
-        "qtd": 1,
+        "id": 17,
+        "qtd": 22,
         "preco": 102.90533054890003,
         "id_Venda": 5,
-        "id_Produto": 5
+        "id_Produto": 5,
+        "produto": "Sonic Frontiers"
     }
 ]

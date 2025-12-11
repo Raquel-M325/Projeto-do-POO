@@ -6,12 +6,8 @@ import pandas as pd
 class VisualizarCarrinhoUI:
     def main():
         st.header("Carrinho")
-        tab1 = st.tabs(["visualizar"])
-        try:
-            VisualizarCarrinhoUI.visualizar()
-
-        except:
-            st.write("Nenhum produto no carrinho")
+        tab1, = st.tabs(["visualizar"])
+        with tab1: VisualizarCarrinhoUI.visualizar()
 
 
     def visualizar():
@@ -22,4 +18,4 @@ class VisualizarCarrinhoUI:
             list_dic = []
             for i in range(len(itens)): list_dic.append(itens[i].to_json())
             df = pd.DataFrame(list_dic)
-            st.dataframe(df, hide_index=True, column_order=["id_Produto", "qtd", "preco"])      
+            st.dataframe(df, hide_index=True, column_order=["produto","qtd", "preco"])      
