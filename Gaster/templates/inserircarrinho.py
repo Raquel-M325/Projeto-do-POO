@@ -7,7 +7,10 @@ class InserirCarrinhoUI:
     def main():
         st.header("Insira seu item no carrinho")
         tab1 = st.tabs(["Inserir"])
-        with tab1:InserirCarrinhoUI.inserir()
+        try:
+            InserirCarrinhoUI.inserir()
+        except:
+            st.error("Nenhum produto foi inserido")
 
     def inserir():
         InserirCarrinhoUI.listar()
