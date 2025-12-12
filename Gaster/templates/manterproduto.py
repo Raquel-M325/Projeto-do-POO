@@ -28,8 +28,11 @@ class ManterProdutoUI:
         estoque = st.number_input("Informe o estoque")
         id_categoria = st.number_input("Informe o Id da Categoria")
         if st.button("Inserir"):
-            View.produto_inserir(descricao, preco, estoque, id_categoria)
-            st.success("Produto inserido com sucesso")
+            try:
+                View.produto_inserir(descricao, preco, estoque, id_categoria)
+                st.success("Produto inserido com sucesso")
+            except:
+                st.error("Há erro na descrição, preço ou quantidade")
             time.sleep(2)
             st.rerun()
 

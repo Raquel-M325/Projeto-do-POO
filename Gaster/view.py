@@ -24,6 +24,8 @@ class View:
 
     #CLIENTE
     def cliente_inserir(nome, email, fone, senha):
+        for obj in ClienteDAO.listar():
+            if obj.get_email() == email: raise ValueError("Email já existente")
         c = Cliente(0, nome, email, fone, senha)
         ClienteDAO.inserir(c) #instanciar DAO vai criar várias listas de clientes
     
@@ -57,6 +59,10 @@ class View:
 
     # PRODUTO
     def produto_inserir(descricao, preco, estoque, id_Categoria):
+        for obj in ProdutoDAO.listar():
+            if descricao == obj.get_descricao(): raise ValueError ("Descrição já exitente")
+        if preco < 0: raise ValueError("Preço inválido")
+        if estoque < 0: raise ValueError("Estoque invalido")
         c = Produto(0, descricao, preco, estoque, id_Categoria)
         ProdutoDAO.inserir(c)
     
