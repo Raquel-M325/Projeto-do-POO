@@ -24,6 +24,9 @@ class View:
 
     #CLIENTE
     def cliente_inserir(nome, email, fone, senha):
+        if nome == "": raise  ValueError("Nome inválido")
+        if email == "": raise ValueError("Email não registrado")
+        if email == "admin": raise ValueError("Admin já existe")
         for obj in ClienteDAO.listar():
             if obj.get_email() == email: raise ValueError("Email já existente")
         c = Cliente(0, nome, email, fone, senha)
@@ -33,6 +36,11 @@ class View:
         return ClienteDAO.listar()
     
     def cliente_atualizar(id, nome, email, fone, senha):
+        if nome == "": raise  ValueError("Nome inválido")
+        if email == "": raise ValueError("Email não registrado")
+        if email == "admin": raise ValueError("Admin já existe")
+        for obj in ClienteDAO.listar():
+            if obj.get_email() == email: raise ValueError("Email já existente")
         c = Cliente(id, nome, email, fone, senha)
         ClienteDAO.atualizar(c)
     
@@ -42,6 +50,9 @@ class View:
 
     #CATEGORIA
     def categoria_inserir(descricao):
+        if descricao == "": raise ValueError("Precisa registrar um produto válido")
+        for obj in CategoriaDAO.listar():
+            if obj.get_descricao == descricao: raise ValueError("Esse produto já exite")
         c = Categoria(0, descricao)
         CategoriaDAO.inserir(c)
     
@@ -49,16 +60,24 @@ class View:
         return CategoriaDAO.listar()
     
     def categoria_atualizar(id, descricao):
+        if descricao == "": raise ValueError("Precisa registrar um produto válido")
+        for obj in CategoriaDAO.listar():
+            if obj.get_descricao == descricao: raise ValueError("Esse produto já exite")
         c = Categoria(id, descricao)
         CategoriaDAO.atualizar(c)
     
     def categoria_excluir(id):
+        ids = []
+        for obj in CategoriaDAO.listar():
+            if obj.get_descricao == descricao: raise ValueError("Esse produto já exite")
         c = Categoria(id, "")
         CategoriaDAO.excluir(c)
 
 
     # PRODUTO
     def produto_inserir(descricao, preco, estoque, id_Categoria):
+        if descricao == "": raise ValueError ("Descrição vazia")
+        if id_Categoria == "": raise ValueError ("Categoria vazia")
         for obj in ProdutoDAO.listar():
             if descricao == obj.get_descricao(): raise ValueError ("Descrição já exitente")
         if preco < 0: raise ValueError("Preço inválido")
@@ -70,6 +89,12 @@ class View:
         return ProdutoDAO.listar()
 
     def produto_atualizar(id, descricao, preco, estoque, id_Categoria):
+        if descricao == "": raise ValueError ("Descrição vazia")
+        if id_Categoria == "": raise ValueError ("Categoria vazia")
+        for obj in ProdutoDAO.listar():
+            if descricao == obj.get_descricao(): raise ValueError ("Descrição já exitente")
+        if preco < 0: raise ValueError("Preço inválido")
+        if estoque < 0: raise ValueError("Estoque invalido")
         c = Produto(id, descricao, preco, estoque, id_Categoria)
         ProdutoDAO.atualizar(c)
     
@@ -78,6 +103,7 @@ class View:
         ProdutoDAO.excluir(c)
     
     def reajustar_preco(porcentagem):
+        if porcentagem == 0: raise ValueError("Digite uma porcentagem diferente de zero!!!")
         for obj in ProdutoDAO.listar():
             obj.reajustar_preco(porcentagem)
             ProdutoDAO.atualizar(obj)
