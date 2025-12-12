@@ -32,7 +32,7 @@ class ManterClienteUI:
                 View.cliente_inserir(nome, email, fone, senha)
                 st.success("Cliente inserido com sucesso")
             except:
-                st.error("Esse email já exite")
+                st.error("Esse email já existe") #email repetido feito
             time.sleep(2)
             st.rerun()
 
@@ -47,9 +47,14 @@ class ManterClienteUI:
             fone = st.text_input("Informe o novo fone", op.get_fone())
             senha = st.text_input("Informe a nova senha", op.get_senha(), type="password")
             if st.button("Atualizar"):
-                id = op.get_id()
-                View.cliente_atualizar(id, nome, email, fone, senha)
-                st.success("Cliente atualizado com sucesso")
+                try:
+                    id = op.get_id()
+                    View.cliente_atualizar(id, nome, email, fone, senha)
+                    st.success("Cliente atualizado com sucesso")
+
+                except IndexError:
+                    st.error("Está vazio, nada há atualizar")
+
                 time.sleep(2)
                 st.rerun()
 

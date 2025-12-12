@@ -26,8 +26,11 @@ class ManterCategoriaUI:
     def inserir():
         descricao = st.text_input("Informe a descrição")
         if st.button("Inserir"):
-            View.categoria_inserir(descricao)
-            st.success("Categoria inserido com sucesso")
+            try:
+                View.categoria_inserir(descricao)
+                st.success("Categoria inserido com sucesso")
+            except: 
+                st.error("Descrição repetida") 
             time.sleep(2)
             st.rerun()
         
@@ -38,9 +41,14 @@ class ManterCategoriaUI:
             op = st.selectbox("Atualização de Categorias", categoria)
             descricao = st.text_input("Informe a nova descrição", op.get_descricao())
             if st.button("Atualizar"):
-                id = op.get_id()
-                View.categoria_atualizar(id, descricao)
-                st.success("Categoria atualizado com sucesso")
+                try:
+                    id = op.get_id()
+                    View.categoria_atualizar(id, descricao)
+                    st.success("Categoria atualizado com sucesso")
+
+                except IndexError:
+                    st.error("Descrição vazia")
+
                 time.sleep(2)
                 st.rerun()
 
@@ -50,8 +58,11 @@ class ManterCategoriaUI:
         else:
             op = st.selectbox("Exclusão de Categorias", categoria)
             if st.button("Excluir"):
-                id = op.get_id()
-                View.categoria_excluir(id)
-                st.success("Categoria excluído com sucesso")
+                try:
+                    id = op.get_id()
+                    View.categoria_excluir(id)
+                    st.success("Categoria excluído com sucesso")
+                except: 
+                    st.error("Existência de produto na categoria")
                 time.sleep(2)
                 st.rerun()

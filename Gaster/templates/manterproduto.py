@@ -32,7 +32,7 @@ class ManterProdutoUI:
                 View.produto_inserir(descricao, preco, estoque, id_categoria)
                 st.success("Produto inserido com sucesso")
             except:
-                st.error("Há erro na descrição, preço ou quantidade")
+                st.error("Preço ou estoque negativo")
             time.sleep(2)
             st.rerun()
 
@@ -48,9 +48,12 @@ class ManterProdutoUI:
             estoque = st.number_input ("Informe o novo valor do estoque", op.get_estoque())
             id_categoria = st.number_input("Informe o novo id da categoria", op.get_id_Categoria())
             if st.button("Atualizar"):
-                id = op.get_id()
-                View.produto_atualizar(id, descricao, preco, estoque, id_categoria)
-                st.success("Produto atualizado com sucesso")
+                try:
+                    id = op.get_id()
+                    View.produto_atualizar(id, descricao, preco, estoque, id_categoria)
+                    st.success("Produto atualizado com sucesso")
+                except IndexError:
+                    st.error("Descrição e/ou categoria vazia")
                 time.sleep(2)
                 st.rerun()
 
