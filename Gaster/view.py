@@ -217,11 +217,14 @@ class View:
         vendas = []
         for obj in View.venda_listar():
             if obj.get_carrinho() is False: vendas.append(obj.get_id())
-        View.listar_vendas(vendas)
+        c = View.listar_vendas(vendas)
+        return c
     
     def listar_vendas(vendas):
+        c = []
         for obj in VendaItemDAO.listar():
-            if obj.get_idVenda() in vendas: print(obj)
+            if obj.get_idVenda() in vendas: c.append(obj)
+        return c
 
     def atualizar_estoque(produto, quantos, venda, preco): #coloquei a quantidade para atualizar, mas falta ver do adm, mesmo funcionando do cliente
         for obj in ProdutoDAO.listar():

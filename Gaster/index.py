@@ -9,6 +9,7 @@ from templates.confirmarcompra import ConfirmarCarrinhoUI
 from templates.inserircarrinho import InserirCarrinhoUI
 from templates.visualizarcarrinho import VisualizarCarrinhoUI
 from templates.listarpedidosrealizados import ListarPedidosRealizadosUI
+from templates.listarvendas import ListarVendasUI
 
 from view import View
 import streamlit as st
@@ -20,13 +21,13 @@ class IndexUI:
             "Cadastro de Categorias",
             "Cadastro de Clientes",
             "Cadastro de Produtos",
-            "Reajustar Produtos"])
+            "Reajustar Produtos", "Listar Vendas"])
         #st.session_state["opcao"].append(op)
         if op == "Cadastro de Categorias": ManterCategoriaUI.main()
         if op == "Cadastro de Clientes": ManterClienteUI.main()
         if op == "Cadastro de Produtos": ManterProdutoUI.main()
         if op == "Reajustar Produtos": ReajustarProdutoUI.main()
-        
+        if op == "Listar Vendas": ListarVendasUI.main()
 
     def menu_cliente():
         op = st.sidebar.selectbox("Menu", [
