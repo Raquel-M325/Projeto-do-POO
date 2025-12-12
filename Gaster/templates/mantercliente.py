@@ -31,8 +31,12 @@ class ManterClienteUI:
             try:
                 View.cliente_inserir(nome, email, fone, senha)
                 st.success("Cliente inserido com sucesso")
-            except:
-                st.error("Esse email já existe") #email repetido feito
+            except ValueError:
+                st.error("Nome e/ou e-mail vazios") 
+            
+            except KeyError:
+                st.error("E-mail repetido ou e-mail admin") #email repetido feito
+
             time.sleep(2)
             st.rerun()
 
@@ -52,8 +56,12 @@ class ManterClienteUI:
                     View.cliente_atualizar(id, nome, email, fone, senha)
                     st.success("Cliente atualizado com sucesso")
 
-                except IndexError:
-                    st.error("Está vazio, nada há atualizar")
+                except ValueError:
+                    st.error("Nome e/ou e-mail vazios") 
+            
+                except KeyError:
+                    st.error("E-mail repetido ou e-mail admin") #email repetido feito
+
 
                 time.sleep(2)
                 st.rerun()

@@ -29,7 +29,7 @@ class ManterCategoriaUI:
             try:
                 View.categoria_inserir(descricao)
                 st.success("Categoria inserido com sucesso")
-            except: 
+            except : 
                 st.error("Descrição repetida") 
             time.sleep(2)
             st.rerun()
@@ -46,8 +46,39 @@ class ManterCategoriaUI:
                     View.categoria_atualizar(id, descricao)
                     st.success("Categoria atualizado com sucesso")
 
-                except IndexError:
-                    st.error("Descrição vazia")
+    def inserir():
+        descricao = st.text_input("Informe a descrição")
+        if st.button("Inserir"):
+            try:
+                View.categoria_inserir(descricao)
+                st.success("Categoria inserido com sucesso")
+            except ValueError:
+                st.error("Descrição vazia") 
+            
+            except KeyError:
+                st.error("Descrição repetida") 
+
+            time.sleep(2)
+            st.rerun()
+        
+    def atualizar():
+        categoria = View.categoria_listar()
+        if len(categoria) == 0: st.write("Nenhuma categoria cadastrado")
+        else:
+            op = st.selectbox("Atualização de Categorias", categoria)
+            descricao = st.text_input("Informe a nova descrição", op.get_descricao())
+            if st.button("Atualizar"):
+                try:
+                    id = op.get_id()
+                    View.categoria_atualizar(id, descricao)
+                    st.success("Categoria atualizado com sucesso")
+
+                except ValueError:
+                    st.error("Descrição vazia") 
+            
+                except KeyError:
+                    st.error("Descrição repetida") 
+
 
                 time.sleep(2)
                 st.rerun()

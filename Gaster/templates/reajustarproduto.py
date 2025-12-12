@@ -15,7 +15,10 @@ class ReajustarProdutoUI:
         else:
             preco = st.number_input("Informe o preço a ser reajustado")
             if st.button("Reajustar"):
-                View.reajustar_preco(preco)
-                st.success("Preço atualizado com sucesso")
+                try:
+                    View.reajustar_preco(preco)
+                    st.success("Preço atualizado com sucesso")
+                except ValueError:
+                    st.error("Percentual vazio")
                 time.sleep(2)
                 st.rerun()
