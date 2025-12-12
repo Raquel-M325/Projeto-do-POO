@@ -58,5 +58,15 @@
         "id": 5,
         "carrinho": false,
         "id_Cliente": 6
+    },
+    {
+        "id": 13,
+        "carrinho": false,
+        "id_Cliente": 6
+    },
+    {
+        "id": 14,
+        "carrinho": false,
+        "id_Cliente": 6
     }
 ]

@@ -166,5 +166,21 @@
         "id_Venda": 5,
         "id_Produto": 5,
         "produto": "Sonic Frontiers"
+    },
+    {
+        "id": 22,
+        "qtd": 1,
+        "preco": 104.96343715987803,
+        "id_Venda": 13,
+        "id_Produto": 5,
+        "produto": "Sonic Frontiers"
+    },
+    {
+        "id": 23,
+        "qtd": 5,
+        "preco": 9.5,
+        "id_Venda": 14,
+        "id_Produto": 10,
+        "produto": "Cocacola"
     }
 ]
