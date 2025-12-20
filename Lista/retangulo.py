@@ -1,3 +1,5 @@
+import math
+
 class Retangulo:
     def __init__(self, b: float, h: float):
         self.base = b
@@ -31,7 +33,7 @@ class Retangulo:
         return self.altura
 
     def calcarea(self):
-        self.area = (self.altura * self.base) / 2
+        self.area = self.altura * self.base
         return self.area
 
     def calcdiagonal(self):
