@@ -1,9 +1,5 @@
 [
     {
-        "id": 2,
-        "descricao": "Musicas"
-    },
-    {
         "id": 3,
         "descricao": "Acessorio"
     },
@@ -18,5 +14,9 @@
     {
         "id": 5,
         "descricao": "Plantas"
+    },
+    {
+        "id": 2,
+        "descricao": "Musicas"
     }
 ]

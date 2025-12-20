@@ -26,9 +26,9 @@ class View:
     def cliente_inserir(nome, email, fone, senha):
         if nome == "": raise  ValueError("Nome inválido")
         if email == "": raise ValueError("Email não registrado")
-        if email == "admin": raise ValueError("Admin já existe")
+        if email == "admin": raise KeyError("Admin já existe")
         for obj in ClienteDAO.listar():
-            if obj.get_email() == email: raise ValueError("Email já existente")
+            if obj.get_email() == email: raise KeyError("Email já existente")
         c = Cliente(0, nome, email, fone, senha)
         ClienteDAO.inserir(c) #instanciar DAO vai criar várias listas de clientes
     
@@ -38,9 +38,9 @@ class View:
     def cliente_atualizar(id, nome, email, fone, senha):
         if nome == "": raise  ValueError("Nome inválido")
         if email == "": raise ValueError("Email não registrado")
-        if email == "admin": raise ValueError("Admin já existe")
+        if email == "admin": raise KeyError("Admin já existe")
         for obj in ClienteDAO.listar():
-            if obj.get_email() == email: raise ValueError("Email já existente")
+            if obj.get_email() == email: raise KeyError("Email já existente")
         c = Cliente(id, nome, email, fone, senha)
         ClienteDAO.atualizar(c)
     
