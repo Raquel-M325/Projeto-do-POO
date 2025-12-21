@@ -2,6 +2,7 @@ import json
 from models.vendaitem import VendaItem, VendaItemDAO
 from models.cliente import ClienteDAO
 from datetime import datetime
+from models.dao import DAO
 class Venda:
     def __init__(self, id, carrinho, id_Cliente):
         self.set_id(id)
@@ -50,43 +51,7 @@ class Venda:
     def from_json(dic):
         return Venda(dic["id"], dic["carrinho"], dic["id_Cliente"])
 # datetime.strptime(dic["data"], "%d/%m/%Y") dic["total"] "data" : self.data.strftime("%d/%m/%Y") "total" : self.total
-class VendaDAO:
-    objetos = []
-    @classmethod
-    def inserir(cls, obj):
-        cls.abrir()
-        id = 0
-        for aux in cls.objetos:
-            if aux.id > id: id = aux.id
-        obj.id = id + 1
-        cls.objetos.append(obj)
-        cls.salvar()
-    @classmethod
-    def listar(cls):
-        cls.abrir()
-        return cls.objetos
-    
-    @classmethod
-    def lista_id(cls, id):
-        cls.abrir()
-        for obj in cls.objetos:
-            if obj.id == id: return obj
-        return None
-    
-    @classmethod
-    def atualizar(cls, obj):
-        aux = cls.lista_id(obj.id)
-        if aux != None:
-            cls.objetos.remove(aux)
-            cls.objetos.append(obj)
-            cls.salvar()
-    
-    @classmethod
-    def excluir(cls, obj):
-        aux = cls.lista_id(obj.id)
-        if aux != None:
-            cls.objetos.remove(aux)
-            cls.salvar()
+class VendaDAO(DAO):
     @classmethod
     def salvar(cls):
         with open("venda.json", mode = "w") as arquivo:

@@ -182,5 +182,13 @@
         "id_Venda": 14,
         "id_Produto": 10,
         "produto": "Cocacola"
+    },
+    {
+        "id": 24,
+        "qtd": 1,
+        "preco": 9.5,
+        "id_Venda": 12,
+        "id_Produto": 10,
+        "produto": "Cocacola"
     }
 ]

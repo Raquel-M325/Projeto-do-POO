@@ -1,4 +1,5 @@
 import json
+from models.dao import DAO
 class Cliente:
     def __init__(self, id, nome, email, fone, senha):
 
@@ -36,46 +37,7 @@ class Cliente:
     def from_json(dic):
         return Cliente(dic["id"], dic["nome"], dic["email"], dic["fone"], dic["senha"])
 
-class ClienteDAO:                       # classe estática -> não tem instância
-    objetos = []                           
-    @classmethod
-    def inserir(cls, obj):
-        cls.abrir()
-        id = 0
-        for aux in cls.objetos:
-            if aux.id > id: id = aux.id
-        obj.id = id + 1 
-        cls.objetos.append(obj)
-        cls.salvar()
-    @classmethod
-    def listar(cls):
-        cls.abrir()
-        return cls.objetos
-
-    @classmethod
-    def lista_id(cls, id):
-        cls.abrir()
-        for obj in cls.objetos:
-            if obj.id == id: return obj
-        return None
-
-    @classmethod
-    def atualizar(cls, obj):
-        #procurar o objeto que tem o id dado por obj.id
-        aux = cls.lista_id(obj.id)
-        if aux != None:
-            # aux.nome = obj.nome
-            # remove o objeto antigo aux e insere novo obj
-            cls.objetos.remove(aux)
-            cls.objetos.append(obj)
-            cls.salvar()
-    @classmethod
-    def excluir(cls, obj):
-        aux = cls.lista_id(obj.id)
-        if aux != None:
-            cls.objetos.remove(aux)
-            cls.salvar()
-        
+class ClienteDAO(DAO):                       # classe estática -> não tem instância
     @classmethod
     def salvar(cls):
         with open("clientes.json", mode="w") as arquivo:

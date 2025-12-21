@@ -66,7 +66,7 @@
         "id": 10,
         "descricao": "Cocacola",
         "preco": 9.5,
-        "estoque": 5.0,
+        "estoque": 4.0,
         "id_Categoria": 1.0
     }
 ]
