@@ -33,19 +33,24 @@ class Retangulo:
         return self.altura
 
     def calcarea(self):
-        self.area = self.altura * self.base
-        return self.area
+        return self.altura * self.base
 
     def calcdiagonal(self):
-        self.diagonal = 
+        return (self.altura**2 + self.base**2)**0.5
     
     def __str__(self):
-        return f"O valor da área do triângulo: {self.area}\n Agora do diagonal: {self.diagonal}"
+        return f"O valor da área do triângulo: {self.calcarea()}\n Agora do diagonal: {self.calcdiagonal()}"
 
 
 class Quadrado(Retangulo):
-    def __init__(self, b, h):
-        super().__init__(b, h)
+    def __init__(self, l):
+        super().__init__(l, l)
 
     def __str__(self):
         return super().__str__()
+
+x = Retangulo(30, 40)
+y = Quadrado(20)
+
+print(x)
+print(y)
