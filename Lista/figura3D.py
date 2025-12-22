@@ -10,7 +10,7 @@ class Esfera(Figura3D):
         self.setraio(raio)
 
     def setraio(self, raio):
-        if not isinstance(raio, float, int):
+        if not isinstance(raio, (float, int)):
             raise ValueError('Não é número, digite um válido')
 
         if raio < 0:
@@ -29,7 +29,7 @@ class Cubo(Figura3D):
         self.setlado(lado)
 
     def setlado(self, lado):
-        if not isinstance(lado, float, int):
+        if not isinstance(lado, (float, int)):
             raise ValueError('Não é número, digite um válido')
 
         if lado < 0:
