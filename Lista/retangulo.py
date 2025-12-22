@@ -40,7 +40,7 @@ class Retangulo:
         return (self.altura**2 + self.base**2)**0.5
     
     def __str__(self):
-        return f"O valor da área do triângulo: {self.calcarea()}\n Agora do diagonal: {self.calcdiagonal()}"
+        return f"O valor da área do retângulo: {self.calcarea()}\n Agora do diagonal: {self.calcdiagonal()}"
 
 
 class Quadrado(Retangulo):
@@ -54,11 +54,9 @@ class Quadrado(Retangulo):
     def getlado(self):
         return self.getbase()
 
-    def __str__(self):
-        return super().__str__()
 
-    #def __str__(self): se querer usar essa forma
-    #    return f"O valor da área do quadrado: {self.calcarea()}\n Agora do diagonal: {self.calcdiagonal()}"
+    def __str__(self):
+        return f"O valor da área do quadrado: {super().calcarea()}\n Agora do diagonal: {super().calcdiagonal()}"
 
 x = Retangulo(30, 40)
 y = Quadrado(20)
