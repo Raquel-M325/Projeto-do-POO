@@ -13,8 +13,8 @@ class Retangulo:
         if b < 0:
             raise ValueError('Número negativo!')
         
-        self.base = b
-        return self.base
+        self.setbase = b
+        return self.setbase
 
 
     def setaltura(self, h):
