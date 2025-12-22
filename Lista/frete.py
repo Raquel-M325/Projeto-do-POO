@@ -54,7 +54,9 @@ class FreteExpresso(Frete):
         return super().valorfrete()*2 + (0.01 * self.__seguro)
 
     def __str__(self):
-        return f"{super().__str__()}; Seguro = {self.__seguro}" 
+        return f"Peso: {super().getpeso()}; Distância = {super().getdistancia()}; Valor do Frete Expresso = {super().valorfrete()}; seguro = {self.getseguro()}"
+
+
 
 x = Frete(30, 20)
 
