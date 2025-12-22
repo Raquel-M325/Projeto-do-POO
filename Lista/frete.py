@@ -4,7 +4,7 @@ class Frete():
         self.setpeso(p)
 
     def setdistancia(self, d):
-        if not isinstance(d, (int, float)):
+        if not isinstance(d, int, float):
             raise ValueError("A distância deve ser um número")
         
         if d < 0:
@@ -13,7 +13,7 @@ class Frete():
         self._distancia = d
 
     def setpeso(self, p):
-        if not isinstance(p, (int, float)):
+        if not isinstance(p, int, float):
             raise ValueError("O peso deve ser um número")
         
         if p < 0:
@@ -39,7 +39,7 @@ class FreteExpresso(Frete):
         self.setseguro(s)
 
     def setseguro(self, s):
-        if not isinstance(s, (int, float)):
+        if not isinstance(s, int, float):
             raise ValueError("O seguro deve ser um número")
         
         if s < 0:
@@ -56,7 +56,7 @@ class FreteExpresso(Frete):
     def __str__(self):
         return f"{super().__str__()}; Seguro = {self.__seguro}" 
 
-x = Frete(30, 20)
+x = Frete(-30, 20)
 
 y = FreteExpresso(40, 10, 30)
 
