@@ -7,7 +7,7 @@ class Retangulo:
         self.diagonal = None
 
     def setbase(self, b):
-        if not isinstance(b, float):
+        if not isinstance(b, float, int):
             raise ValueError('Não é número, digite um válido')
 
         if b < 0:
@@ -18,7 +18,7 @@ class Retangulo:
 
 
     def setaltura(self, h):
-        if not isinstance(h, float):
+        if not isinstance(h, float, int):
             raise ValueError('Não é número, digite um válido')
 
         if h < 0:
