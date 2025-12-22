@@ -1,9 +1,10 @@
-import math
 
 class Retangulo:
     def __init__(self, b: float, h: float):
         self.base = b
         self.altura = h
+        self.area = None
+        self.diagonal = None
 
     def setbase(self, b):
         if not isinstance(b, float):
