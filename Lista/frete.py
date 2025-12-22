@@ -1,7 +1,7 @@
 class Frete():
     def __init__(self, d:float, p:float):
-        self._distancia = d
-        self._peso = p
+        self.setdistancia(d)
+        self.setpeso(p)
 
     def setdistancia(self, d):
         if not isinstance(d, (int, float)):
@@ -36,7 +36,7 @@ class Frete():
 class FreteExpresso(Frete):
     def __init__(self, d:float, p:float, s:float):
         super().__init__(d, p)
-        self.__seguro = s
+        self.setseguro(s)
 
     def setseguro(self, s):
         if not isinstance(s, (int, float)):
