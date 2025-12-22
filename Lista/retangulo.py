@@ -1,8 +1,8 @@
 
 class Retangulo:
     def __init__(self, b: float, h: float):
-        self.base = b
-        self.altura = h
+        self.setbase(b)
+        self.setaltura(h)
         self.area = None
         self.diagonal = None
 

@@ -7,7 +7,7 @@ class Figura3D(ABC):
 
 class Esfera(Figura3D):
     def __init__(self, raio: float):
-        self.__raio = raio
+        self.setraio(raio)
 
     def setraio(self, raio):
         if not isinstance(raio, float, int):
@@ -26,7 +26,7 @@ class Esfera(Figura3D):
 
 class Cubo(Figura3D):
     def __init__(self, lado):
-        self.__lado = lado
+        self.setlado(lado)
 
     def setlado(self, lado):
         if not isinstance(lado, float, int):
