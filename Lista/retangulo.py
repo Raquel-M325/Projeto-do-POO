@@ -57,6 +57,9 @@ class Quadrado(Retangulo):
     def __str__(self):
         return super().__str__()
 
+    #def __str__(self): se querer usar essa forma
+    #    return f"O valor da área do quadrado: {self.calcarea()}\n Agora do diagonal: {self.calcdiagonal()}"
+
 x = Retangulo(30, 40)
 y = Quadrado(20)
 

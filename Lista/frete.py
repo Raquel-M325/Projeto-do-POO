@@ -56,6 +56,9 @@ class FreteExpresso(Frete):
     def __str__(self):
         return f"{super().__str__()}; Seguro = {self.__seguro}" 
 
+    # def __str__(self):
+    #     return f"Peso: {self._peso}; Distância = {self._distancia}; Valor do Frete Expresso = {self.valorfrete()}; Seguro = {self.__seguro}"
+
 x = Frete(30, 20)
 
 y = FreteExpresso(40, 10, 30)
