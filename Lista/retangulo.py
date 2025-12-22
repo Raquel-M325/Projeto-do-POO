@@ -47,6 +47,13 @@ class Quadrado(Retangulo):
     def __init__(self, l):
         super().__init__(l, l)
 
+    def setlado(self, l):
+        self.setbase(l)
+        self.setaltura(l)
+
+    def getlado(self):
+        return self.getbase()
+
     def __str__(self):
         return super().__str__()
 
