@@ -65,6 +65,7 @@ class UI:
     def cadastrar():
         UI.cliente_inserir()
 
+    @staticmethod
     def esqueceusenha_inserir():
         print("====== NOVA SENHA =======")
         try:
