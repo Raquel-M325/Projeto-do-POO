@@ -61,6 +61,8 @@ class UI:
     def cadastrar():
         UI.cliente_inserir()
 
+    def esqueceusenha_inserir():
+
 
     @staticmethod  
     def menu_admin():
@@ -238,6 +240,7 @@ class UI:
         View.atualizar_estoque(produto, quantos, venda, preco) # Verifica se pode inserir antes de inserir
         # Coloquei o vendaitem_inserir dentro de atualizar estoque para verificação
         
+    def produtos_maisvendidos():
 
     @classmethod
     def visualizar_carrinho(cls):
@@ -265,6 +268,9 @@ class UI:
         pagar = int(input("Escolha uma opção de pagamento: "))
         forma = View.opcao_pagar(pagar)
         return forma  
+
+    def opcao_entrega():
+        
 
     @classmethod
     def listar_minhas_compras(cls):
