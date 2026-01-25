@@ -35,6 +35,8 @@ class UI:
         print('1 - Entrar na conta')
         print('2 - Cadastrar uma nova conta')
         print('3 - Sair')
+        print('4 - Esqueceu a senha?')
+
 
         opcao = int(input('Escolha uma opção: '))
         if opcao == 1:
@@ -43,6 +45,8 @@ class UI:
             UI.cadastrar()
         elif opcao == 3:
             print("Saindo...")
+        elif opcao == 4:
+            UI.esqueceusenha_inserir()
         else:
             print('Opção inválida, tente novamente')
 
@@ -62,6 +66,11 @@ class UI:
         UI.cliente_inserir()
 
     def esqueceusenha_inserir():
+        print("====== NOVA SENHA =======")
+        email = input("Seu email: ")
+        novasenha = input("Nova senha: ")
+        confirmar = input("Confirmar a nova senha: ") #precisa avaliar se deve deixar isso
+        return UI.entrar() #se criou, vai tentar entrar novamente com a nova senha, mas a senha tem que ser ATUALIZADA
 
 
     @staticmethod  
