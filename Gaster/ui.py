@@ -67,10 +67,14 @@ class UI:
 
     def esqueceusenha_inserir():
         print("====== NOVA SENHA =======")
-        email = input("Seu email: ")
-        novasenha = input("Nova senha: ")
-        confirmar = input("Confirmar a nova senha: ") #precisa avaliar se deve deixar isso
-        return UI.entrar() #se criou, vai tentar entrar novamente com a nova senha, mas a senha tem que ser ATUALIZADA
+        try:
+            email = input("Seu email: ")
+            novasenha = input("Nova senha: ")
+            confirmar = input("Confirmar a nova senha: ") #precisa avaliar se deve deixar isso
+            return UI.entrar() #se criou, vai tentar entrar novamente com a nova senha, mas a senha tem que ser ATUALIZADA
+        except:
+            raise ValueError("Dados incorretos, corrija o email!")
+            
 
 
     @staticmethod  
