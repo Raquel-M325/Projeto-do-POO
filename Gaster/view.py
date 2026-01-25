@@ -238,7 +238,7 @@ class View:
         return View.opcao_entrega()
 
     def finalizacao():
-        return 'Espero que tenha gostado!'
+        return 'Espero que tenha gostado! Você receberá seu pedido!'
 
     def local():
         print("========= ENTREGA LOCAL ESCOLHIDA =========")
