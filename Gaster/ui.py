@@ -269,8 +269,14 @@ class UI:
         forma = View.opcao_pagar(pagar)
         return forma  
 
+    @staticmethod
     def opcao_entrega():
-        
+        print("1-Retirada no local")
+        print("2-Entrega em domicílio")
+        print()
+        entrega = int(input("Escolha a opção de entrega: "))
+        escolha = View.opcao_entrega(entrega)
+        return escolha
 
     @classmethod
     def listar_minhas_compras(cls):

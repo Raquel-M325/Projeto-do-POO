@@ -202,6 +202,11 @@ class View:
         if pagar == 4: return None
         return c
 
+    def opcao_entrega(entrega):
+        if entrega == 1: return View.local()
+        if entrega == 2: return View.domicilio()
+        return c #só segui o padrão, mas pode estar errado
+
     def pagamento_credito():
         print('========================  CRÉDITO  ==========================\n')
 
@@ -222,7 +227,7 @@ class View:
         banco = input('Digite qual é o banco: ')
         tipo = input('Que tipo de conta (corrente ou poupança): ')
 
-        return View.finalizacao()
+        return View.opcao_entrega()
 
     def pagamento_pix():
         print('=====================  PIX  ============================\n')
@@ -230,10 +235,26 @@ class View:
         nome = input('Nome titular completo: ')
         chave = input('Digite sua chave: ')
 
-        return View.finalizacao()
+        return View.opcao_entrega()
 
     def finalizacao():
         return 'Espero que tenha gostado!'
+
+    def local():
+        print("========= ENTREGA LOCAL ESCOLHIDA =========")
+        nome =  input("Nome Completo: ")
+        telefone = input("Telefone: ")
+        data = input("Data para buscar: ") #precisa avaliar se é ideal ter esse
+
+        return View.finalizacao()
+
+    def domicilio():
+        print("========= ENTREGA DOMICILIO ESCOLHIDA =========")
+        nome = input("Nome Completo: ")
+        telefone = input("Telefone: ")
+        endereco = input("Endereço do CEP: ") #podemos detalhar mais o endereço, mas quis simplificar
+
+        return View.finalizacao()
 
 
     def listar_minhas_compras(vendas):
