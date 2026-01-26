@@ -226,7 +226,8 @@ class View:
     def opcao_entrega(entrega):
         if entrega == 1: return View.local()
         if entrega == 2: return View.domicilio()
-        return c #só segui o padrão, mas pode estar errado
+        else:
+            return #só segui o padrão, mas pode estar errado
 
     def pagamento_credito():
         print('========================  CRÉDITO  ==========================\n')
