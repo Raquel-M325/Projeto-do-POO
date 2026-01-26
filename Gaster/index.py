@@ -10,6 +10,7 @@ from templates.inserircarrinho import InserirCarrinhoUI
 from templates.visualizarcarrinho import VisualizarCarrinhoUI
 from templates.listarpedidosrealizados import ListarPedidosRealizadosUI
 from templates.listarvendas import ListarVendasUI
+from templates.reclamacoes import ReclameAquiUI
 
 from view import View
 import streamlit as st
@@ -35,12 +36,14 @@ class IndexUI:
             "Inserir produto no carrinho",
             "Visualizar carrinho",
             "Comprar carrinho",
-            "Listar minhas compras"])
+            "Listar minhas compras",
+            "Minhas reclamações"])
         if op == "Listar produtos": ListarProdutoUI.main()
         if op == "Inserir produto no carrinho": InserirCarrinhoUI.main()
         if op == "Visualizar carrinho":  VisualizarCarrinhoUI.main()
         if op == "Comprar carrinho": ConfirmarCarrinhoUI.main()
-        if op == "Listar minhas compras":  ListarPedidosRealizadosUI.main()   
+        if op == "Listar minhas compras":  ListarPedidosRealizadosUI.main() 
+        if op == "Minhas reclamações": ReclameAquiUI.main()
 
     def menu_visitante():
         op = st.sidebar.selectbox("Menu", [

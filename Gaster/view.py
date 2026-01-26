@@ -3,6 +3,7 @@ from models.cliente import Cliente, ClienteDAO
 from models.produto import Produto, ProdutoDAO
 from models.venda import Venda, VendaDAO
 from models.vendaitem import VendaItem, VendaItemDAO
+from models.reclameaqui import Reclame, ReclameDAO
 import json
 import streamlit as st
 from datetime import datetime
@@ -177,6 +178,26 @@ class View:
     def vendaitem_excluir(id):
         c = VendaItem(id)
         VendaItemDAO.excluir(c)
+
+
+    # Reclameaqui
+    def reclameaqui_inserir(reclamacao, idCliente):
+        if reclamacao == "": raise ValueError("Digite uma reclamação")
+        c = Reclame(0, reclamacao, idCliente)
+        ReclameDAO.inserir(c)
+ 
+    def reclameaqui_listar():
+        return ReclameDAO.listar()
+
+    def reclameaqui_atualizar(id, reclamacao, idCliente):
+        if reclamacao == "": raise ValueError("Digite uma reclamação")
+        c = Reclame(id, reclamacao, idCliente)
+        ReclameDAO.atualizar(c)
+
+    def reclameaqui_excluir(id):
+        c = Reclame(id)
+        ReclameDAO.excluir(id)
+
 
 
     # Funções do Cliente

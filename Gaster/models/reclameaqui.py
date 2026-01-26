@@ -5,7 +5,7 @@ class Reclame:
     def __init__(self, id, reclamacao, idCliente):
         self.set_id(id)
         self.set_reclamacao(reclamacao)
-        self.idCliente(idCliente)
+        self.set_idCliente(idCliente)
 
     def set_id(self, id):
         self.id = id
