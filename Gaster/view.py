@@ -71,7 +71,7 @@ class View:
     def categoria_excluir(id):
         ids = []
         for obj in CategoriaDAO.listar():
-            if obj.get_descricao == descricao: raise ValueError("Esse produto já exite")
+            if obj.get_descricao() == descricao: raise ValueError("Esse produto já exite")
         c = Categoria(id, "")
         CategoriaDAO.excluir(c)
 
@@ -197,7 +197,7 @@ class View:
 
     def reclameaqui_excluir(id):
         c = Reclame(id)
-        ReclameDAO.excluir(id)
+        ReclameDAO.excluir(c)
 
 
 
@@ -289,22 +289,33 @@ class View:
 
     
     def favoritos_inserir(idCliente, idProduto):
-        if favoritos == "": raise ValueError("Adicione um favorito!")
-            c = Favorito(0, idCliente, idProduto)
-            FavoritoDAO.inserir(c)
+        a = 0
+        for obj in FavoritoDAO.listar():
+            if obj.get_idProduto() == idProduto:
+                a = 1
+                break
+        if a == 1: raise KeyError("Você já favoritou esse produto")   
+        if idProduto == "": raise ValueError("Adicione um favorito!")
+        for obj in ProdutoDAO.listar():
+            if obj.get_id() == idProduto:
+                idProduto = obj.get_id_Categoria()
+        c = Favorito(0, idCliente, idProduto)
+        FavoritoDAO.inserir(c)
 
     def favoritos_listar():
         return FavoritoDAO.listar()
 
     
-    def favoritos_atualizar(id, idCliente, id_Produto):
-        if favoritos == "": raise ValueError("Adicione um favorito!")
-            c = Favorito(id, id_Produto, idCliente)
-            FavoritoDAO.atualizar(c)  
+    def favoritos_atualizar(id, idCliente, idProduto):
+        if idProduto == "": raise ValueError("Adicione um favorito!")
+        c = Favorito(id, idCliente, idProduto)
+        FavoritoDAO.atualizar(c)  
 
     def favoritos_excluir(id): #desfavoritar
-        c = Favorito(id)
-        FavoritoDAO.excluir(id)
+        if id not in FavoritoDAO.listar():
+            raise ValueError()
+        c = Favorito(id, 0, 0)
+        FavoritoDAO.excluir(c)
 
 
     #ADM

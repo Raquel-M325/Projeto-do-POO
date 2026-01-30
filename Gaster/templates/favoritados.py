@@ -8,21 +8,27 @@ class FavoritadosUI:
     def main():
         st.header("Favoritos")
         tab1, tab2 = st.tabs(["Favoritagem", "Listar Favoritos"])
-        with tab1:ReclameAquiUI.favoritar()
-        with tab2:ReclameAquiUI.favoritos()
+        with tab1:FavoritadosUI.favoritar()
+        with tab2:FavoritadosUI.favoritos()
 
 
     def favoritar():
-        favorito = st.number_input("Digite o id do produto que gosta")
-        if button("Favoritar"):
+        FavoritadosUI.listar()
+        favorito = st.number_input("Digite o id do produto que gosta",value=0, step = 0)
+        if st.button("Favoritar"):
             try:
                 View.favoritos_inserir(st.session_state["cliente_id"], favorito)
-                st.success("Produto inserido no carrinho com sucesso")
+                st.success("Novo produto favoritado")
                 time.sleep(2)
                 st.rerun()
-            except:
+            except ValueError:
                 st.error("Erro de favoritagem")
-                st.rerun
+                time.sleep(2)
+                st.rerun()
+            except KeyError:
+                st.error("Você já favoritou esse produto")
+                time.sleep(2)
+                st.rerun()            
 
 
     def listar():
@@ -41,8 +47,20 @@ class FavoritadosUI:
         else:
             list_dic = []
             for obj in favoritos:
-                if obj.get_idCliente() = st.session_state["cliente_id"]:
+                if obj.get_idCliente() == st.session_state["cliente_id"]:
                     list_dic.append(obj.to_json())
             df = pd.DataFrame(list_dic)
-            st.dataframe(df, hide_index=True, column_order=["idProduto"])
+            st.dataframe(df, hide_index=True, column_order=["id", "produto", "idCliente"])
+
+        #desfavorito = st.number_input("Digite o id do produto que queira defavoritar",value=0, step = 0)
+        #if st.button("Desfavoritar"):
+            #try:
+                #View.favoritos_excluir(desfavorito)
+                #st.success("Produto desfavoritado")
+                #time.sleep(2)
+                #st.rerun()
+            #except:
+                #st.error("Erro ao desfavoritar")
+                #time.sleep(2)
+                #st.rerun()
 

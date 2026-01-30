@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "idProduto": 1,
+        "idCliente": 2,
+        "produto": "Jornada"
+    },
+    {
+        "id": 3,
+        "idProduto": 3,
+        "idCliente": 2,
+        "produto": "\u00d3culos"
+    }
+]

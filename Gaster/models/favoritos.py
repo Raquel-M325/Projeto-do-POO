@@ -1,7 +1,7 @@
 import json
 from models.dao import DAO
 from models.cliente import Cliente
-from models.produto import Produto
+from models.produto import ProdutoDAO
 
 class Favorito:
     def __init__(self, id, idCliente, idProduto):
@@ -22,11 +22,15 @@ class Favorito:
     def get_idProduto(self): return self.idProduto
     def get_idCliente(self): return self.idCliente
 
+    def get_nome_produto(self):
+        for obj in ProdutoDAO.listar():
+            if obj.get_id() == self.get_idProduto(): return obj.get_descricao()
+
     def __str__(self):
         return f'Id do Favorito: {self.id} - Produto: {self.idProduto} - Id do Cliente: {self.idCliente}'
 
     def to_json(self):
-        return { "id" : self.id, "idProduto" : self.idProduto, "idCliente" : self.idCliente }
+        return { "id" : self.id, "idProduto" : self.idProduto, "idCliente" : self.idCliente, "produto" : self.get_nome_produto()}
     def from_json(dic):
         return Favorito(dic["id"], dic["idProduto"], dic["idCliente"])
 
