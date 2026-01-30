@@ -254,8 +254,6 @@ class UI:
         View.atualizar_estoque(produto, quantos, venda, preco) # Verifica se pode inserir antes de inserir
         # Coloquei o vendaitem_inserir dentro de atualizar estoque para verificação
         
-    def produtos_maisvendidos():
-
     @classmethod
     def visualizar_carrinho(cls):
         venda = View.venda_existente(cls.__usuario["id"])

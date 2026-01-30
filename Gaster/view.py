@@ -4,6 +4,7 @@ from models.produto import Produto, ProdutoDAO
 from models.venda import Venda, VendaDAO
 from models.vendaitem import VendaItem, VendaItemDAO
 from models.reclameaqui import Reclame, ReclameDAO
+from models.favoritos import Favorito, FavoritoDAO
 import json
 import streamlit as st
 from datetime import datetime
@@ -286,6 +287,21 @@ class View:
                 if obj.get_idVenda() == prints: c.append(obj)
         return c
 
+    
+    def favoritos_listar():
+        return 
+
+    
+    def favoritos_inserir():
+
+    
+    def favoritos_atualizar():
+
+
+    def favoritos_excluir(): #desfavoritar
+
+    
+
     #ADM
 
     def chec_vendas():
@@ -316,3 +332,5 @@ class View:
         for obj in ProdutoDAO.listar():
             if obj.get_id() == produto and obj.get_estoque() <= 0:
                 return 'O produto está em falta!'
+
+
