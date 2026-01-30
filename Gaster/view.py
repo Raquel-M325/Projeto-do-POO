@@ -288,16 +288,16 @@ class View:
         return c
 
     
-    def favoritos_inserir(favoritos, idCliente, idProduto):
+    def favoritos_inserir(idCliente, idProduto):
         if favoritos == "": raise ValueError("Adicione um favorito!")
-            c = Favorito(0, favoritos, idCliente, idProduto)
+            c = Favorito(0, idCliente, idProduto)
             FavoritoDAO.inserir(c)
 
     def favoritos_listar():
         return FavoritoDAO.listar()
 
     
-    def favoritos_atualizar(id, idCliente, id_Produto, favoritos):
+    def favoritos_atualizar(id, idCliente, id_Produto):
         if favoritos == "": raise ValueError("Adicione um favorito!")
             c = Favorito(id, id_Produto, idCliente)
             FavoritoDAO.atualizar(c)  
