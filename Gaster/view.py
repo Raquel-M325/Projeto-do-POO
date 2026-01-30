@@ -288,19 +288,24 @@ class View:
         return c
 
     
+    def favoritos_inserir(favoritos, idCliente, idProduto):
+        if favoritos == "": raise ValueError("Adicione um favorito!")
+            c = Favorito(0, favoritos, idCliente, idProduto)
+            FavoritoDAO.inserir(c)
+
     def favoritos_listar():
-        return 
+        return FavoritoDAO.listar()
 
     
-    def favoritos_inserir():
+    def favoritos_atualizar(id, idCliente, id_Produto, favoritos):
+        if favoritos == "": raise ValueError("Adicione um favorito!")
+            c = Favorito(id, id_Produto, idCliente)
+            FavoritoDAO.atualizar(c)  
 
-    
-    def favoritos_atualizar():
+    def favoritos_excluir(id): #desfavoritar
+        c = Favorito(id)
+        FavoritoDAO.excluir(id)
 
-
-    def favoritos_excluir(): #desfavoritar
-
-    
 
     #ADM
 
