@@ -22,7 +22,7 @@ class EquipeUI:
             list_dic = []
             for obj in funcionario: list_dic.append(obj.to_json())
             df = pd.DataFrame(list_dic)
-            st.dataframe(df, hide_index=True, column_order=["id", "nome", "funcao"])
+            st.dataframe(df, hide_index=True, column_order=["id", "funcionario", "funcao"])
 
     def equiparar():
         EquipeUI.cadastrar()
