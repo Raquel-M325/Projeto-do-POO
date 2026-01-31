@@ -12,6 +12,7 @@ from templates.listarpedidosrealizados import ListarPedidosRealizadosUI
 from templates.listarvendas import ListarVendasUI
 from templates.favoritados import FavoritadosUI
 from templates.reclamacoes import ReclameAquiUI
+from templates.equipe import EquipeUI
 
 from view import View
 import streamlit as st
