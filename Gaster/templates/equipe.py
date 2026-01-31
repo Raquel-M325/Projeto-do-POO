@@ -57,11 +57,7 @@ class EquipeUI:
         retirar = st.number_input("Digite o id da equipe para retirar o funcionário", value=0, step = 0)
         if st.button("retirado"):
             try:
-                retirado = None
-                for obj in View.equipe_listar():
-                    if obj.get_idCliente() == retirar:
-                        retirado = obj.get_id()                
-                View.equipe_excluir(retirado)
+                View.equipe_excluir(retirar)
                 st.success("Funcionário retirado")
                 time.sleep(2)
                 st.rerun()
