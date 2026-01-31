@@ -55,11 +55,16 @@ class FavoritadosUI:
         desfavorito = st.number_input("Digite o id do produto que queira defavoritar",value=0, step = 0)
         if st.button("Desfavoritar"):
             try:
-                View.favoritos_excluir(desfavorito)
+                desfavoritado = None
+                for obj in View.favoritos_listar():
+                    if obj.get_idCliente() == st.session_state["cliente_id"]:
+                        if obj.get_idProduto() == desfavorito:
+                            desfavoritado = obj.get_id()                
+                View.favoritos_excluir(desfavoritado)
                 st.success("Produto desfavoritado")
                 time.sleep(2)
                 st.rerun()
-            except:
+            except ValueError:
                 st.error("Erro ao desfavoritar")
                 time.sleep(2)
                 st.rerun()

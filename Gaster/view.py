@@ -311,8 +311,7 @@ class View:
         FavoritoDAO.atualizar(c)  
 
     def favoritos_excluir(id): #desfavoritar
-        if id not in FavoritoDAO.listar():
-            raise ValueError()
+        if id == None: raise ValueError()
         c = Favorito(id, 0, 0)
         FavoritoDAO.excluir(c)
 
