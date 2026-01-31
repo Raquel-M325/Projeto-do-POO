@@ -6,8 +6,8 @@ from models.produto import ProdutoDAO
 class Favorito:
     def __init__(self, id, idCliente, idProduto):
         self.set_id(id)
-        self.set_idProduto(idProduto)
         self.set_idCliente(idCliente)
+        self.set_idProduto(idProduto)
 
     def set_id(self, id):
         self.id = id
@@ -27,12 +27,12 @@ class Favorito:
             if obj.get_id() == self.get_idProduto(): return obj.get_descricao()
 
     def __str__(self):
-        return f'Id do Favorito: {self.id} - Produto: {self.idProduto} - Id do Cliente: {self.idCliente}'
+        return f'Id do Favorito: {self.id}  - Id do Cliente: {self.idCliente} - Produto: {self.idProduto}'
 
     def to_json(self):
-        return { "id" : self.id, "idProduto" : self.idProduto, "idCliente" : self.idCliente, "produto" : self.get_nome_produto()}
+        return { "id" : self.id,  "idCliente" : self.idCliente, "idProduto" : self.idProduto,"produto" : self.get_nome_produto()}
     def from_json(dic):
-        return Favorito(dic["id"], dic["idProduto"], dic["idCliente"])
+        return Favorito(dic["id"], dic["idCliente"], dic["idProduto"])
 
 
 class FavoritoDAO(DAO):

@@ -291,14 +291,12 @@ class View:
     def favoritos_inserir(idCliente, idProduto):
         a = 0
         for obj in FavoritoDAO.listar():
-            if obj.get_idProduto() == idProduto:
-                a = 1
-                break
+            if obj.get_idCliente() == idCliente:
+                if obj.get_idProduto() == idProduto:
+                    a = 1
+                    break
         if a == 1: raise KeyError("Você já favoritou esse produto")   
         if idProduto == "": raise ValueError("Adicione um favorito!")
-        for obj in ProdutoDAO.listar():
-            if obj.get_id() == idProduto:
-                idProduto = obj.get_id_Categoria()
         c = Favorito(0, idCliente, idProduto)
         FavoritoDAO.inserir(c)
 

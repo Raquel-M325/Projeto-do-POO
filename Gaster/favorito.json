@@ -1,14 +1,20 @@
 [
     {
         "id": 1,
-        "idProduto": 1,
         "idCliente": 2,
+        "idProduto": 1,
         "produto": "Jornada"
     },
     {
-        "id": 3,
-        "idProduto": 3,
+        "id": 2,
         "idCliente": 2,
+        "idProduto": 2,
+        "produto": "Smooth criminal"
+    },
+    {
+        "id": 3,
+        "idCliente": 2,
+        "idProduto": 3,
         "produto": "\u00d3culos"
     }
 ]
