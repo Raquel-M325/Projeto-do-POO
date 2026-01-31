@@ -359,7 +359,7 @@ class View:
         EquipeDAO.atualizar(c)  
 
     def equipe_excluir(id): 
-        c = Equipe(id)
+        c = Equipe(id, "", "")
         EquipeDAO.excluir(c)
 
 
