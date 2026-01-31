@@ -347,15 +347,15 @@ class View:
             if obj.get_id() == produto and obj.get_estoque() <= 0:
                 return 'O produto está em falta!'
 
-    def equipe_inserir(nome):
-        c = Equipe(0, nome)
+    def equipe_inserir(nome, funcao):
+        c = Equipe(0, nome, funcao)
         EquipeDAO.inserir(c)
 
     def equipe_listar():
         return EquipeDAO.listar()
 
-    def equipe_atualizar(id, nome):
-        c = Equipe(id, nome)
+    def equipe_atualizar(id, nome, funcao):
+        c = Equipe(id, nome, funcao)
         EquipeDAO.atualizar(c)  
 
     def equipe_excluir(id): 
