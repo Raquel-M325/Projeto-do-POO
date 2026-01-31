@@ -33,7 +33,7 @@ class EquipeDAO(DAO):
     @classmethod
     def salvar(cls):
         with open("equipe.json", mode = "w") as arquivo:
-            json.dump(cls.objetos, arquivo, default = equipe.to_json, indent = 4)
+            json.dump(cls.objetos, arquivo, default = Equipe.to_json, indent = 4)
     
     @classmethod
     def abrir(cls):
@@ -42,7 +42,7 @@ class EquipeDAO(DAO):
             with open("equipe.json", mode = "r") as arquivo:
                 list_dic = json.load(arquivo)
                 for dic in list_dic:
-                    c = equipe.from_json(dic)
+                    c = Equipe.from_json(dic)
                     cls.objetos.append(c)
         except:
             pass
