@@ -50,17 +50,17 @@ class FavoritadosUI:
                 if obj.get_idCliente() == st.session_state["cliente_id"]:
                     list_dic.append(obj.to_json())
             df = pd.DataFrame(list_dic)
-            st.dataframe(df, hide_index=True, column_order=["id", "produto", "idCliente"])
+            st.dataframe(df, hide_index=True, column_order=["idProduto", "produto", "idCliente"])
 
-        #desfavorito = st.number_input("Digite o id do produto que queira defavoritar",value=0, step = 0)
-        #if st.button("Desfavoritar"):
-            #try:
-                #View.favoritos_excluir(desfavorito)
-                #st.success("Produto desfavoritado")
-                #time.sleep(2)
-                #st.rerun()
-            #except:
-                #st.error("Erro ao desfavoritar")
-                #time.sleep(2)
-                #st.rerun()
+        desfavorito = st.number_input("Digite o id do produto que queira defavoritar",value=0, step = 0)
+        if st.button("Desfavoritar"):
+            try:
+                View.favoritos_excluir(desfavorito)
+                st.success("Produto desfavoritado")
+                time.sleep(2)
+                st.rerun()
+            except:
+                st.error("Erro ao desfavoritar")
+                time.sleep(2)
+                st.rerun()
 
