@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "funcionario": "Toby Fox",
+        "funcao": "Programador Master"
+    },
+    {
+        "id": 2,
+        "funcionario": "Core",
+        "funcao": "Garoto do Programa"
+    },
+    {
+        "id": 3,
+        "funcionario": "Gaster",
+        "funcao": "so quero atrapalhar"
+    }
+]
