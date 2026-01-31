@@ -33,7 +33,7 @@ class IndexUI:
         if op == "Cadastro de Produtos": ManterProdutoUI.main()
         if op == "Reajustar Produtos": ReajustarProdutoUI.main()
         if op == "Listar Vendas": ListarVendasUI.main()
-        if op == "Minha Equipe": EquipeUI.main()
+        if op == "Listar a Equipe": EquipeUI.main()
 
 
     def menu_cliente():
