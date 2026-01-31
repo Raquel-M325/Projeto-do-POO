@@ -26,7 +26,7 @@ class Equipe:
     def to_json(self):
         return { "id" : self.id, "funcionario" : self.nome, "funcao" : self.funcao}
     def from_json(dic):
-        return equipe(dic["id"], dic["funcionario"], dic["funcao"])
+        return Equipe(dic["id"], dic["funcionario"], dic["funcao"])
 
 
 class EquipeDAO(DAO):
