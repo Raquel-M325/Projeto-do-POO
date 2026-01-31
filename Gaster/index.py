@@ -24,13 +24,17 @@ class IndexUI:
             "Cadastro de Categorias",
             "Cadastro de Clientes",
             "Cadastro de Produtos",
-            "Reajustar Produtos", "Listar Vendas"])
+            "Reajustar Produtos", 
+            "Listar Vendas",
+            "Listar a Equipe"])
         #st.session_state["opcao"].append(op)
         if op == "Cadastro de Categorias": ManterCategoriaUI.main()
         if op == "Cadastro de Clientes": ManterClienteUI.main()
         if op == "Cadastro de Produtos": ManterProdutoUI.main()
         if op == "Reajustar Produtos": ReajustarProdutoUI.main()
         if op == "Listar Vendas": ListarVendasUI.main()
+        if op == "Minha Equipe": EquipeUI.main()
+
 
     def menu_cliente():
         op = st.sidebar.selectbox("Menu", [
