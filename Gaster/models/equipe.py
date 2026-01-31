@@ -24,7 +24,7 @@ class Equipe:
         return equipe(dic["id"], dic["funcionario"],)
 
 
-class equipeDAO(DAO):
+class EquipeDAO(DAO):
     @classmethod
     def salvar(cls):
         with open("equipe.json", mode = "w") as arquivo:

@@ -5,6 +5,7 @@ from models.venda import Venda, VendaDAO
 from models.vendaitem import VendaItem, VendaItemDAO
 from models.reclameaqui import Reclame, ReclameDAO
 from models.favoritos import Favorito, FavoritoDAO
+from models.equipe import Equipe, EquipeDAO
 import json
 import streamlit as st
 from datetime import datetime
@@ -346,5 +347,20 @@ class View:
         for obj in ProdutoDAO.listar():
             if obj.get_id() == produto and obj.get_estoque() <= 0:
                 return 'O produto está em falta!'
+
+    def equipe_inserir(nome):
+        c = Equipe(0, nome)
+        EquipeDAO.inserir(c)
+
+    def equipe_listar():
+        return EquipeDAO.listar()
+
+    def equipe_atualizar(id, nome):
+        c = Equipe(id, nome)
+        EquipeDAO.atualizar(c)  
+
+    def equipe_excluir(id): 
+        c = Equipe(id)
+        EquipeDAO.excluir(c)
 
 
