@@ -54,14 +54,13 @@ class EquipeUI:
             df = pd.DataFrame(list_dic)
             st.dataframe(df, hide_index=True, column_order=["id", "nome"])
 
-        retirado = st.number_input("Digite o id da equipe para retirar o funcionário", value=0, step = 0)
+        retirar = st.number_input("Digite o id da equipe para retirar o funcionário", value=0, step = 0)
         if st.button("retirado"):
             try:
                 retirado = None
                 for obj in View.equipe_listar():
-                    if obj.get_idCliente() == st.session_state["cliente_id"]:
-                        if obj.get_idProduto() == desfavorito:
-                            retirado = obj.get_id()                
+                    if obj.get_idCliente() == retirar:
+                        retirado = obj.get_id()                
                 View.equipe_excluir(retirado)
                 st.success("Funcionário retirado")
                 time.sleep(2)
