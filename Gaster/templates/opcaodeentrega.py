@@ -25,3 +25,4 @@ class OpcaodeEntregaUI:
         nome = number_input("Nome Completo: ")
         telefone = number_input("Telefone: ")
         data = number_input("Data para buscar: ") #precisa avaliar se é ideal ter esse
+        return "Local"
