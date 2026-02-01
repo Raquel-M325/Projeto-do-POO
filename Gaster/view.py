@@ -6,6 +6,7 @@ from models.vendaitem import VendaItem, VendaItemDAO
 from models.reclameaqui import Reclame, ReclameDAO
 from models.favoritos import Favorito, FavoritoDAO
 from models.equipe import Equipe, EquipeDAO
+from models.entrega import Entrega, EntregaDAO
 import json
 import streamlit as st
 from datetime import datetime
@@ -362,4 +363,19 @@ class View:
         c = Equipe(id, "", "")
         EquipeDAO.excluir(c)
 
+    # Entrega
 
+    def entrega_inserir(idCliente,descricao):
+        c = Entrega(0, idCliente, descricao)
+        EntregaDAO.inserir(c)
+    
+    def entrega_listar():
+        return EntregaDAO.listar()
+
+    def entrega_atualizar(id, idCliente, descricao):
+        c = Entrega(id, idCliente, descricao)
+        EntregaDAO.atualizar(c)
+
+    def Entrar_excluir(id):
+        c = Entrega(id, 0, "")
+        EntregaDAO.excluir(c)

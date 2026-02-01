@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "descricao_entrega": 2,
+        "idCliente": "Domic\u00edlio"
+    },
+    {
+        "id": 2,
+        "descricao_entrega": "Local",
+        "idCliente": 2
+    }
+]

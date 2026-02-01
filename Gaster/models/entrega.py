@@ -28,14 +28,14 @@ class Entrega:
     def to_json(self):
         return { "id" : self.id, "descricao_entrega" : self.descricao_entrega, "idCliente" : self.idCliente }
     def from_json(dic):
-        return entrega(dic["id"], dic["descricao_entrega"], dic["idCliente"])
+        return Entrega(dic["id"], dic["descricao_entrega"], dic["idCliente"])
 
 
 class EntregaDAO(DAO):
     @classmethod
     def salvar(cls):
         with open("entrega.json", mode = "w") as arquivo:
-            json.dump(cls.objetos, arquivo, default = entrega.to_json, indent = 4)
+            json.dump(cls.objetos, arquivo, default = Entrega.to_json, indent = 4)
     
     @classmethod
     def abrir(cls):
@@ -44,7 +44,7 @@ class EntregaDAO(DAO):
             with open("entrega.json", mode = "r") as arquivo:
                 list_dic = json.load(arquivo)
                 for dic in list_dic:
-                    c = entrega.from_json(dic)
+                    c = Entrega.from_json(dic)
                     cls.objetos.append(c)
         except:
             pass
