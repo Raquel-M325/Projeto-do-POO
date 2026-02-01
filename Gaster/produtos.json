@@ -35,13 +35,6 @@
         "id_Categoria": 4
     },
     {
-        "id": 3,
-        "descricao": "\u00d3culos",
-        "preco": 166.37697213885002,
-        "estoque": 6,
-        "id_Categoria": 3
-    },
-    {
         "id": 8,
         "descricao": "Lentilha",
         "preco": 14.68035,
@@ -68,5 +61,12 @@
         "preco": 9.5,
         "estoque": 4.0,
         "id_Categoria": 1.0
+    },
+    {
+        "id": 3,
+        "descricao": "\u00d3culos",
+        "preco": 166.37697213885002,
+        "estoque": 3,
+        "id_Categoria": 3
     }
 ]

@@ -110,5 +110,12 @@
         "email": "alma",
         "fone": "alma",
         "senha": "alma"
+    },
+    {
+        "id": 18,
+        "nome": "Raquel",
+        "email": "@raquel",
+        "fone": "11111111",
+        "senha": "a"
     }
 ]

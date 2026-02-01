@@ -13,6 +13,7 @@ from templates.listarvendas import ListarVendasUI
 from templates.favoritados import FavoritadosUI
 from templates.reclamacoes import ReclameAquiUI
 from templates.equipe import EquipeUI
+from templates.opcaodeentrega import OpcaodeEntregaUI
 
 from view import View
 import streamlit as st
@@ -42,6 +43,7 @@ class IndexUI:
             "Inserir produto no carrinho",
             "Visualizar carrinho",
             "Comprar carrinho",
+            "Opções de Entrega",
             "Listar minhas compras",
             "Minhas reclamações",
             "Meus favoritos"])
@@ -49,6 +51,7 @@ class IndexUI:
         if op == "Inserir produto no carrinho": InserirCarrinhoUI.main()
         if op == "Visualizar carrinho":  VisualizarCarrinhoUI.main()
         if op == "Comprar carrinho": ConfirmarCarrinhoUI.main()
+        if op == "Opções de Entrega": OpcaodeEntregaUI.main()
         if op == "Listar minhas compras":  ListarPedidosRealizadosUI.main() 
         if op == "Minhas reclamações": ReclameAquiUI.main()
         if op == "Meus favoritos": FavoritadosUI.main()
