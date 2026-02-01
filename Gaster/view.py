@@ -376,6 +376,6 @@ class View:
         c = Entrega(id, idCliente, descricao)
         EntregaDAO.atualizar(c)
 
-    def Entrar_excluir(id):
+    def entrega_excluir(id):
         c = Entrega(id, 0, "")
         EntregaDAO.excluir(c)
