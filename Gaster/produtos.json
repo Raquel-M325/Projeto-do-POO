@@ -49,13 +49,6 @@
         "id_Categoria": 5.0
     },
     {
-        "id": 5,
-        "descricao": "Sonic Frontiers",
-        "preco": 99.71526530188412,
-        "estoque": 994932,
-        "id_Categoria": 1
-    },
-    {
         "id": 10,
         "descricao": "Cocacola",
         "preco": 9.5,
@@ -68,5 +61,12 @@
         "preco": 166.37697213885002,
         "estoque": 3,
         "id_Categoria": 3
+    },
+    {
+        "id": 5,
+        "descricao": "Sonic Frontiers",
+        "preco": 99.71526530188412,
+        "estoque": 994928,
+        "id_Categoria": 1
     }
 ]
