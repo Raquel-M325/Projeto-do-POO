@@ -15,14 +15,14 @@ class OpcaodeEntregaUI:
     
     def domicilio():
         st.write("========= ENTREGA DOMICILIO ESCOLHIDA =========")
-        nome = number_input("Nome Completo: ")
-        telefone = number_input("Telefone: ")
-        endereco = number_input("Endereço do CEP: ") #podemos detalhar mais o endereço, mas quis simplificar
+        nome = st.number_input("Nome Completo: ")
+        telefone = st.number_input("Telefone: ")
+        endereco = st.number_input("Endereço do CEP: ") #podemos detalhar mais o endereço, mas quis simplificar
         return "Domicílio"
 
     def local():
         st.write("========= ENTREGA LOCAL ESCOLHIDA =========")
-        nome = number_input("Nome Completo: ")
-        telefone = number_input("Telefone: ")
-        data = number_input("Data para buscar: ") #precisa avaliar se é ideal ter esse
+        nome = st.number_input("Nome Completo: ")
+        telefone = st.number_input("Telefone: ")
+        data = st.number_input("Data para buscar: ") #precisa avaliar se é ideal ter esse
         return "Local"
